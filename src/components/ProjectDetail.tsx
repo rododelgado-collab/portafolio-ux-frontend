@@ -89,6 +89,19 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
                   ))}
                 </ul>
               </div>
+
+              {/* Live Demo CTA */}
+              <div className="pt-4">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-lg focus:ring-4 focus:ring-cyan-500/50 outline-none"
+                  aria-label={`Ver versión en vivo de ${project.title}`}
+                >
+                  Ver en vivo <span>→</span>
+                </a>
+              </div>
             </div>
 
             {/* Sidebar */}

@@ -100,9 +100,21 @@ const Projects = ({ onProjectClick }: ProjectsProps) => {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="inline-flex items-center gap-2 text-slate-900 dark:text-white font-bold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                Ver caso de estudio <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+              {/* CTAs */}
+              <div className="flex flex-wrap items-center gap-4 mt-4">
+                <div className="inline-flex items-center gap-2 text-slate-900 dark:text-white font-bold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors cursor-pointer">
+                  Ver caso de estudio <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 font-bold hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-all"
+                  aria-label={`Ver versión en vivo de ${project.title}`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Vercel <ExternalLink size={16} />
+                </a>
               </div>
             </div>
           </div>
