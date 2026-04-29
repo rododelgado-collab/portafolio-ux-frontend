@@ -61,5 +61,26 @@
       "Interfaz intuitiva de gestión",
       "Rendimiento optimizado"
     ]
+  },
+  {
+    "id": "4",
+    "title": "Cerrajero Santiago 24",
+    "shortDescription": "Sitio web profesional para servicios de cerrajería",
+    "description": "Página web moderna y responsiva para empresa de servicios de cerrajería 24/7. Diseñada para captar clientes y mostrar servicios de forma clara y profesional.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    "image": "https://images.unsplash.com/photo-1460925895917-aaf4b91c7670?w=600&h=400&fit=crop",
+    "imageAlt": "Cerrajero Santiago 24 - Sitio profesional",
+    "liveUrl": "https://cerrajero-santiago24.vercel.app/",
+    "githubUrl": "https://github.com/rododelgado-collab/cerrajeroSantiago24",
+    "category": "frontend",
+    "role": "Desarrollador Frontend",
+    "timeline": "Completado",
+    "challenge": "Crear un sitio web profesional para servicios de cerrajería que comunique confiabilidad, disponibilidad 24/7 y facilite el contacto con clientes.",
+    "solution": "Desarrollé un sitio web con React y TypeScript que presenta los servicios de forma clara, incluye información de contacto destacada y está optimizado para conversiones y SEO.",
+    "results": [
+      "Diseño profesional y moderno",
+      "Completamente responsivo",
+      "Optimizado para contactos y conversiones"
+    ]
   }
 ]
