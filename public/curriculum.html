@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodolfo Delgado - CV Accesible 2026</title>
+    <!-- Fuentes y Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        :root {
+            --bg-body: #f1f5f9;
+            --bg-cv: #ffffff;
+            --bg-sidebar: #f8fafc;
+            --text-main: #1e293b;
+            --text-side: #475569;
+            --border-color: #e2e8f0;
+            --accent: #2563eb;
+            --tag-text: #1e40af;
+        }
+
+        .dark {
+            --bg-body: #0f172a;
+            --bg-cv: #020617;
+            --bg-sidebar: #0f172a;
+            --text-main: #f8fafc;
+            --text-side: #cbd5e1;
+            --border-color: #1e293b;
+            --accent: #3b82f6;
+            --tag-text: #ffffff;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body { background-color: white !important; padding: 0 !important; margin: 0 !important; }
+            .no-print { display: none !important; }
+            .cv-container { 
+                box-shadow: none !important; 
+                margin: 0 !important; 
+                width: 210mm !important;
+                height: 297mm !important;
+                border: none !important;
+                overflow: hidden !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Urbanist', sans-serif; }
+
+        .cv-container {
+            width: 210mm;
+            height: 297mm;
+            background-color: var(--bg-cv);
+            margin: 0 auto;
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar {
+            width: 32%;
+            background-color: var(--bg-sidebar);
+            padding: 35px 25px;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease;
+            color: var(--text-side);
+        }
+
+        .main-content {
+            width: 68%;
+            padding: 35px 45px;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-main);
+        }
+
+        .section-line {
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            margin-bottom: 12px;
+        }
+
+        .exp-dot {
+            position: absolute;
+            left: -29px;
+            top: 7px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        .skill-tag {
+            background-color: rgba(37, 99, 235, 0.15);
+            color: var(--tag-text);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .link-accent {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link-accent:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Estilo para botón accesible */
+        .dark #theme-toggle {
+            background-color: #f8fafc !important;
+            color: #000000 !important;
+            border-color: #cbd5e1;
+        }
+
+        #theme-toggle:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="py-10">
+
+    <!-- CABECERA DE CONTROL (No se imprime) -->
+    <div role="toolbar" aria-label="Controles de página"
+         class="max-w-[210mm] mx-auto mb-6 no-print
+                flex flex-col lg:flex-row lg:justify-between lg:items-center
+                gap-3 lg:gap-0
+                bg-white dark:bg-slate-900 p-4 rounded-xl shadow-md
+                border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+
+        <!-- Fila 1 mobile: Volver (izq) + Switch modo (der) | Desktop: solo switch -->
+        <div class="flex justify-between items-center lg:justify-start lg:gap-4">
+            <a href="index.html"
+               aria-label="Volver al portafolio"
+               class="lg:hidden bg-slate-100 p-2 rounded-lg border border-slate-300
+                      flex items-center gap-1 text-slate-900 text-xs font-bold uppercase
+                      transition-transform active:scale-95
+                      dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700">
+                &#8592; Volver
+            </a>
+            <button id="theme-toggle"
+                    aria-label="Cambiar entre modo claro y oscuro"
+                    class="bg-slate-100 p-2 rounded-lg border border-slate-300
+                           flex items-center gap-2 text-slate-900
+                           transition-transform active:scale-95">
+                <span id="theme-icon" aria-hidden="true">🌙</span>
+                <span class="text-xs font-bold uppercase" id="theme-text">Modo Oscuro</span>
+            </button>
+        </div>
+
+        <!-- Título (solo desktop) -->
+        <div class="hidden lg:block text-center" aria-hidden="true">
+            <h3 class="font-bold text-slate-800 dark:text-white text-sm uppercase tracking-tight">Rodolfo Delgado - CV 2026</h3>
+        </div>
+
+        <!-- Fila 2 mobile / Derecha desktop: botón imprimir -->
+        <button onclick="window.print()"
+                aria-label="Imprimir currículum o guardar como PDF"
+                class="w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold
+                       py-2 px-6 rounded-lg transition-all shadow-md text-xs
+                       focus:outline focus:outline-3 focus:outline-offset-2 focus:outline-blue-400">
+            🖨️ IMPRIMIR PDF
+        </button>
+    </div>
+
+    <div class="cv-container" id="cv-root">
+        <!-- BARRA LATERAL (Complementaria) -->
+        <aside class="sidebar" role="complementary">
+            <div class="mb-8" aria-hidden="true">
+                <div class="w-20 h-20 bg-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center transform rotate-3 shadow-lg">
+                    <span class="text-2xl font-extrabold text-white -rotate-3">RD</span>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-blue-600 text-[9px] font-bold uppercase tracking-[0.3em]">Design & Logic Synergy</h2>
+                </div>
+            </div>
+
+            <!-- CONTACTO -->
+            <section class="mb-6" aria-labelledby="contact-title">
+                <h2 id="contact-title" class="font-bold uppercase tracking-widest text-[10px] mb-3 border-b border-slate-300 dark:border-slate-800 pb-1.5">Información</h2>
+                <div class="space-y-2.5 text-[11px]">
+                    <div>
+                        <p class="text-slate-500 dark:text-slate-500 text-[8px] uppercase font-bold mb-0.5">Ubicación</p>
+                        <p class="leading-tight font-medium">San Joaquín, Santiago, Chile</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 dark:text-slate-500 text-[8px] uppercase font-bold mb-0.5">Teléfono</p>
+                        <p class="leading-tight font-medium" aria-label="Teléfono: +56 9 9591 4808">+56 9 9591 4808</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 dark:text-slate-500 text-[8px] uppercase font-bold mb-0.5">Email</p>
+                        <a href="mailto:rodolfodelgadosantiag@gmail.com" 
+                           class="link-accent break-all leading-tight" 
+                           aria-label="Enviar correo a rodolfodelgadosantiag@gmail.com">rodolfodelgadosantiag@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-slate-500 dark:text-slate-500 text-[8px] uppercase font-bold mb-0.5">LinkedIn</p>
+                        <a href="https://linkedin.com/in/rodolfo-delgado-592a22266" 
+                           target="_blank" 
+                           class="link-accent break-all leading-tight"
+                           aria-label="Perfil de LinkedIn de Rodolfo Delgado">linkedin.com/rodolfo-delgado</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section class="mb-6" aria-labelledby="skills-title">
+                <h2 id="skills-title" class="font-bold uppercase tracking-widest text-[10px] mb-3 border-b border-slate-300 dark:border-slate-800 pb-1.5">Tecnologías</h2>
+                <div class="mb-4">
+                    <h3 class="text-[9px] font-bold text-blue-600 uppercase mb-2">Diseño & UX</h3>
+                    <div class="flex flex-wrap gap-1" role="list">
+                        <span class="skill-tag" role="listitem">Figma</span>
+                        <span class="skill-tag" role="listitem">Design Systems</span>
+                        <span class="skill-tag" role="listitem">User Research</span>
+                        <span class="skill-tag" role="listitem">UCD</span>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <h3 class="text-[9px] font-bold text-slate-500 dark:text-slate-500 uppercase mb-2">Programación</h3>
+                    <div class="flex flex-wrap gap-1" role="list">
+                        <span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[9px] px-1.5 py-0.5 rounded font-bold border border-slate-300 dark:border-slate-700" role="listitem">Angular</span>
+                        <span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[9px] px-1.5 py-0.5 rounded font-bold border border-slate-300 dark:border-slate-700" role="listitem">React</span>
+                        <span class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[9px] px-1.5 py-0.5 rounded font-bold border border-slate-300 dark:border-slate-700" role="listitem">Logic & Data</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VALOR HÍBRIDO -->
+            <section class="mb-6" aria-labelledby="value-title">
+                <h2 id="value-title" class="font-bold uppercase tracking-widest text-[11px] mb-3 border-b border-slate-300 dark:border-slate-800 pb-1.5">Valor Híbrido</h2>
+                <p class="text-[10px] leading-relaxed italic font-medium">
+                    "Mi formación en programación me otorga una <strong>perspectiva estructural</strong>: diseño sistemas lógicos y componentes optimizados para su implementación técnica."
+                </p>
+            </section>
+
+            <!-- FORMACIÓN -->
+            <section class="mb-6" aria-labelledby="edu-title">
+                <h2 id="edu-title" class="font-bold uppercase tracking-widest text-[11px] mb-3 border-b border-slate-300 dark:border-slate-800 pb-1.5">Formación</h2>
+                <div class="space-y-4">
+                    <article>
+                        <p class="text-[11px] font-bold leading-tight">Analista Programador</p>
+                        <p class="text-[10px] text-blue-600 font-bold italic">Duoc UC | 2026 - 2028</p>
+                    </article>
+                    <article>
+                        <p class="text-[11px] font-bold leading-tight">Animación y Diseño Gráfico</p>
+                        <p class="text-[10px] font-medium">IP Santo Tomás | Graduado</p>
+                    </article>
+                </div>
+            </section>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content" role="main">
+            <!-- HEADER -->
+            <header class="mb-6">
+                <h1 class="text-5xl font-extrabold tracking-tighter mb-1 uppercase">Rodolfo <span class="text-blue-600">Delgado</span></h1>
+                <p class="text-base font-medium text-slate-500 dark:text-slate-400 tracking-[0.3em] uppercase mb-4">UX/UI Designer & Front-End Developer</p>
+                
+                <div class="section-line" aria-hidden="true"></div>
+                <p class="leading-relaxed text-[12px] font-medium italic">
+                    "Diseñador UX/UI con mentalidad de desarrollador. Mi formación actual como Analista Programador me permite integrar una lógica de sistemas en cada solución visual. Mi enfoque garantiza una <strong>experiencia de usuario excepcional</strong> respaldada por una viabilidad técnica absoluta."
+                </p>
+            </header>
+
+            <!-- EXPERIENCIA PROFESIONAL -->
+            <section aria-labelledby="exp-title">
+                <h2 id="exp-title" class="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600 mb-5 flex items-center gap-4">
+                    Experiencia Profesional
+                    <span class="flex-grow h-[1px] bg-slate-100 dark:bg-slate-800" aria-hidden="true"></span>
+                </h2>
+
+                <div class="space-y-6 border-l border-slate-100 dark:border-slate-800 ml-3">
+                    
+                    <!-- SERMALUC -->
+                    <article class="relative ml-8">
+                        <div class="exp-dot" aria-hidden="true"></div>
+                        <header class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-[14px] uppercase tracking-wider">UX Designer</h3>
+                            <time class="text-[9px] font-bold text-slate-400 uppercase">Mar 2024 - Jun 2024</time>
+                        </header>
+                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">Sermaluc (Banco Estado)</p>
+                        <ul class="text-[11px] space-y-1">
+                            <li>• Diseño centrado en el usuario para ecosistemas transaccionales App Banco Estado.</li>
+                            <li>• Prototipado interactivo en <strong>Angular</strong> para acelerar el desarrollo técnico.</li>
+                        </ul>
+                    </article>
+
+                    <!-- MANPOWER -->
+                    <article class="relative ml-8">
+                        <div class="exp-dot" aria-hidden="true"></div>
+                        <header class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-[14px] uppercase tracking-wider">UX Designer Senior</h3>
+                            <time class="text-[9px] font-bold text-slate-400 uppercase">May 2022 - Oct 2023</time>
+                        </header>
+                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">ManpowerGroup Chile (Tarjeta Líder)</p>
+                        <ul class="text-[11px] space-y-1">
+                            <li>• Liderazgo UX para integración de MATCHPAY y validación con usuarios reales.</li>
+                            <li>• <strong class="text-blue-600 font-bold uppercase">CRO:</strong> Incremento del 10% en leads mensuales mediante landing pages.</li>
+                        </ul>
+                    </article>
+
+                    <!-- CBC -->
+                    <article class="relative ml-8">
+                        <div class="exp-dot" aria-hidden="true"></div>
+                        <header class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-[14px] uppercase tracking-wider">User Experience Designer</h3>
+                            <time class="text-[9px] font-bold text-slate-400 uppercase">Mar 2020 - Nov 2021</time>
+                        </header>
+                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">CBC</p>
+                        <ul class="text-[11px] space-y-1">
+                            <li>• Diseño de interfaces omnicanal con foco en la satisfacción del cliente final.</li>
+                            <li>• Arquitectura estratégica de información para campañas masivas de marketing.</li>
+                        </ul>
+                    </article>
+
+                    <!-- EVERIS -->
+                    <article class="relative ml-8 pb-2">
+                        <div class="exp-dot" aria-hidden="true"></div>
+                        <header class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-[14px] uppercase tracking-wider">Prototype &amp; UX Designer</h3>
+                            <time class="text-[9px] font-bold text-slate-400 uppercase">Jun 2018 - Nov 2020</time>
+                        </header>
+                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-1.5">Everis (NTT DATA)</p>
+                        <ul class="text-[11px] space-y-1">
+                            <li>• Definición visual de interfaces y ejecución de pruebas de usabilidad (Testing A/B).</li>
+                            <li>• Prototipos rápidos para asegurar la viabilidad técnica de requerimientos.</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+
+            themeIcon.innerText = isDark ? '☀️' : '🌙';
+            themeText.innerText = isDark ? 'Modo Claro' : 'Modo Oscuro';
+            themeBtn.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        });
+    </script>
+</body>
+</html>
