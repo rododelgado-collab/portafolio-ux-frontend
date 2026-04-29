@@ -74,12 +74,12 @@ const Projects = ({ onProjectClick }: ProjectsProps) => {
             aria-label={`Ver caso de estudio de ${project.title}`}
           >
             {/* Hero Image */}
-            <div className="h-64 w-full bg-gradient-to-br from-blue-600 to-cyan-500 opacity-90 group-hover:opacity-100 transition-opacity flex items-center justify-center p-8" aria-hidden="true">
-              <div className="w-full h-full bg-slate-900/30 dark:bg-slate-950/40 backdrop-blur-sm rounded-xl border border-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform duration-500 shadow-inner">
-                <span className="font-mono text-sm tracking-widest uppercase font-bold drop-shadow-md">
-                  Preview del Proyecto
-                </span>
-              </div>
+            <div className="h-64 w-full overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
             </div>
 
             {/* Content */}
