@@ -1,4 +1,4 @@
-import { X } from 'lucide-react'
+import { X, ExternalLink } from 'lucide-react'
 import type { Project } from '../types'
 
 interface ProjectDetailProps {
@@ -91,7 +91,7 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
               </div>
 
               {/* Live Demo CTA */}
-              <div className="pt-4">
+              <div className="pt-4 flex flex-wrap gap-4">
                 <a
                   href={project.liveUrl}
                   target="_blank"
@@ -101,6 +101,17 @@ const ProjectDetail = ({ project, onClose }: ProjectDetailProps) => {
                 >
                   Ver en vivo <span>→</span>
                 </a>
+                {project.figmaUrl && (
+                  <a
+                    href={project.figmaUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-700 hover:bg-slate-600 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-lg focus:ring-4 focus:ring-cyan-500/50 outline-none"
+                    aria-label={`Ver sistema de diseño en Figma de ${project.title}`}
+                  >
+                    Link de Figma <ExternalLink size={16} />
+                  </a>
+                )}
               </div>
             </div>
 

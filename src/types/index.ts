@@ -8,6 +8,7 @@ export interface Project {
   imageAlt: string
   liveUrl?: string
   githubUrl?: string
+  figmaUrl?: string
   category: 'ux' | 'frontend' | 'fullstack'
   role: string
   timeline: string
