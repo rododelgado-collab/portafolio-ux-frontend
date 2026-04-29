@@ -1,4 +1,5 @@
 import { ExternalLink } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import type { Project } from '../types'
 
 interface ProjectsProps {
@@ -6,71 +7,37 @@ interface ProjectsProps {
 }
 
 const Projects = ({ onProjectClick }: ProjectsProps) => {
-  const projects: Project[] = [
-    {
-      id: '1',
-      title: 'Fintech Dashboard UX',
-      shortDescription: 'Rediseño de dashboard financiero con mejora del 30% en velocidad de tareas',
-      description: 'Rediseño completo de un dashboard financiero. Mejoré la accesibilidad y reduje el tiempo de tareas en un 30% mediante investigación de usuarios y un diseño limpio en React.',
-      technologies: ['React', 'Tailwind', 'Figma', 'Recharts'],
-      image: 'https://images.unsplash.com/photo-1460925895917-aaf4b91c7670?w=600&h=400&fit=crop',
-      imageAlt: 'Dashboard financiero moderno con gráficos y datos',
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'ux',
-      role: 'Lead UX/UI & Desarrollador Front-End',
-      timeline: '3 meses',
-      challenge: 'El sistema financiero anterior presentaba una sobrecarga cognitiva severa. Los usuarios tardaban un promedio de 4 minutos en encontrar el reporte mensual, y las tasas de error en las transferencias eran altas debido a la falta de jerarquía visual y retroalimentación del sistema.',
-      solution: 'Implementamos una arquitectura de información basada en "widgets" personalizables. Desarrollé el front-end utilizando React y Tailwind CSS, asegurando que cada componente fuera accesible (WCAG 2.1 AA) y respondiera instantáneamente. Creamos un sistema de diseño robusto en Figma para mantener la coherencia.',
-      results: [
-        'Reducción del 30% en el tiempo promedio por tarea.',
-        'Disminución del 85% en errores de transferencia.',
-        'Puntuación de satisfacción (CSAT) aumentada de 3.2 a 4.8 sobre 5.'
-      ]
-    },
-    {
-      id: '2',
-      title: 'E-commerce Sostenible',
-      shortDescription: 'Tienda en línea optimizada con puntuación de 98 en Lighthouse',
-      description: 'Desarrollo de una tienda en línea rápida y optimizada para SEO. Implementación de un carrito de compras con estado global y animaciones fluidas.',
-      technologies: ['Next.js', 'TypeScript', 'Zustand', 'Framer Motion'],
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-      imageAlt: 'Interfaz de e-commerce con productos',
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'frontend',
-      role: 'Desarrollador Front-End Principal',
-      timeline: '2.5 meses',
-      challenge: 'La marca de ropa sostenible necesitaba migrar de una plataforma lenta a una experiencia a medida, ultrarrápida y optimizada para buscadores, capaz de manejar picos de tráfico repentinos durante los lanzamientos de colecciones.',
-      solution: 'Arquitecturamos la solución con Next.js para un Server-Side Rendering y SEO óptimo. Utilicé Zustand para un manejo de estado ligero en el carrito y Framer Motion para micro-interacciones sutiles que mejoran la percepción de calidad de los productos.',
-      results: [
-        'Puntuación de 98/100 en Google Lighthouse (Performance).',
-        'Aumento del 40% en la tasa de conversión móvil.',
-        'Reducción del tiempo de carga inicial a menos de 0.8 segundos.'
-      ]
-    },
-    {
-      id: '3',
-      title: 'App de Movilidad Urbana',
-      shortDescription: 'Sistema de transporte con Design System escalable',
-      description: 'Investigación, wireframing y prototipado de alta fidelidad para una app de transporte. Incluye un sistema de diseño escalable y pruebas de usabilidad.',
-      technologies: ['Figma', 'Miro', 'UserTesting', 'Design System'],
-      image: 'https://images.unsplash.com/photo-1563986768609-2f121991de9a?w=600&h=400&fit=crop',
-      imageAlt: 'Aplicación de movilidad urbana',
-      liveUrl: '#',
-      githubUrl: '#',
-      category: 'ux',
-      role: 'UX Researcher & Product Designer',
-      timeline: '4 meses',
-      challenge: 'Los usuarios de la ciudad se quejaban de la falta de predictibilidad en los tiempos de llegada del transporte público en la app existente. Necesitábamos descubrir las frustraciones reales y diseñar una solución que generara confianza inmediata.',
-      solution: 'Realicé entrevistas en profundidad y pruebas de usabilidad con la app actual. Basado en los hallazgos, rediseñé el flujo principal, introduciendo estimaciones de tiempo con rangos de probabilidad visuales y mapas térmicos. Todo fue prototipado y validado en Figma.',
-      results: [
-        'Validación exitosa del nuevo flujo con 20 usuarios beta.',
-        'Creación de un Design System con más de 50 componentes y variantes.',
-        'Incremento proyectado del 25% en la retención de usuarios recurrentes.'
-      ]
-    },
-  ]
+  const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const response = await fetch('/projects-data.json')
+        const data = await response.json()
+        setProjects(data)
+      } catch (error) {
+        console.error('Error loading projects:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadProjects()
+  }, [])
+
+  if (loading) {
+    return (
+      <section id="projects" tabIndex={-1} className="py-24 px-6 max-w-6xl mx-auto outline-none">
+        <div className="text-center">
+          <div className="inline-block animate-pulse">
+            <div className="h-12 w-48 bg-slate-200 dark:bg-slate-800 rounded-lg mb-4"></div>
+            <div className="h-6 w-72 bg-slate-200 dark:bg-slate-800 rounded-lg"></div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section
@@ -84,7 +51,7 @@ const Projects = ({ onProjectClick }: ProjectsProps) => {
             Proyectos Destacados
           </h2>
           <p className="text-slate-700 dark:text-slate-400 max-w-xl text-lg">
-            Una selección de trabajos donde he aplicado mi enfoque de extremo a extremo, desde la investigación inicial hasta el despliegue del código.
+            Una selección de trabajos donde he aplicado mis habilidades en desarrollo frontend y diseño UX/UI.
           </p>
         </div>
       </div>

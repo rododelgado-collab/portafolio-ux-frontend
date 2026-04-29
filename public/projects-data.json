@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Delta Prueba",
+    "shortDescription": "Plataforma de pruebas y análisis delta",
+    "description": "Aplicación desarrollada con React y TypeScript para pruebas y análisis de cambios (delta). Interfaz moderna con diseño responsivo.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    "image": "https://images.unsplash.com/photo-1460925895917-aaf4b91c7670?w=600&h=400&fit=crop",
+    "imageAlt": "Delta Prueba - Plataforma de análisis",
+    "liveUrl": "https://delta-prueba.vercel.app/",
+    "githubUrl": "https://github.com/rododelgado-collab/DeltaPrueba",
+    "category": "frontend",
+    "role": "Desarrollador Frontend",
+    "timeline": "En desarrollo",
+    "challenge": "Crear una plataforma intuitiva para realizar pruebas y análisis de cambios con una interfaz clara y responsiva.",
+    "solution": "Desarrollé una aplicación con React y TypeScript que proporciona un análisis visual de cambios (delta) con una interfaz moderna optimizada para desktop y mobile.",
+    "results": [
+      "Interfaz responsiva y accesible",
+      "Carga rápida y optimizada",
+      "Fácil navegación y usabilidad"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Mythic Boosters",
+    "shortDescription": "Tienda de boosters para juegos de cartas coleccionables",
+    "description": "E-commerce especializado en boosters y productos para juegos de cartas. Desarrollado con tecnologías modernas para una experiencia de compra fluida.",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
+    "imageAlt": "Mythic Boosters - Tienda de productos",
+    "liveUrl": "https://mythic-boosters.vercel.app/",
+    "githubUrl": "https://github.com/rododelgado-collab/mythic-boosters",
+    "category": "frontend",
+    "role": "Desarrollador Frontend Principal",
+    "timeline": "En desarrollo",
+    "challenge": "Crear una tienda online para productos de juegos de cartas con catálogo dinámico y sistema de compras intuitivo.",
+    "solution": "Implementé un e-commerce con Next.js, TypeScript y Tailwind CSS que permite navegar, filtrar y comprar productos de forma sencilla y segura.",
+    "results": [
+      "Catálogo dinámico y actualizable",
+      "Carrito de compras funcional",
+      "Diseño atractivo y optimizado"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "MTG Booster Antigravity",
+    "shortDescription": "Sistema de gestión de boosters Magic: The Gathering",
+    "description": "Aplicación especializada para gestionar colecciones de boosters Magic: The Gathering con funcionalidades avanzadas de organización y búsqueda.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "API REST"],
+    "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&h=400&fit=crop",
+    "imageAlt": "MTG Booster Antigravity - Gestor de colecciones",
+    "liveUrl": "https://mtg-booster-antigravity-lyovrpfph-rododelgado-collabs-projects.vercel.app/",
+    "githubUrl": "https://github.com/rododelgado-collab/mtg-booster-antigravity",
+    "category": "frontend",
+    "role": "Desarrollador Frontend",
+    "timeline": "En desarrollo",
+    "challenge": "Crear un sistema eficiente para organizar y gestionar colecciones de boosters Magic: The Gathering con búsqueda y filtros avanzados.",
+    "solution": "Desarrollé una aplicación React con TypeScript que permite gestionar colecciones, filtrar por características, buscar específicos y mantener un inventario organizado.",
+    "results": [
+      "Búsqueda y filtros avanzados",
+      "Interfaz intuitiva de gestión",
+      "Rendimiento optimizado"
+    ]
+  }
+]
