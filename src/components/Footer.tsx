@@ -76,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-3 list-none m-0 p-0">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/rododelgado-collab"
                   target="_blank"
                   rel="noreferrer"
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
@@ -87,24 +87,13 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rodolfo-delgado-592a22266/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
                   aria-label="Visitarme en LinkedIn"
                 >
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
-                  aria-label="Sígueme en Twitter"
-                >
-                  Twitter
                 </a>
               </li>
             </ul>

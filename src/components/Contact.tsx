@@ -54,25 +54,22 @@ const Contact = () => {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://github.com"
+              href="https://github.com/rododelgado-collab"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus:ring-4 focus:ring-cyan-500/50 outline-none"
               aria-label="Ver mi código en GitHub"
             >
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rodolfo-delgado-592a22266/"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus:ring-4 focus:ring-cyan-500/50 outline-none"
               aria-label="Visitarme en LinkedIn"
             >
               LinkedIn
-            </a>
-            <a
-              href="https://twitter.com"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus:ring-4 focus:ring-cyan-500/50 outline-none"
-              aria-label="Sígueme en Twitter"
-            >
-              Twitter
             </a>
           </div>
         </div>
