@@ -57,7 +57,7 @@ const Hero = () => {
           <FileText size={20} /> Currículum
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/rododelgado-collab"
           target="_blank"
           rel="noreferrer"
           className="px-8 py-4 rounded-full bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-sm focus:ring-4 focus:ring-cyan-500/50 outline-none"
