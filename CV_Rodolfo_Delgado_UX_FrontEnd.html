@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Rodolfo Delgado · UX/UI Designer & Front-End Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f8fb;
+    --page:#ffffff;
+    --ink:#0e1116;
+    --ink-soft:#3a4150;
+    --muted:#6b7280;
+    --accent:#4169e1;
+    --accent-deep:#2d4fb8;
+    --accent-soft:#8aa4ff;
+    --chip-bg:#f1f4fe;
+    --chip-border:#dfe6fb;
+    --line:#e6e9ef;
+    --shape:#2d4fb8;
+    --shape2:#4169e1;
+    --sidebar:#f7f8fb;
+    --serif:'Inter',system-ui,sans-serif;
+    --grad-a:#22d3ee;
+    --grad-b:#4169e1;
+    --grad-c:#a78bfa;
+    --sans:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  [data-theme="dark"]{
+    --bg:#0a0d12;
+    --page:#0e1116;
+    --ink:#e8eaed;
+    --ink-soft:#c4cad4;
+    --muted:#9ba3b0;
+    --accent:#8aa4ff;
+    --accent-deep:#4169e1;
+    --accent-soft:#8aa4ff;
+    --chip-bg:#1e232c;
+    --chip-border:#2a2f3a;
+    --line:#232a34;
+    --shape:#4169e1;
+    --shape2:#2d4fb8;
+    --sidebar:#12161d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:var(--bg)}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding:32px 16px;
+    transition:background .3s,color .3s;
+    background:var(--bg);
+  }
+  .page{
+    position:relative;
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto;
+    background:var(--page);
+    box-shadow:0 10px 40px rgba(14,17,22,.12);
+    overflow:hidden;
+  }
+  .cols{display:grid;grid-template-columns:70mm 1fr;min-height:297mm}
+  /* ---- Formas diagonales (estilo Juan Piña) ---- */
+  .corner{position:absolute;z-index:2;pointer-events:none}
+  .corner.tl{top:0;left:0;width:66mm;height:24mm;background:var(--shape);clip-path:polygon(0 0,100% 0,0 100%)}
+  .corner.br{bottom:0;right:0;width:70mm;height:20mm;background:var(--shape);clip-path:polygon(100% 0,100% 100%,0 100%)}
+
+  /* ---- Sidebar ---- */
+  aside{
+    position:relative;z-index:1;
+    background:var(--sidebar);
+    padding:20mm 8mm 14mm 10mm;
+    border-right:1px solid var(--line);
+  }
+  .monogram{
+    width:29mm;height:29mm;margin:0 auto;
+    background:linear-gradient(135deg,var(--accent-deep),var(--accent));
+    border-radius:22%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(65,105,225,.35);
+  }
+  .monogram span{
+    font-family:var(--sans);font-weight:900;font-size:11.5mm;color:#fff;letter-spacing:-.02em;
+  }
+  .tagline{
+    text-align:center;margin-top:4mm;
+    font-family:var(--mono);font-size:6.6pt;letter-spacing:.28em;
+    color:var(--accent);text-transform:uppercase;font-weight:700;
+  }
+  aside h2, main h2{
+    display:flex;align-items:center;gap:2.2mm;
+    font-family:var(--sans);font-weight:700;
+    font-size:10.5pt;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent-deep);
+    margin:6mm 0 2.6mm;
+  }
+  [data-theme="dark"] aside h2,[data-theme="dark"] main h2{color:var(--accent)}
+  aside h2::before, main h2::before{
+    content:"";width:2.4mm;height:2.4mm;border-radius:50%;
+    background:var(--accent);flex:0 0 auto;
+  }
+  aside h2::after, main h2::after{
+    content:"";flex:1;height:1px;background:var(--line);
+  }
+  .about{font-size:8.2pt;line-height:1.5;color:var(--ink-soft)}
+  .contact{list-style:none;display:flex;flex-direction:column;gap:2.1mm}
+  .contact li{display:flex;align-items:flex-start;gap:2.6mm;font-size:8pt;line-height:1.4;color:var(--ink-soft)}
+  .contact .ic{
+    flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:1.5mm;
+    background:var(--accent-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:8pt;
+  }
+  .contact a{color:var(--accent-deep);text-decoration:none;word-break:break-all}
+  [data-theme="dark"] .contact a{color:var(--accent)}
+  .edu-item{margin-bottom:3mm}
+  .edu-item .deg{font-weight:700;font-size:8.8pt}
+  .edu-item .inst{font-size:8.2pt;color:var(--ink-soft)}
+  .edu-item .when{font-family:var(--mono);font-size:7pt;color:var(--accent-deep);margin-top:.5mm}
+  [data-theme="dark"] .edu-item .when{color:var(--accent)}
+
+  /* ---- Main ---- */
+  main{position:relative;z-index:1;padding:10mm 12mm 13mm 10mm}
+  .name{
+    font-family:var(--sans);font-weight:900;
+    font-size:25pt;line-height:1.05;letter-spacing:-.025em;
+    margin-top:4mm;
+  }
+  .name em{
+    font-style:normal;color:var(--accent);
+    background:linear-gradient(90deg,var(--grad-a),var(--grad-b),var(--grad-c));
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .role{
+    font-family:var(--mono);font-size:8.6pt;font-weight:500;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+    margin-top:2.5mm;
+  }
+  .rule{height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin-top:3mm}
+  main h2{margin-top:4.5mm}
+  .job{margin-bottom:3.2mm;padding-left:4.5mm;border-left:2px solid var(--line);position:relative}
+  .job::before{
+    content:"";position:absolute;left:-1.35mm;top:1.4mm;
+    width:2.6mm;height:2.6mm;border-radius:50%;
+    background:var(--accent);border:.5mm solid var(--page);
+  }
+  .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:4mm;flex-wrap:wrap}
+  .job-title{font-weight:700;font-size:10pt}
+  .job-when{font-family:var(--mono);font-size:7.2pt;color:var(--accent-deep);white-space:nowrap;font-weight:700}
+  [data-theme="dark"] .job-when{color:var(--accent)}
+  .job-org{font-family:var(--mono);font-size:7.6pt;color:var(--muted);letter-spacing:.04em;margin-top:.4mm}
+  .job ul{list-style:none;margin-top:1.6mm}
+  .job li{
+    font-size:8.4pt;line-height:1.45;color:var(--ink-soft);
+    padding-left:4mm;position:relative;margin-bottom:.7mm;
+  }
+  .job li::before{content:">";position:absolute;left:0;color:var(--accent);font-family:var(--mono);font-weight:700;font-size:7.5pt}
+  .job li strong{color:var(--ink)}
+  .skills-group{margin-bottom:2.2mm}
+  .skills-group .sg-title{
+    font-family:var(--mono);font-size:7.4pt;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    margin-bottom:1.6mm;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:1.6mm}
+  .chip{
+    font-family:var(--mono);font-size:7.4pt;
+    background:var(--chip-bg);border:1px solid var(--chip-border);
+    color:var(--accent-deep);
+    padding:1mm 2.6mm;border-radius:1.4mm;
+  }
+  [data-theme="dark"] .chip{color:var(--accent)}
+
+  /* ---- Toggle ---- */
+  .theme-toggle,.download-btn{
+    position:fixed;top:16px;z-index:10;
+    font-family:var(--mono);font-size:12px;font-weight:700;
+    border:1px solid var(--line);border-radius:999px;
+    padding:8px 16px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(14,17,22,.15);
+    transition:background .3s,color .3s;
+    text-decoration:none;display:inline-block;
+  }
+  .theme-toggle{right:16px;background:var(--page);color:var(--ink)}
+  .download-btn{right:160px;background:linear-gradient(135deg,var(--accent-deep),var(--accent));color:#fff;border-color:transparent}
+  .theme-toggle:hover{border-color:var(--accent)}
+  .download-btn:hover{filter:brightness(1.1)}
+
+  /* ---- Print ---- */
+  @page{size:A4;margin:0}
+  @media print{
+    body{padding:0;background:#fff}
+    .page{box-shadow:none;width:210mm;min-height:297mm}
+    .theme-toggle,.download-btn{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="download-btn" href="CV_Rodolfo_Delgado_UX_FrontEnd.pdf" download="CV_Rodolfo_Delgado_UX_FrontEnd.pdf">⤓ Descargar PDF</a>
+<button class="theme-toggle" id="toggle" aria-label="Cambiar tema">☾ Modo oscuro</button>
+
+<div class="page">
+  <div class="corner tl"></div>
+  <div class="corner br"></div>
+
+  <div class="cols">
+  <aside>
+    <div class="monogram" aria-hidden="true"><span>RD</span></div>
+    <p class="tagline">Design &amp; Logic Synergy</p>
+
+    <h2>Sobre mí</h2>
+    <p class="about">Diseñador UX/UI con mentalidad de desarrollador. Creo interfaces intuitivas basadas en el comportamiento real del usuario, con una ventaja técnica: entiendo las capacidades y limitaciones del código. Mi formación como Analista Programador me permite tender puentes efectivos entre diseño y tecnología, optimizando el handoff técnico y garantizando la viabilidad de cada propuesta visual.</p>
+
+    <h2>Contacto</h2>
+    <ul class="contact">
+      <li><span class="ic">✆</span><span>+56 9 9591 4807</span></li>
+      <li><span class="ic">✉</span><a href="mailto:rodolfodelgadosantiag@gmail.com">rodolfodelgadosantiag@gmail.com</a></li>
+      <li><span class="ic">⌂</span><span>San Joaquín, Santiago, Chile</span></li>
+      <li><span class="ic">in</span><a href="https://linkedin.com/in/rodolfo-delgado-592a22266">linkedin.com/in/rodolfo-delgado-592a22266</a></li>
+      <li><span class="ic">◈</span><a href="https://portafolio-ux-frontend.vercel.app">portafolio-ux-frontend.vercel.app</a></li>
+    </ul>
+
+    <h2>Educación</h2>
+    <div class="edu-item">
+      <div class="deg">Analista Programador</div>
+      <div class="inst">Duoc UC · En curso</div>
+      <div class="when">2026 — 2028</div>
+    </div>
+  </aside>
+
+  <main>
+    <h1 class="name">RODOLFO <em>DELGADO</em></h1>
+    <p class="role">UX/UI Designer &amp; Front-End Developer</p>
+    <div class="rule"></div>
+
+    <h2>Experiencia</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">UX Designer</span>
+        <span class="job-when">MAR 2024 — JUN 2024</span>
+      </div>
+      <div class="job-org">SERMALUC (BANCO ESTADO) · SANTIAGO, CHILE</div>
+      <ul>
+        <li>Diseño y prototipado de alta fidelidad para la App Banco Estado (Personas y Empresas).</li>
+        <li>Optimización del handoff técnico con prototipos interactivos en <strong>Angular</strong>, reduciendo los tiempos de maquetado del equipo de desarrollo.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Senior UX Designer</span>
+        <span class="job-when">MAY 2022 — OCT 2023</span>
+      </div>
+      <div class="job-org">MANPOWERGROUP CHILE (APP TARJETA LÍDER) · SANTIAGO, CHILE</div>
+      <ul>
+        <li>Liderazgo en el diseño UX de la integración de la pasarela de pago <strong>MATCHPAY</strong>, reduciendo la fricción transaccional.</li>
+        <li>User Research: perfilamiento y entrevistas con prototipos para validar funcionalidades críticas con usuarios reales.</li>
+        <li>CRO: landing pages estratégicas en Figma con un aumento del <strong>10% en la captación mensual de leads</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">User Experience Designer</span>
+        <span class="job-when">MAR 2020 — NOV 2021</span>
+      </div>
+      <div class="job-org">CBC · SANTIAGO, CHILE</div>
+      <ul>
+        <li>Diseño de interfaces omnicanal enfocado en la experiencia del cliente.</li>
+        <li>Arquitectura de información y piezas gráficas para campañas masivas de mailing del área de marketing comercial.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Prototype &amp; UX/UI Designer</span>
+        <span class="job-when">JUN 2018 — NOV 2020</span>
+      </div>
+      <div class="job-org">EVERIS (NTT DATA) · CHILE</div>
+      <ul>
+        <li>Definición visual de interfaces y ejecución de pruebas de usabilidad (testing).</li>
+        <li>Prototipos ágiles para validación temprana de requerimientos.</li>
+      </ul>
+    </div>
+
+    <h2>Habilidades</h2>
+
+    <div class="skills-group">
+      <div class="sg-title">Diseño &amp; UX</div>
+      <div class="chips">
+        <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Wireframing</span><span class="chip">Prototipado Hi-Fi</span><span class="chip">Design Systems</span><span class="chip">User Research</span><span class="chip">Testeo de Usabilidad</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="sg-title">Front-End</div>
+      <div class="chips">
+        <span class="chip">Angular</span><span class="chip">React</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Diseño Responsivo</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="sg-title">Metodologías</div>
+      <div class="chips">
+        <span class="chip">Handoff Diseño-Dev</span><span class="chip">CRO</span><span class="chip">Accesibilidad WCAG 2.1</span><span class="chip">Comunicación Asertiva</span><span class="chip">Pensamiento Analítico</span>
+      </div>
+    </div>
+  </main>
+  </div>
+</div>
+
+<script>
+  const btn=document.getElementById('toggle');
+  const root=document.documentElement;
+  function setTheme(t){
+    root.setAttribute('data-theme',t);
+    btn.textContent=t==='dark'?'☀ Modo claro':'☾ Modo oscuro';
+  }
+  btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+  window.matchMedia('print').addEventListener('change',e=>{if(e.matches)setTheme('light')});
+  window.addEventListener('beforeprint',()=>setTheme('light'));
+</script>
+</body>
+</html>
