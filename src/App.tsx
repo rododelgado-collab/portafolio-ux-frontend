@@ -6,6 +6,7 @@ import BackToTop from './components/BackToTop'
 import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
+import PrivacyPage from './pages/PrivacyPage'
 
 // Al cambiar de ruta: subir al inicio y mover el foco al contenido
 // principal para que lectores de pantalla anuncien la nueva página
@@ -67,6 +68,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:postId" element={<BlogPostPage />} />
+        <Route path="/privacidad" element={<PrivacyPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

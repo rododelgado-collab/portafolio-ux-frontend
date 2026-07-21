@@ -117,6 +117,12 @@ const Footer = () => {
         <div className="border-t border-slate-200 dark:border-slate-800/50 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
             <p>© {currentYear} Rodolfo Delgado. Todos los derechos reservados.</p>
+            <Link
+              to="/privacidad"
+              className="hover:text-slate-900 dark:hover:text-white transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none"
+            >
+              Política de Privacidad
+            </Link>
             <p>Diseñado y desarrollado con pasión.</p>
           </div>
         </div>
