@@ -7,7 +7,9 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import ProjectDetail from './components/ProjectDetail'
-import type { Project } from './types'
+import Blog from './components/Blog'
+import BlogPostDetail from './components/BlogPostDetail'
+import type { Project, BlogPost } from './types'
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -18,6 +20,7 @@ function App() {
     return false // Default to light mode
   })
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null)
   const [showScroll, setShowScroll] = useState(false)
 
   // Aplicar clase dark al documento cuando isDark cambia
@@ -46,6 +49,13 @@ function App() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 dark:bg-purple-900/20 blur-[120px]"></div>
       </div>
 
+      {selectedPost && (
+        <BlogPostDetail
+          post={selectedPost}
+          onClose={() => setSelectedPost(null)}
+        />
+      )}
+
       {selectedProject ? (
         <ProjectDetail
           project={selectedProject}
@@ -59,6 +69,7 @@ function App() {
             <Hero />
             <Skills />
             <Projects onProjectClick={setSelectedProject} />
+            <Blog onPostClick={setSelectedPost} />
             <Contact />
           </main>
 

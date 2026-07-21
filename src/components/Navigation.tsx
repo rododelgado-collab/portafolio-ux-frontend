@@ -17,7 +17,7 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
       setScrolled(window.scrollY > 50)
 
       // Detectar sección activa
-      const sections = ['hero', 'skills', 'projects', 'contact']
+      const sections = ['hero', 'skills', 'projects', 'blog', 'contact']
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId)
         if (element) {
@@ -102,6 +102,17 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
               }`}
             >
               Proyectos
+            </a>
+            <a
+              href="#blog"
+              onClick={(e) => handleNavClick(e, 'blog')}
+              className={`pb-1 border-b-2 transition-colors outline-none focus:outline-none focus-visible:outline-none active:outline-none ${
+                activeSection === 'blog'
+                  ? 'text-slate-900 dark:text-white border-cyan-600 dark:border-cyan-400'
+                  : 'text-slate-600 dark:text-slate-300 border-transparent hover:text-cyan-600 dark:hover:text-cyan-400'
+              }`}
+            >
+              Blog
             </a>
 
             {/* Theme Toggle */}
@@ -202,6 +213,20 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
               }`}
             >
               Proyectos
+            </a>
+            <a
+              href="#blog"
+              onClick={(e) => {
+                handleNavClick(e, 'blog')
+                setMobileMenuOpen(false)
+              }}
+              className={`block py-3 px-4 rounded-lg transition-colors ${
+                activeSection === 'blog'
+                  ? 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              Blog
             </a>
             <a
               href="#contact"

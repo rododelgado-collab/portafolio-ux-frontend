@@ -17,6 +17,20 @@ export interface Project {
   results: string[]
 }
 
+export interface BlogPost {
+  id: string
+  title: string
+  date: string
+  dateLabel: string
+  tags: string[]
+  excerpt: string
+  content: string[]
+  image: string
+  imageAlt: string
+  sourceUrl: string
+  sourceLabel: string
+}
+
 export interface Skill {
   category: string
   items: string[]
