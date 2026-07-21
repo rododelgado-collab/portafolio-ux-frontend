@@ -18,7 +18,7 @@ const BlogPreview = () => {
     >
       <SectionHeader
         id="blog-preview-heading"
-        title="Últimos artículos"
+        title="Blog"
         description="Análisis y opinión sobre diseño UX/UI, desarrollo front-end e inteligencia artificial."
       />
 
