@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Layers, Terminal, Code2, Smartphone, Palette } from 'lucide-react'
+import SectionHeader from './common/SectionHeader'
 
 const Skills = () => {
   const skillsRef = useRef<HTMLDivElement>(null)
@@ -42,14 +43,10 @@ const Skills = () => {
       className="py-24 px-6 bg-white dark:bg-slate-900/20 border-y border-slate-200 dark:border-slate-800/50 outline-none"
     >
       <div className="max-w-6xl mx-auto" ref={skillsRef}>
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-            Mi Arsenal Creativo
-          </h2>
-          <p className="text-slate-700 dark:text-slate-400 max-w-xl text-lg">
-            El puente entre el diseño y el código. Utilizo las mejores herramientas para asegurar que la visión de diseño sobreviva la implementación técnica.
-          </p>
-        </div>
+        <SectionHeader
+          title="Mi Arsenal Creativo"
+          description="El puente entre el diseño y el código. Utilizo las mejores herramientas para asegurar que la visión de diseño sobreviva la implementación técnica."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => {

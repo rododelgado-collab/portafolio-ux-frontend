@@ -1,5 +1,7 @@
 import { ExternalLink } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import SectionHeader from './common/SectionHeader'
+import TagList from './common/TagList'
 import type { Project } from '../types'
 
 interface ProjectsProps {
@@ -45,16 +47,10 @@ const Projects = ({ onProjectClick }: ProjectsProps) => {
       tabIndex={-1}
       className="py-24 px-6 max-w-6xl mx-auto outline-none"
     >
-      <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-            Proyectos Destacados
-          </h2>
-          <p className="text-slate-700 dark:text-slate-400 max-w-xl text-lg">
-            Una selección de trabajos donde he aplicado mis habilidades en desarrollo frontend y diseño UX/UI.
-          </p>
-        </div>
-      </div>
+      <SectionHeader
+        title="Proyectos Destacados"
+        description="Una selección de trabajos donde he aplicado mis habilidades en desarrollo frontend y diseño UX/UI."
+      />
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -89,16 +85,7 @@ const Projects = ({ onProjectClick }: ProjectsProps) => {
               <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3 font-medium">{project.shortDescription}</p>
 
               {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <TagList tags={project.technologies} className="mb-8" />
 
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 mt-4">

@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
-import { ArrowLeft, Calendar, ExternalLink } from 'lucide-react'
+import { Navigate, useParams } from 'react-router-dom'
+import { ExternalLink } from 'lucide-react'
+import BackLink from '../components/common/BackLink'
+import PostMeta from '../components/common/PostMeta'
+import TagList from '../components/common/TagList'
 import { blogPosts } from '../data/blogPosts'
 
 const BlogPostPage = () => {
@@ -23,13 +26,7 @@ const BlogPostPage = () => {
       tabIndex={-1}
       className="relative z-10 pt-32 pb-24 px-6 max-w-3xl mx-auto min-h-screen outline-none"
     >
-      {/* Volver */}
-      <Link
-        to="/blog"
-        className="inline-flex items-center gap-2 mb-10 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-colors focus:ring-2 focus:ring-cyan-500 outline-none rounded px-1 py-0.5"
-      >
-        <ArrowLeft size={18} aria-hidden="true" /> Volver al blog
-      </Link>
+      <BackLink to="/blog" label="Volver al blog" className="mb-10" />
 
       <article>
         <header className="mb-8">
@@ -39,20 +36,8 @@ const BlogPostPage = () => {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 text-sm font-bold">
-              <Calendar size={14} aria-hidden="true" />
-              <time dateTime={post.date}>{post.dateLabel}</time>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+            <PostMeta date={post.date} dateLabel={post.dateLabel} />
+            <TagList tags={post.tags} />
           </div>
         </header>
 
@@ -95,12 +80,7 @@ const BlogPostPage = () => {
             Fuente: {post.sourceLabel} <ExternalLink size={16} aria-hidden="true" />
           </a>
 
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-colors focus:ring-2 focus:ring-cyan-500 outline-none rounded px-1 py-0.5"
-          >
-            <ArrowLeft size={18} aria-hidden="true" /> Volver al blog
-          </Link>
+          <BackLink to="/blog" label="Volver al blog" />
         </footer>
       </article>
     </main>

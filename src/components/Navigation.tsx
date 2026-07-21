@@ -27,7 +27,9 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
   const navigate = useNavigate()
 
   const isHome = location.pathname === '/'
-  const isBlog = location.pathname.startsWith('/blog')
+  const isBlogPage = location.pathname.startsWith('/blog')
+  // Resaltado visual: en la página del blog o al pasar por la sección de la landing
+  const isBlogActive = isBlogPage || (isHome && activeSection === 'blog')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
 
       // Detectar sección activa (solo aplica en la página de inicio)
       if (window.location.pathname !== '/') return
-      const sections = ['hero', 'skills', 'projects', 'contact']
+      const sections = ['hero', 'skills', 'projects', 'blog', 'contact']
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId)
         if (element) {
@@ -131,9 +133,9 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
             ))}
             <Link
               to="/blog"
-              aria-current={isBlog ? 'page' : undefined}
+              aria-current={isBlogPage ? 'page' : undefined}
               className={`pb-1 border-b-2 transition-colors outline-none focus:outline-none focus-visible:outline-none active:outline-none ${
-                isBlog
+                isBlogActive
                   ? 'text-slate-900 dark:text-white border-cyan-600 dark:border-cyan-400'
                   : 'text-slate-600 dark:text-slate-300 border-transparent hover:text-cyan-600 dark:hover:text-cyan-400'
               }`}
@@ -210,8 +212,8 @@ const Navigation = ({ isDark, setIsDark }: NavigationProps) => {
               ))}
               <Link
                 to="/blog"
-                aria-current={isBlog ? 'page' : undefined}
-                className={mobileSectionClass(isBlog)}
+                aria-current={isBlogPage ? 'page' : undefined}
+                className={mobileSectionClass(isBlogActive)}
               >
                 Blog
               </Link>
