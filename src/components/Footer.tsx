@@ -1,7 +1,12 @@
+import { Link, useLocation } from 'react-router-dom'
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (!isHome) return // fuera del inicio, el Link navega a /#id
     e.preventDefault()
     const el = document.getElementById(id)
     if (el) {
@@ -32,40 +37,48 @@ const Footer = () => {
             <h4 className="font-semibold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Navegación</h4>
             <ul className="space-y-3 list-none m-0 p-0">
               <li>
-                <a
-                  href="#about"
-                  onClick={(e) => handleNavClick(e, 'about')}
+                <Link
+                  to="/#hero"
+                  onClick={(e) => handleNavClick(e, 'hero')}
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
                 >
                   Sobre mí
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#skills"
+                <Link
+                  to="/#skills"
                   onClick={(e) => handleNavClick(e, 'skills')}
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
                 >
                   Habilidades
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#projects"
+                <Link
+                  to="/#projects"
                   onClick={(e) => handleNavClick(e, 'projects')}
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
                 >
                   Proyectos
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  to="/blog"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#contact"
                   onClick={(e) => handleNavClick(e, 'contact')}
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm transition-colors focus:ring-2 focus:ring-cyan-500 rounded px-2 py-1 outline-none inline-block"
                 >
                   Contacto
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

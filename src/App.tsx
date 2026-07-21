@@ -1,15 +1,28 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import Hero from './components/Hero'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
-import ProjectDetail from './components/ProjectDetail'
-import Blog from './components/Blog'
-import BlogPostDetail from './components/BlogPostDetail'
-import type { Project, BlogPost } from './types'
+import HomePage from './pages/HomePage'
+import BlogPage from './pages/BlogPage'
+import BlogPostPage from './pages/BlogPostPage'
+
+// Al cambiar de ruta: subir al inicio y mover el foco al contenido
+// principal para que lectores de pantalla anuncien la nueva página
+const RouteChangeHandler = () => {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo({ top: 0 })
+    const main = document.getElementById('main-content')
+    if (main) {
+      main.focus({ preventScroll: true })
+    }
+  }, [pathname, hash])
+
+  return null
+}
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -19,8 +32,6 @@ function App() {
     }
     return false // Default to light mode
   })
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null)
   const [showScroll, setShowScroll] = useState(false)
 
   // Aplicar clase dark al documento cuando isDark cambia
@@ -49,35 +60,19 @@ function App() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 dark:bg-purple-900/20 blur-[120px]"></div>
       </div>
 
-      {selectedPost && (
-        <BlogPostDetail
-          post={selectedPost}
-          onClose={() => setSelectedPost(null)}
-        />
-      )}
+      <RouteChangeHandler />
+      <Navigation isDark={isDark} setIsDark={setIsDark} />
 
-      {selectedProject ? (
-        <ProjectDetail
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      ) : (
-        <>
-          <Navigation isDark={isDark} setIsDark={setIsDark} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogPostPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
-          <main id="main-content" className="relative z-10">
-            <Hero />
-            <Skills />
-            <Projects onProjectClick={setSelectedProject} />
-            <Blog onPostClick={setSelectedPost} />
-            <Contact />
-          </main>
+      <Footer />
 
-          <Footer />
-
-          <BackToTop show={showScroll} />
-        </>
-      )}
+      <BackToTop show={showScroll} />
     </div>
   )
 }
