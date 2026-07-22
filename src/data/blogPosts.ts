@@ -2,6 +2,27 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'vercel-agent-ia-con-permisos',
+    title: 'Una IA que investiga tu producción y pide permiso antes de actuar',
+    date: '2026-07-22',
+    dateLabel: '22 de julio, 2026',
+    tags: ['IA', 'Desarrollo', 'DevOps'],
+    excerpt:
+      'Vercel presentó la nueva versión de su Agent: una IA que investiga incidentes en producción, propone el arreglo y solo actúa cuando la apruebas. Lo interesante no es el código que escribe, sino su modelo de permisos.',
+    content: [
+      'La noticia no es que una IA escriba tu código. Es que ahora te pide permiso antes de tocar producción.',
+      'Vercel presentó la nueva versión de su Vercel Agent: un agente de IA que vive en tu dashboard, investiga incidentes en producción (lee logs, métricas y deploys), encuentra la causa raíz y propone el arreglo. Pero no actúa solo: es de solo lectura por defecto y ejecuta cambios únicamente cuando tú apruebas. En el ejemplo que muestra Vercel, un mal deploy rompe el checkout, y el agente ya había rastreado el error y recomendado un rollback antes de que el ingeniero de turno abriera su laptop.',
+      'Lo que más me interesa es su modelo de seguridad. Hoy la mayoría de los agentes heredan TODOS tus permisos, así que un prompt confuso tiene el mismo alcance de daño que tú. Vercel invierte eso: el agente corre bajo su propia identidad, con permisos acotados y un entorno controlado donde ejecutarse. La pregunta deja de ser "qué tan inteligente es" y pasa a ser "quién es, qué puede hacer y dónde".',
+      'Vengo del mundo de las apps financieras, donde el acceso a producción nunca es "todo o nada": se aprueba por pasos, con roles y trazabilidad. Ver ese mismo principio aplicado a los agentes de IA me parece la dirección correcta. La productividad no debería costarnos el control, y el humano que aprueba sigue siendo parte del diseño, no un estorbo.',
+      'Para quienes diseñamos y desarrollamos productos, aquí hay una lección de experiencia de usuario: la confianza en la IA no se gana escondiendo lo que hace, sino haciendo visible y reversible cada acción. Un buen punto de aprobación, con contexto claro de qué se va a cambiar y por qué, es tan importante como la capacidad técnica del agente.',
+    ],
+    image: '/blog/vercel-agent-ia-con-permisos.png',
+    imageAlt:
+      'Tarjeta del artículo: Una IA que investiga tu producción y pide permiso antes de actuar, con etiqueta Human-in-the-loop',
+    sourceUrl: 'https://vercel.com/blog/vercel-agent',
+    sourceLabel: 'Vercel — Blog oficial',
+  },
+  {
     id: 'react2shell-flight-protocol',
     title: 'Una petición HTTP bastaba: la lección de React2Shell para el front-end',
     date: '2026-07-21',
