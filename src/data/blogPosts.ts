@@ -2,6 +2,27 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'openai-presence-ux-del-handoff',
+    title: 'Un agente resuelve el 75% de las llamadas solo; la UX está en el otro 25%',
+    date: '2026-07-23',
+    dateLabel: '23 de julio, 2026',
+    tags: ['IA', 'UX', 'Atención al cliente'],
+    excerpt:
+      'OpenAI presentó Presence, un producto para desplegar agentes de voz y chat con políticas, guardrails y reglas de escalación. Su soporte telefónico ya resuelve el 75% de los casos sin humanos. Pero la experiencia se juega en el otro 25%: el momento en que el agente te pasa con una persona.',
+    content: [
+      'Un agente de IA que resuelve el 75% de las llamadas de atención al cliente sin ninguna intervención humana. Para quienes diseñamos productos, lo verdaderamente interesante no es ese número, sino el otro 25%.',
+      'El 22 de julio, OpenAI presentó Presence, un producto para desplegar agentes de voz y chat en flujos de atención al cliente e internos. La propuesta va más allá del modelo: cada despliegue arranca con un trabajo concreto (resolver un problema de facturación, atender un reclamo de seguro, gestionar una solicitud de soporte de TI) y el agente recibe solo el conocimiento y el acceso a sistemas que ese trabajo necesita. La empresa define las políticas: qué puede hacer el agente, cuándo necesita aprobación y cuándo una persona debe tomar el control. El propio soporte telefónico en inglés de OpenAI, que funciona sobre Presence, ya resuelve el 75% de los casos entrantes sin asistencia humana.',
+      'Vengo del mundo de las aplicaciones de banca y fintech, y por eso lo que más me importa de un anuncio así no es la cifra de automatización, sino cómo se diseña el momento en que el agente te pasa con una persona. Ese handoff es un instante frágil. Si el agente escala demasiado tarde, sin traspasar el contexto de la conversación o sin explicarle al usuario por qué lo deriva, la confianza se rompe justo cuando el usuario más la necesita: cuando ya está frustrado y su problema no se resolvió solo.',
+      'Presence incluye piezas que apuntan en esa dirección: guardrails que intervienen cuando la interacción se sale de los límites de la empresa, simulaciones y evaluadores que comprueban si el agente llegó al resultado correcto y escaló cuando correspondía, y un proceso de mejora continua que detecta dónde falla y propone ajustes que el equipo prueba y aprueba. No es casualidad que BBVA figure como socio de diseño explorando soporte de voz para banca en México, o que SoftBank e IAG estén probando conversaciones en japonés y soporte en momentos de alta demanda.',
+      'La lección de experiencia que saco es esta: la buena UX con IA no consiste en que el agente nunca falle, sino en que sepa reconocer su límite y ceder el control con elegancia. El traspaso a un humano no es el fracaso del sistema, es una parte del diseño que merece el mismo cuidado que ponemos en el resto de la interfaz. Diseñar ese 25% (cuándo escalar, con qué contexto, con qué tono) es, para mí, donde se juega la confianza real en los productos conversacionales.',
+    ],
+    image: '/blog/openai-presence-ux-del-handoff.png',
+    imageAlt:
+      'Tarjeta del artículo: El 75% lo resuelve la IA, la UX está en el otro 25%, con una barra que separa el trabajo del agente del handoff humano',
+    sourceUrl: 'https://openai.com/index/introducing-openai-presence/',
+    sourceLabel: 'OpenAI — Blog oficial',
+  },
+  {
     id: 'vercel-agent-ia-con-permisos',
     title: 'Una IA que investiga tu producción y pide permiso antes de actuar',
     date: '2026-07-22',
