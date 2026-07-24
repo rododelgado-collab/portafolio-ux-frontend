@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'dependabot-cooldown-friccion-de-diseno',
+    title: 'Tres días de espera: la fricción también es una decisión de diseño',
+    date: '2026-07-24',
+    dateLabel: '24 de julio, 2026',
+    tags: ['Front-End', 'Seguridad', 'Dependencias'],
+    excerpt:
+      'GitHub cambió el comportamiento por defecto de Dependabot: las actualizaciones de versión ahora esperan tres días antes de proponerse. No es un ajuste técnico menor, es una decisión de diseño sobre dónde poner la fricción y a quién proteger con ella.',
+    content: [
+      'Durante años, la promesa de las herramientas automáticas de dependencias fue la velocidad: una versión nueva se publica y, minutos después, ya tienes el pull request esperándote. Esa velocidad acaba de dejar de ser el valor por defecto, y el motivo es interesante para cualquiera que diseñe productos.',
+      'El 23 de julio, GitHub anunció que Dependabot espera ahora al menos tres días desde que se publica una versión antes de abrir un pull request de actualización. La medida aplica solo a las actualizaciones de versión, esas que mantienen tus dependencias al día sin que exista un problema conocido. Las actualizaciones de seguridad, en cambio, siguen abriéndose de inmediato: retrasar el parche de una vulnerabilidad ya pública sería justamente el error contrario. El plazo es configurable desde el archivo dependabot.yml, así que cada equipo puede ajustarlo a su realidad.',
+      'La razón está en cómo se comportan los ataques a la cadena de suministro. En septiembre de 2025, un atacante obtuvo por phishing las credenciales de un mantenedor de npm y publicó versiones con código malicioso de chalk, debug y alrededor de una docena de paquetes más, que juntos superan los 2.000 millones de descargas semanales. El código alteraba direcciones de billeteras de criptomonedas en cualquier aplicación de navegador que lo cargara. Esas versiones estuvieron disponibles cerca de dos horas antes de que la comunidad las detectara y npm las retirara. Dos horas es una respuesta rápida, y aun así es tiempo de sobra para que una herramienta automática tome la versión envenenada y la deje frente a tu equipo. GitHub apunta además a una cifra que da dimensión al problema: en el año terminado en mayo de 2026, su Advisory Database publicó más de 6.500 avisos de malware en npm, cerca de 18 paquetes maliciosos nuevos cada día.',
+      'Lo que más me llama la atención de este cambio es que no es una decisión técnica, sino de diseño. Alguien miró un flujo completamente automatizado y decidió introducir una espera a propósito, sabiendo que iba a incomodar a quienes valoran estar siempre en la última versión. Eligió una fricción concreta (tres días) por una razón concreta: la mayoría de las versiones maliciosas de paquetes populares se detectan y se retiran en horas, así que esperar deja pasar la ventana en la que el ataque vive.',
+      'Vengo de trabajar en aplicaciones de banca y fintech, y ahí aprendí que la fricción bien puesta no es un error de usabilidad. Es lo que impide que una acción irreversible ocurra por inercia. Un paso de confirmación antes de transferir a un destinatario nuevo incomoda un segundo y evita un problema que puede ser enorme. La clave nunca fue eliminar la fricción, sino ubicarla donde el costo de equivocarse es alto y quitarla de todo el resto del recorrido. En este caso el usuario es el equipo de desarrollo, pero el principio es exactamente el mismo.',
+      'GitHub es honesto sobre los límites de la medida: un período de enfriamiento sirve contra el ataque que se publica, se propaga y se descubre rápido, pero no contra una puerta trasera que queda latente durante meses ni contra un sistema de compilación comprometido. Por eso lo plantea como una capa más, junto con fijar versiones con lockfiles, desactivar los scripts de instalación en integración continua, acotar los permisos de los tokens y revisar las actualizaciones antes de fusionarlas.',
+      'Me quedo con la pregunta de fondo, que sirve tanto para una interfaz como para un flujo de trabajo: nos acostumbramos a tratar la fricción como la enemiga de la buena experiencia, cuando en realidad la pregunta correcta no es cuánta fricción hay, sino dónde está puesta y a quién protege.',
+    ],
+    image: '/blog/dependabot-cooldown-friccion-de-diseno.png',
+    imageAlt:
+      'Tarjeta del artículo: Tres días de espera, la fricción también es una decisión de diseño, con una línea de tiempo de 72 horas de enfriamiento',
+    sourceUrl:
+      'https://github.blog/security/supply-chain-security/the-case-for-a-cooldown-why-dependabot-now-waits-before-issuing-version-updates/',
+    sourceLabel: 'GitHub Blog — Carlin Cherry',
+  },
+  {
     id: 'openai-presence-ux-del-handoff',
     title: 'Un agente resuelve el 75% de las llamadas solo; la UX está en el otro 25%',
     date: '2026-07-23',
