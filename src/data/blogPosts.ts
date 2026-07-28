@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'node-docs-mismo-contenido-otra-experiencia',
+    title: 'Mismo contenido, otra experiencia: Node.js rediseñó su documentación',
+    date: '2026-07-28',
+    dateLabel: '28 de julio, 2026',
+    tags: ['Front-End', 'Documentación', 'UX'],
+    excerpt:
+      'Node.js publicó la beta de sus nuevas docs de API. Cada página se genera desde los mismos archivos Markdown de siempre: lo que se rehízo fue la navegación, el layout y la legibilidad. Y por primera vez, la documentación tiene buscador propio.',
+    content: [
+      'Node.js rediseñó por completo la documentación de su API y el contenido no cambió ni una sola línea. Esa combinación es justamente lo que vuelve interesante el anuncio para cualquiera que trabaje en producto.',
+      'El 24 de julio, el equipo web de Node.js publicó una versión preliminar de las nuevas docs en beta.docs.nodejs.org, con la intención de que la gente la use en trabajo real antes de convertirla en la versión por defecto. Cada página se genera desde los mismos archivos Markdown del repositorio nodejs/node que alimentan la documentación actual. Lo que ya existía sobrevivió al cambio: temas claro y oscuro, el cambio entre ESM y CJS, los botones para copiar fragmentos de código, las etiquetas de estabilidad, el historial de versiones y la versión en Markdown de cada página. Lo que se rehízo fue la navegación, el layout y la legibilidad.',
+      'La novedad que más me llamó la atención es el buscador. Por primera vez la documentación de la API tiene búsqueda incorporada, con una caja presente en todas las páginas y un atajo de teclado para abrirla. Hasta ahora, encontrar algo puntual en las docs de Node significaba dar un rodeo por un buscador externo. Eso nunca fue un problema de contenido: la información estaba ahí. Era un problema de arquitectura de información, y se resolvió con una decisión de diseño, no escribiendo más documentación.',
+      'La segunda decisión que me parece bien pensada es la consistencia. Las docs ahora comparten el sistema de diseño del sitio nodejs.org, con una barra lateral persistente que lista todos los módulos, una tabla de contenidos por página siempre visible y un layout que funciona en pantallas pequeñas. Es el argumento clásico a favor de los design systems, pero aplicado donde suele postergarse: la documentación técnica casi siempre queda fuera del sistema, como si fuera un anexo y no parte del producto.',
+      'Hay un detalle que en el anuncio ocupa apenas una línea y que para mí vale bastante más: cada página sigue siendo utilizable con JavaScript desactivado y sin conexión. En un stack moderno es fácil olvidar que la mejora progresiva no es nostalgia, es accesibilidad. Alguien con una conexión inestable, un dispositivo modesto o restricciones de red sigue pudiendo leer la documentación. Esa clase de decisión rara vez aparece en una demo, pero define a quién dejas fuera.',
+      'También se menciona llms.txt, que entrega a las herramientas de IA un punto de entrada estructurado a la referencia de la API. Vale la pena notar el cambio implícito: la documentación pasó a tener dos públicos, personas y agentes, y el equipo diseñó para ambos de forma explícita. Todo esto se construyó con doc-kit, una herramienta propia del proyecto que reemplaza al generador anterior, y el equipo pide retroalimentación a través de su repositorio antes de dar el paso final.',
+      'Vengo de trabajar en aplicaciones de banca y fintech, y ahí aprendí algo que este rediseño ilustra bien: cuando una persona no encuentra lo que busca, casi nunca es porque el dato no exista. Es porque el camino hacia el dato está mal diseñado. Agregar más contenido a un sistema donde no se encuentra nada solo empeora el problema.',
+      'La conclusión que me llevo es simple y bastante incómoda: solemos tratar la documentación como un depósito de texto que hay que mantener al día, cuando en realidad es una interfaz que la gente usa bajo presión, casi siempre con algo roto y con poco tiempo. Merece el mismo cuidado de diseño que le damos a cualquier pantalla del producto.',
+    ],
+    image: '/blog/node-docs-mismo-contenido-otra-experiencia.png',
+    imageAlt:
+      'Tarjeta del artículo: Mismo contenido, otra experiencia, con una maqueta de documentación que muestra una barra lateral y un buscador con atajo de teclado',
+    sourceUrl: 'https://nodejs.org/en/blog/announcements/new-api-docs-beta',
+    sourceLabel: 'Node.js — Blog oficial',
+  },
+  {
     id: 'dependabot-cooldown-friccion-de-diseno',
     title: 'Tres días de espera: la fricción también es una decisión de diseño',
     date: '2026-07-24',
