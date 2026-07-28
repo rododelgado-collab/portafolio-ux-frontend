@@ -83,19 +83,35 @@ npm run lint
 
 ## 🎨 Paleta de Colores
 
-### Dark Mode (Principal)
+El sitio soporta modo claro (por defecto) y oscuro, con toggle en la navegación.
+
+### Modo Claro (por defecto)
 ```
 Fondos:
-- #0f172a (Slate 950) - Base
-- #1e293b (Slate 800) - Secundario
+- #f8fafc (Slate 50)  - Base
+- #ffffff (White)     - Tarjetas
+
+Texto:
+- #0f172a (Slate 900) - Principal
+- #334155 (Slate 700) - Secundario
+```
+
+### Modo Oscuro
+```
+Fondos:
+- #020617 (Slate 950) - Base
+- #0f172a (Slate 900) - Secundario
 
 Texto:
 - #f1f5f9 (Slate 100) - Principal
 - #cbd5e1 (Slate 300) - Secundario
+```
 
-Acentos:
-- #3b82f6 (Blue 500) - Primario
-- #8b5cf6 (Violet 500) - Secundario
+### Acentos (gradiente de marca)
+```
+- #06b6d4 (Cyan 500)   - Inicio del gradiente
+- #3b82f6 (Blue 500)   - Medio
+- #a855f7 (Purple 500) - Fin del gradiente
 ```
 
 ## 📱 Responsive Design
@@ -195,6 +211,31 @@ Acentos:
 - Respetar `prefers-reduced-motion` en animaciones
 - Usar headings jerárquicos (h1 > h2 > h3)
 - Links deben ser distinguibles por algo más que color
+
+## 📈 Analítica y Tracking
+
+El sitio usa dos herramientas de analítica, ambas de forma agregada y anónima:
+
+- **Vercel Web Analytics** — visitas, páginas vistas, país de origen y referrers. Sin cookies.
+- **Microsoft Clarity** — mapas de calor (clics y scroll) y grabaciones de sesión anónimas para detectar puntos de fricción.
+
+### Activación
+
+**Vercel Web Analytics** (no requiere variables):
+
+1. En el proyecto en Vercel → pestaña **Analytics** → **Enable**.
+2. `npm install` y deploy. El componente `<Analytics />` ya está integrado en `App.tsx`.
+
+**Microsoft Clarity** (requiere un Project ID):
+
+1. Crea un proyecto en [clarity.microsoft.com](https://clarity.microsoft.com) (cuenta Microsoft).
+2. Copia el **Project ID**.
+3. Define la variable de entorno `VITE_CLARITY_ID`:
+   - Local: en tu archivo `.env` (ver `.env.example`).
+   - Producción: en Vercel → Settings → **Environment Variables**.
+4. Redeploy. Clarity solo se inicializa si la variable está definida, así que no ensucia las métricas en desarrollo.
+
+La sección "Analítica de uso" de la [Política de Privacidad](/privacidad) documenta ambas herramientas.
 
 ## 📚 Referencias
 

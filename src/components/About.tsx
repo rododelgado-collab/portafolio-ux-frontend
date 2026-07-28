@@ -23,18 +23,19 @@ const About = () => {
       className="section container-tight"
       aria-label="Sección sobre mí"
     >
-      <h2 className="text-slate-100 mb-12">Sobre mí</h2>
+      <h2 className="text-slate-900 dark:text-slate-100 mb-12">Sobre mí</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
         <div className="lg:col-span-2">
-          <p className="text-slate-300 mb-4 text-lg">
-            Soy un diseñador y desarrollador con 5+ años de experiencia creando productos digitales
-            que son tanto hermosos como accesibles. Mi pasión es la intersección entre diseño y
-            desarrollo, asegurando que cada pixel sirve un propósito.
+          <p className="text-slate-700 dark:text-slate-300 mb-4 text-lg">
+            Soy diseñador UX y desarrollador frontend, enfocado en crear productos digitales que
+            sean tanto atractivos como accesibles. Me mueve la intersección entre diseño y
+            desarrollo: entender al usuario y también poder llevar la solución hasta el código.
           </p>
-          <p className="text-slate-300 text-lg mb-6">
-            Especializado en WCAG 2.1 AA compliance y diseño centrado en el usuario, creo experiencias
-            que funcionan para todos, sin importar sus capacidades o el dispositivo que utilicen.
+          <p className="text-slate-700 dark:text-slate-300 text-lg mb-6">
+            Trabajo con foco en accesibilidad (WCAG 2.1 AA) y diseño centrado en el usuario, cuidando
+            que cada experiencia funcione para todos, sin importar sus capacidades o el dispositivo
+            que utilicen.
           </p>
         </div>
 
@@ -50,7 +51,7 @@ const About = () => {
       </div>
 
       <div>
-        <h3 className="text-slate-100 mb-8">Habilidades</h3>
+        <h3 className="text-slate-900 dark:text-slate-100 mb-8">Habilidades</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {skills.map((skillGroup) => (
             <Card key={skillGroup.category} ariaLabel={`Habilidades en ${skillGroup.category}`}>
