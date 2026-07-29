@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'menos-permisos-menos-excusas-ia-diseno',
+    title: 'Menos permisos y menos excusas: la IA cambia la posición del diseño',
+    date: '2026-07-29',
+    dateLabel: '29 de julio, 2026',
+    tags: ['IA', 'Diseño', 'Carrera'],
+    excerpt:
+      'Andy Budd plantea en Smashing Magazine los dos futuros posibles del diseño digital con IA: uno en el que el diseñador deja de pedir permiso para hacer las cosas, y otro en el que las empresas se conforman con lo que él llama diseño plausible. Los dos pueden ser ciertos al mismo tiempo.',
+    content: [
+      'Los equipos de diseño llevan años repitiendo una idea: haríamos mejor trabajo si la organización se corriera un poco. Faltó tiempo de ingeniería, producto ya había decidido la solución, el roadmap estaba lleno, la investigación se recortó, la deuda de diseño se conocía pero nadie quiso gastar un sprint en arreglarla. La IA está a punto de tomarle la palabra a ese argumento.',
+      'El 29 de julio, Andy Budd publicó en Smashing Magazine una columna que evita la pregunta de siempre, esa de si la IA reemplazará a los diseñadores, y propone una mejor. Según él, el cambio interesante no es que ahora se puedan producir más pantallas, porque nadie necesita más pantallas. El cambio es que el diseño puede necesitar menos permiso.',
+      'Ese es su caso alcista. Un buen diseñador ya puede pasar de "deberíamos arreglar esto" a "lo arreglé y está publicado": prototipar el onboarding alternativo, escribir y probar un texto más claro, construir una versión rudimentaria de la interacción, limpiar deuda de diseño sin esperar tres meses a que aparezca un espacio en el roadmap. Budd apunta a algo que a mí me hizo sentido de inmediato: el diseño dependió tanto de la persuasión porque no tenía medios de producción propios. Cuando esa distancia se acorta, cambia la política del trabajo. La propuesta deja de defenderse en una reunión y empieza a defenderse funcionando.',
+      'El caso bajista es más incómodo y, creo, más útil. La autonomía también quita cobertura. Durante años fue cómodo decir que había una idea mejor pero nunca hubo tiempo de ingeniería para probarla; a veces era cierto y a veces esa idea nunca pasó de ser una crítica que sonaba fuerte porque vivía a salvo, en oposición a lo que sí se publicó. Muchos somos buenos notando qué está mal. Menos somos buenos decidiendo qué debería pasar en su lugar, y todavía menos haciéndolo lo bastante concreto como para que otros puedan juzgarlo. Más poder significa menos excusas.',
+      'Hay un segundo riesgo que me parece el más relevante para cualquiera que trabaje en producto. Si producto e ingeniería pueden generar un flujo razonable, un texto razonable y un prototipo razonable, puede que dejen de sentir la necesidad de involucrar al diseño temprano. El problema no es que esas personas se conviertan de golpe en grandes diseñadores. El problema, dice Budd, es que muchas empresas no distinguen entre buen diseño y diseño plausible. Lo plausible se ve coherente en una revisión: usa los componentes correctos, el espaciado está bien, el texto no es vergonzoso, el flujo más o menos funciona y nadie en la sala siente lo suficiente como para objetar. Entonces se publica.',
+      'Vengo de trabajar en aplicaciones de banca y fintech, y ahí lo plausible es justamente lo que sale caro. Una pantalla puede verse impecable hasta que el pago falla, hasta que la persona entra con un lector de pantalla, hasta que el dato llega vacío o el servicio responde lento. Esos estados no aparecen en la maqueta bonita: aparecen porque alguien se sentó a pensarlos, los escribió y los probó. Es exactamente el tipo de trabajo que no se ve en una demo y que sostiene la confianza cuando el producto está en manos de gente real.',
+      'La columna cita además dos evaluaciones del Nielsen Norman Group sobre herramientas de prototipado con IA, que concluyen algo consistente con esto: las herramientas siguen bien una instrucción hacia un objetivo general, pero todavía no sopesan compensaciones de diseño ni llegan a un resultado cuidado sin bastante guía humana. Producir opciones ya es barato. Elegir cuál vale la pena sigue costando.',
+      'Mi lectura es que ambos escenarios van a convivir. Habrá diseñadores que usen la IA para ganar terreno y empresas que la usen para conformarse antes. La diferencia no la va a marcar quién genera más alternativas, sino quién sabe cuál perseguir, cómo probarla, qué cortar y en qué punto un "está bien así" empieza a costarle plata al negocio. Trabajo con un lema que resume mi forma de ver esto, Design & Logic Synergy, y nunca me pareció tan literal: entender cómo se construye lo que diseñas dejó de ser un plus y se volvió la parte que te permite decidir.',
+    ],
+    image: '/blog/menos-permisos-menos-excusas-ia-diseno.png',
+    imageAlt:
+      'Tarjeta del artículo: Menos permisos, menos excusas, con dos paneles que contrastan el caso alcista y el caso bajista del diseño con IA',
+    sourceUrl:
+      'https://www.smashingmagazine.com/2026/07/bull-and-bear-case-digital-design-age-ai/',
+    sourceLabel: 'Smashing Magazine — Andy Budd',
+  },
+  {
     id: 'node-docs-mismo-contenido-otra-experiencia',
     title: 'Mismo contenido, otra experiencia: Node.js rediseñó su documentación',
     date: '2026-07-28',
