@@ -29,3 +29,6 @@ coverage
 .env
 .env.local
 .env.*.local
+
+# Notas de trabajo locales
+DEPLOY_ANALITICA.txt
