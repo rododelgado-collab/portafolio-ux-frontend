@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import PrivacyPage from './pages/PrivacyPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 // Al cambiar de ruta: subir al inicio y mover el foco al contenido
 // principal para que lectores de pantalla anuncien la nueva página
@@ -70,7 +71,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:postId" element={<BlogPostPage />} />
         <Route path="/privacidad" element={<PrivacyPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       <Footer />

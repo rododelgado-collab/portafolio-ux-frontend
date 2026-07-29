@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { ExternalLink } from 'lucide-react'
 import BackLink from '../components/common/BackLink'
 import PostMeta from '../components/common/PostMeta'
 import TagList from '../components/common/TagList'
+import NotFoundPage from './NotFoundPage'
 import { blogPosts } from '../data/blogPosts'
 
 const BlogPostPage = () => {
@@ -17,7 +18,12 @@ const BlogPostPage = () => {
   }, [post])
 
   if (!post) {
-    return <Navigate to="/blog" replace />
+    return (
+      <NotFoundPage
+        title="Este artículo no existe"
+        description="El enlace que seguiste apunta a un artículo que no está publicado en el blog. Puede que la URL se haya cortado al copiarla o que el artículo haya cambiado de dirección."
+      />
+    )
   }
 
   return (
