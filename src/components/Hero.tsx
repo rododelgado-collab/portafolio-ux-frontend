@@ -59,11 +59,20 @@ const Hero = () => {
         <a
           href="https://github.com/rododelgado-collab"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="px-8 py-4 rounded-full bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-sm focus:ring-4 focus:ring-cyan-500/50 outline-none"
           aria-label="Visitar mi perfil de GitHub"
         >
           GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/rodolfo-delgado-592a22266/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 rounded-full bg-white dark:bg-slate-800/50 text-slate-900 dark:text-white font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-sm focus:ring-4 focus:ring-cyan-500/50 outline-none"
+          aria-label="Visitar mi perfil de LinkedIn"
+        >
+          LinkedIn
         </a>
       </div>
     </section>
