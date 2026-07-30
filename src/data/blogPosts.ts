@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'super-app-ia-arquitectura-de-informacion',
+    title: 'Una sola app para todo: la IA reabre el problema de la arquitectura de información',
+    date: '2026-07-30',
+    dateLabel: '30 de julio, 2026',
+    tags: ['IA', 'UX', 'Arquitectura de información'],
+    excerpt:
+      'Microsoft confirmó que unirá el chat, el asistente de código y los agentes de Copilot en una sola aplicación. La consolidación se entiende desde el negocio. El problema de diseño que abre es otro: tres capacidades con consecuencias muy distintas comparten el mismo campo de texto.',
+    content: [
+      'Durante años, la arquitectura de información fue un problema de menús. Dónde va cada sección, cómo se agrupan las funciones, qué se ve primero. Las aplicaciones de IA lo volvieron un problema distinto y bastante más difícil, porque casi todo se pide desde el mismo lugar: un campo de texto.',
+      'El 29 de julio, durante su llamada de resultados, Microsoft confirmó que está construyendo una "super app" de IA que combina las capacidades de chat, de código y de agentes de Copilot. Satya Nadella lo planteó como una evolución: Copilot pasó de chat a Cowork y a Autopilots, y este trimestre esas experiencias se juntan, incluido el código, en una sola aplicación. Según lo que informó The Verge, el producto abarcará tanto el uso personal como el empresarial y llegará este año. La nota recuerda además que un reporte previo de Fortune ya describía esa fusión entre el chatbot de Copilot, GitHub Copilot, Copilot Cowork y el sistema agéntico Autopilot, y que OpenAI hizo un movimiento parecido al presentar ChatGPT Work junto a su herramienta de código.',
+      'La lógica de negocio es transparente y no tengo mucho que discutirle: mantener cuatro productos separados que se parecen entre sí confunde al usuario, fragmenta el aprendizaje y multiplica el costo de mantener cada superficie. Consolidar es razonable. Lo que me interesa es lo que queda sobre la mesa del equipo de diseño una vez tomada esa decisión.',
+      'Responder una pregunta, escribir código y ejecutar una acción sobre tus sistemas son tres cosas con consecuencias radicalmente distintas. La primera te da un texto que puedes ignorar. La segunda produce algo que todavía tienes que revisar. La tercera cambia el estado del mundo: modifica un archivo, envía un correo, toca una configuración. En términos clásicos de diseño, son niveles de reversibilidad completamente diferentes. Y sin embargo, en la interfaz se piden de la misma forma, con el mismo gesto y en el mismo espacio.',
+      'Ese es el punto que me parece central. La caja de texto es un widget maravilloso justamente porque no impone estructura: acepta cualquier cosa. Pero esa misma cualidad borra las señales que la gente usa para calibrar el riesgo de lo que está por hacer. Un botón que dice "Eliminar" en rojo comunica su consecuencia antes de que lo aprietes. Un campo vacío no comunica nada. Cuando el mismo campo puede devolverte un párrafo o ejecutar una acción irreversible, la interfaz dejó de responder una pregunta básica: qué va a pasar cuando presione enter.',
+      'Vengo de trabajar en aplicaciones de banca y fintech, y ahí esto es casi sentido común. Consultar un saldo y transferir dinero jamás se ven iguales, ni se confirman igual, ni ocupan el mismo lugar en la jerarquía visual. Existe una diferencia deliberada de fricción entre lo que se puede deshacer y lo que no. Nadie diseña una pantalla donde revisar tus movimientos y hacer un pago se soliciten con el mismo control, porque el costo del error no es simétrico. Una app de IA que hace todo necesita esa misma disciplina, pero con muchas menos pistas visuales disponibles, porque su entrada principal es prosa libre.',
+      'No creo que la solución sea volver a los menús ni pedirle a la gente que elija un modo antes de escribir; eso traslada al usuario un trabajo de clasificación que la herramienta debería hacer. Me parece más prometedor trabajar sobre la respuesta que sobre la entrada: que el sistema muestre con claridad qué interpretó, en qué modo va a operar y qué alcance tiene, antes de actuar. Que lo reversible fluya sin trabas y lo irreversible se detenga a confirmar. Que el historial permita entender no solo qué se pidió, sino qué se hizo con ese pedido.',
+      'La arquitectura de información no desaparece cuando la interfaz se reduce a un campo de texto. Se muda. Deja de vivir en la navegación y pasa a vivir en la conversación, en la confirmación y en la retroalimentación. Es el mismo trabajo de siempre, pero ahora hay que resolverlo sin el andamiaje visual que lo hacía evidente. Consolidar productos es la parte fácil del anuncio; hacer que la persona entienda con cuál de ellos está hablando es la parte que se diseña.',
+    ],
+    image: '/blog/super-app-ia-arquitectura-de-informacion.png',
+    imageAlt:
+      'Tarjeta del artículo: Una sola app para todo, con tres etiquetas —chat, código y agente— que convergen en un mismo campo de texto',
+    sourceUrl:
+      'https://www.theverge.com/tech/972927/microsoft-copilot-super-app-confirmed',
+    sourceLabel: 'The Verge — Emma Roth',
+  },
+  {
     id: 'menos-permisos-menos-excusas-ia-diseno',
     title: 'Menos permisos y menos excusas: la IA cambia la posición del diseño',
     date: '2026-07-29',
