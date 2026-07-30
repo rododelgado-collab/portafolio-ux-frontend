@@ -1,5 +1,189 @@
 [
   {
+    "id": "5",
+    "title": "Tarjeta Líder BCI — Autoenrolamiento",
+    "shortDescription": "Caso UX/UI: eliminar el paso manual de vincular la tarjeta antes del primer pago",
+    "description": "Diseño e investigación UX del flujo de autoenrolamiento de medios de pago en la app Tarjeta Líder BCI, sobre la integración del SDK de MACH Pay. El trabajo cubrió desde la definición del flujo y sus casos de error hasta las especificaciones de interfaz y accesibilidad entregadas a desarrollo.",
+    "technologies": ["Figma", "UX Research", "User Flows", "Wireframes", "Design System", "Accesibilidad"],
+    "image": "/liderBciScreen.png",
+    "imageAlt": "Portada del caso UX/UI de autoenrolamiento de medios de pago en Tarjeta Líder BCI",
+    "figmaUrl": "https://www.figma.com/design/OKiI5IDnIrJ31K5QTtb0mw",
+    "category": "ux",
+    "role": "UX Research y diseño UX/UI · Equipo Ecosistema",
+    "timeline": "2022 — 2023",
+    "challenge": "Para pagar en un comercio digital, el usuario tenía que ver los datos de su tarjeta en la app o en su tarjeta física y anotarlos en el comercio digital para realizar el pago. El momento de mayor urgencia era también el de mayor fricción, y ahí se concentraba el abandono del primer pago.",
+    "solution": "Diseñé un flujo en el que la tarjeta se detecta y se vincula automáticamente, y el usuario solo confirma el consentimiento una vez. Documenté los seis casos del flujo con sus puntos de decisión, definí un patrón único para los estados de error y entregué las especificaciones de estados, contenido y accesibilidad para desarrollo.",
+    "results": [
+      "Flujo de primer pago sin pasos manuales de vinculación",
+      "Pantallas de onboarding evaluadas con 4,9 de 5 por los participantes del test",
+      "Tres puntos de acceso validados: un tercio de los usuarios encontró más de uno sin ayuda",
+      "Seis casos de flujo documentados con sus ramas de decisión y salidas",
+      "Patrón único de error reutilizable en todo el flujo de pago",
+      "Especificaciones de estados, contraste y microcopy entregadas a desarrollo"
+    ],
+    "uxProcess": [
+      {
+        "name": "Investigación con usuarios",
+        "description": "Test de usabilidad con nueve participantes, todos clientes de ambos productos, en dos etapas: una entrevista de preguntas abiertas para perfilarlos, y un prototipo navegable en Maze con tres misiones. La pregunta central era la encontrabilidad de la nueva funcionalidad en los distintos niveles de navegación, no la usabilidad del pago en sí.",
+        "deliverables": ["Entrevistas de perfilamiento", "Prototipo navegable en Maze", "Tres misiones de test", "Escalas de opinión", "Informe de resultados"]
+      },
+      {
+        "name": "Análisis de hallazgos",
+        "description": "El test invalidó el supuesto de que el banner del home sería el acceso dominante: los tres puntos de acceso tuvieron ingresos y tasa de éxito equivalentes, y un tercio de los participantes descubrió accesos distintos a los que había usado antes. El onboarding, candidato a recortarse, resultó la pantalla mejor evaluada.",
+        "deliverables": ["Validación de hipótesis", "Hallazgos por misión", "Implicaciones de diseño"]
+      },
+      {
+        "name": "Definición del flujo",
+        "description": "Construí el flujo completo del autoenrolamiento y sus variantes, separando el camino principal de las ramas que abre cada punto de decisión: tarjetas activas, consentimiento, permiso de cámara y validación del PIN.",
+        "deliverables": ["User flow", "Matriz de casos", "Inventario de estados de error"]
+      },
+      {
+        "name": "Wireframes e interfaz",
+        "description": "Diseñé las pantallas de cada momento del flujo trabajando dentro de las restricciones del SDK embebido, que no permitía intervenir todas las vistas. Cada decisión de interfaz quedó anotada junto a la pantalla que la justifica.",
+        "deliverables": ["Wireframes anotados", "Pantallas finales", "Especificación de componentes"]
+      },
+      {
+        "name": "Definiciones y entrega",
+        "description": "Cerré el caso con las reglas transversales que permitían resolver pantallas nuevas sin volver a discutir lo mismo: principios, tokens, matriz de estados, criterios de accesibilidad y reglas de contenido.",
+        "deliverables": ["Design tokens", "Matriz de estados", "Guía de microcopy", "Criterios de accesibilidad"]
+      }
+    ],
+    "userFlow": [
+      "Apertura del SDK de pago desde la app",
+      "Aviso de autoenrolamiento: la tarjeta ya quedó vinculada",
+      "Consentimiento de términos y condiciones",
+      "Solicitud del permiso de cámara, con ruta manual alternativa",
+      "Selección del medio de pago, con la tarjeta preseleccionada",
+      "Escaneo del código QR del comercio o ingreso manual",
+      "Validación del pago con PIN, mostrando monto y comercio",
+      "Procesamiento de la transacción",
+      "Voucher de éxito e invitación a sumar otro medio de pago"
+    ],
+    "designDecisions": [
+      {
+        "decision": "Informar el autoenrolamiento, no pedir permiso para hacerlo",
+        "rationale": "La vinculación ya ocurrió, así que la pantalla comunica un hecho en vez de abrir una negociación. Un solo botón que avanza: agregar una acción secundaria habría sembrado la duda de si algo salió mal."
+      },
+      {
+        "decision": "El botón de aceptar términos nace inactivo",
+        "rationale": "En un producto financiero el consentimiento tiene que ser un acto deliberado y auditable. El botón solo se habilita al marcar la casilla, para que nadie acepte por inercia tocando dos veces seguidas."
+      },
+      {
+        "decision": "Explicar el permiso de cámara antes del diálogo del sistema",
+        "rationale": "El diálogo nativo no admite contexto y solo se muestra una vez. Una pantalla previa explica el para qué y ofrece el ingreso manual del código, de modo que negar el permiso no cierre el flujo."
+      },
+      {
+        "decision": "Mostrar monto y comercio en la misma pantalla del PIN",
+        "rationale": "El PIN es el punto de no retorno. Tener a la vista cuánto y a quién se paga en el momento de autorizar evita el error más caro del flujo: confirmar un pago que no era el esperado."
+      },
+      {
+        "decision": "Mantener los tres puntos de acceso en vez de priorizar uno",
+        "rationale": "La hipótesis era que el banner del home concentraría los ingresos. El test la desmintió: los tres accesos tuvieron ingresos y tasa de éxito equivalentes, y un tercio de los participantes descubrió por su cuenta accesos distintos a los que ya había usado. Cada punto sirve a un tipo de usuario distinto."
+      },
+      {
+        "decision": "Conservar el onboarding informativo pese a que alarga el flujo",
+        "rationale": "Era candidato a recortarse por sumar pasos antes del pago. Resultó la pantalla mejor evaluada del test, con 4,9 de 5, y los participantes declararon valorar explícitamente la explicación previa a usar una funcionalidad nueva."
+      },
+      {
+        "decision": "Distinguir errores terminales de errores recuperables",
+        "rationale": "Cuando el problema está fuera de la app —ninguna tarjeta habilitada— ofrecer «Reintentar» sería mentir. Ese estado tiene una sola salida; los recuperables comparten un molde con reintento y escape."
+      }
+    ],
+    "uxDefinitions": [
+      "Cero configuración previa: nada que el sistema pueda resolver solo se le pide al usuario",
+      "Una decisión por pantalla, con jerarquía explícita entre acción primaria y salida",
+      "Todo error ofrece una salida y el texto indica dónde se resuelve el problema",
+      "Ningún estado se comunica solo con color: siempre hay texto o icono acompañando",
+      "Contraste AA como mínimo, con el texto principal en AAA sobre fondo claro",
+      "Área táctil mínima de 44×44 pt en cualquier control del flujo de pago",
+      "El microcopy nombra el hecho en el título y la acción concreta en el botón"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Industrializa.app — Planificación de obra",
+    "shortDescription": "Caso UX/UI: llevar la planificación de una obra a una plataforma web que la haga legible a tiempo",
+    "description": "Diseño de Industrializa.app, plataforma web donde los equipos de construcción generan su Carta Gantt y sus Líneas de Balance, detectan los puntos críticos y optimizan la planificación. El trabajo abarcó la arquitectura de la plataforma, los wireframes de las vistas y el sistema de diseño con su style guide y UI kit.",
+    "technologies": ["Figma", "UX Research", "Arquitectura de información", "Wireframes", "UI Kit", "Design System", "Visualización de datos"],
+    "image": "/industrializaScreen.png",
+    "imageAlt": "Portada del caso UX/UI de Industrializa.app, plataforma de planificación y control de obra",
+    "figmaUrl": "https://www.figma.com/design/hD6kyQ2XaAvJix5AXrI5vJ",
+    "category": "ux",
+    "role": "UX Research, arquitectura de información, wireframes y pantallas mobile",
+    "timeline": "2023",
+    "challenge": "Planificar una obra significaba armar la Carta Gantt a mano, rehacerla entera con cada cambio y descubrir los puntos críticos cuando ya se habían convertido en retraso. La planificación existía, pero no se podía leer a tiempo.",
+    "solution": "Diseñé una plataforma que organiza el trabajo en tres niveles —empresa, proyecto y unidad constructiva— y ofrece cuatro vistas sobre los mismos datos. La Carta Gantt responde cuándo, las Líneas de Balance responden dónde y a qué ritmo, y la optimización genera siempre una versión paralela que el equipo compara antes de guardar. Todo sostenido por un sistema de diseño de 23 grupos de componentes sobre base Material.",
+    "results": [
+      "Arquitectura de tres niveles con cuatro vistas consistentes sobre los mismos datos",
+      "Sistema de diseño con grilla responsive de 345 a 1920 px y 23 grupos de componentes",
+      "Style guide con color, tipografía, elevación e iconografía documentados",
+      "Wireframes de las vistas de planificación, seguimiento y resultados"
+    ],
+    "uxProcess": [
+      {
+        "name": "Encuadre del problema",
+        "description": "Entendí cómo se planifica realmente una obra y por qué el cronograma deja de reflejar la realidad a las pocas semanas. La conclusión fue que el problema no era generar el plan, sino poder leerlo y ajustarlo a tiempo.",
+        "deliverables": ["Definición del problema", "Objetivos de negocio y de usuario", "Restricciones del dominio"]
+      },
+      {
+        "name": "Arquitectura de la plataforma",
+        "description": "Definí la jerarquía de empresa, proyecto y unidad constructiva, y las cuatro vistas que se abren en el último nivel. El patrón de navegación separa la profundidad (breadcrumb) del cambio de lente (pestañas).",
+        "deliverables": ["Mapa de la plataforma", "Patrón de navegación", "Definición de módulos"]
+      },
+      {
+        "name": "Wireframes y vistas clave",
+        "description": "Diseñé las tres pantallas donde se decide: la Carta Gantt para el cuándo, las Líneas de Balance para el dónde y a qué ritmo, y Resultados para constatar la desviación. Cada una con su densidad de información resuelta.",
+        "deliverables": ["Wireframes de vistas", "Diseño de visualizaciones", "Estados de la interfaz"]
+      },
+      {
+        "name": "Sistema de diseño",
+        "description": "Construí el style guide y el UI kit sobre base Material, adaptados a una interfaz densa de tablas, cronogramas y gráficos. Grilla responsive de cuatro breakpoints, escalas de color, tipografía Open Sans, elevación e iconografía.",
+        "deliverables": ["Style guide", "UI kit de 23 grupos", "Grilla responsive", "Tokens de color y tipografía"]
+      }
+    ],
+    "userFlow": [
+      "La empresa accede a su cuenta y ve todos sus proyectos en un solo lugar",
+      "Entra a un proyecto y elige la unidad constructiva que va a planificar",
+      "Genera o ajusta la Carta Gantt, con zoom por día, semana, mes o año",
+      "Cambia a Líneas de Balance para ver la misma planificación por avance y ubicación",
+      "Detecta dónde se estrecha la holgura entre dos actividades",
+      "Ejecuta Optimizar, que produce una versión paralela sin tocar la original",
+      "Compara ambas versiones y guarda la que decide adoptar",
+      "Consulta Resultados para contrastar el avance real contra el planificado"
+    ],
+    "designDecisions": [
+      {
+        "decision": "Optimizar genera una versión paralela, no sobrescribe la original",
+        "rationale": "Nadie acepta que un algoritmo le reordene la obra sin poder verificarlo antes, y esa desconfianza es razonable: la planificación es un compromiso con proveedores y subcontratos. Al generar una carta paralela, el equipo compara y decide cuál guarda."
+      },
+      {
+        "decision": "Cada actividad conserva su color entre la Carta Gantt y las Líneas de Balance",
+        "rationale": "Son dos lecturas del mismo plan. Mantener la paleta permite cambiar de pestaña sin releer la leyenda, y convierte las dos vistas en un solo lenguaje en vez de dos herramientas separadas."
+      },
+      {
+        "decision": "El eje vertical de las Líneas de Balance usa pisos, no porcentaje de avance",
+        "rationale": "El equipo de obra piensa en pisos y unidades, no en abstracciones. Usar su unidad hace que el gráfico se lea sin traducción mental, que es donde se pierde la mayoría de los tableros de control."
+      },
+      {
+        "decision": "Cada indicador de Resultados lleva su traducción debajo",
+        "rationale": "«−6 pts» no le dice nada a un jefe de obra. «Equivale a 1,2 semanas de atraso» sí, porque semanas es la unidad en la que negocia plazos con sus subcontratos."
+      },
+      {
+        "decision": "Resultados es de solo lectura, sin Optimizar ni Guardar",
+        "rationale": "Ahí no se decide, se constata. Separar la vista de diagnóstico de las de edición evita que alguien modifique el plan mientras lo está evaluando."
+      }
+    ],
+    "uxDefinitions": [
+      "La densidad de información no es un defecto a esconder: es el requisito del dominio, y el sistema debe sostenerla sin volverse ilegible",
+      "Grilla responsive de 4, 8 y 12 columnas en 345, 768 y 1440 px, con 1920 px para cronogramas largos",
+      "La profundidad se navega con breadcrumb y las vistas hermanas con pestañas; nunca se mezclan",
+      "Ningún estado se comunica solo con color: siempre hay posición, forma o texto acompañando",
+      "Dos niveles de elevación, no más: uno para tarjetas y otro para overlays",
+      "Tres tamaños de icono fijos —16, 20 y 24— asignados por contexto de uso",
+      "Los tokens se nombran por función y con escala numérica, no por parecido de color"
+    ]
+  },
+  {
     "id": "1",
     "title": "Delta Prueba",
     "shortDescription": "Plataforma de pruebas y análisis delta",

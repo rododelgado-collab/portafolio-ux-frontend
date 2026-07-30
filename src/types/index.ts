@@ -1,3 +1,16 @@
+/** Etapa del proceso de diseño, con los entregables que produjo. */
+export interface UxStage {
+  name: string
+  description: string
+  deliverables: string[]
+}
+
+/** Decisión de diseño acompañada del motivo que la sostiene. */
+export interface DesignDecision {
+  decision: string
+  rationale: string
+}
+
 export interface Project {
   id: string
   title: string
@@ -15,6 +28,14 @@ export interface Project {
   challenge: string
   solution: string
   results: string[]
+  /** Etapas del proceso de diseño. Solo en casos UX. */
+  uxProcess?: UxStage[]
+  /** Pasos del flujo principal, en orden. Solo en casos UX. */
+  userFlow?: string[]
+  /** Decisiones de diseño y su porqué. Solo en casos UX. */
+  designDecisions?: DesignDecision[]
+  /** Definiciones transversales: principios, accesibilidad, contenido. Solo en casos UX. */
+  uxDefinitions?: string[]
 }
 
 export interface BlogPost {
