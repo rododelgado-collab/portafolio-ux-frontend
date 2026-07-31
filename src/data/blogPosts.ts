@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'css-sibling-index-animaciones-escalonadas',
+    title: 'El CSS ya sabe contar: sibling-index() y el fin de los retardos a mano',
+    date: '2026-07-31',
+    dateLabel: '31 de julio, 2026',
+    tags: ['CSS', 'Front-end', 'Design systems'],
+    excerpt:
+      'Firefox 154 despachará sibling-index() el 18 de agosto y la función pasará a Baseline. Suena a detalle de sintaxis, pero elimina uno de los puntos de fricción más constantes entre lo que se especifica en una entrega de motion y lo que termina implementado.',
+    content: [
+      'Hay una categoría de decisiones de diseño que no se pierden por estar mal pensadas, sino porque implementarlas cuesta más de lo que parecen valer. La animación en cascada es el ejemplo perfecto. Pedir que una grilla de tarjetas aparezca de a una, con unos milisegundos de diferencia entre cada elemento, se escribe en una línea dentro de una especificación. Construirlo era harina de otro costal.',
+      'El motivo es simple: hasta ahora el CSS no tenía forma de saber qué posición ocupaba un elemento dentro de su grupo de hermanos. Podía seleccionarlo con nth-child, sí, pero no usar ese número en un cálculo. Para escalonar retardos había que escribir a mano una variable en cada elemento del marcado, generarla desde el lenguaje de plantillas, o recorrer la lista con JavaScript después del renderizado y asignarla nodo por nodo. Tres caminos que funcionan y ninguno que se sienta bien, sobre todo cuando el contenido es dinámico y la cantidad de elementos cambia.',
+      'En la edición número 16 de su boletín "What’s !important", publicada el 31 de julio, Daniel Schwarz recogió el trabajo de Temani Afif sobre cómo aprovechar la función sibling-index() precisamente para animaciones. La novedad de calendario es concreta: Firefox 154 la despachará el 18 de agosto de 2026, y con eso la función pasa a ser Baseline: Newly Available, es decir, disponible de forma consistente en los navegadores principales. El retardo de cada elemento deja de ser un dato que alguien tiene que inyectar y pasa a ser algo que el propio CSS deduce de la estructura del documento.',
+      'Lo que me interesa de esto no es el ahorro de líneas. Es dónde estaba puesto el costo. Cuando entrego una especificación de motion, lo que comunico es una intención de ritmo: cada tarjeta entra sesenta milisegundos después de la anterior, para que el ojo siga la secuencia en lugar de recibir todo el bloque de golpe. Esa intención se explica en una frase. Del otro lado, quien implementa tenía que decidir si ensuciaba el marcado, si tocaba la plantilla o si agregaba un script que corre después de pintar. Y como la animación casi nunca es lo más urgente del sprint, la respuesta razonable muchas veces era recortarla.',
+      'Vengo de trabajar en productos de banca y fintech, donde el detalle de movimiento suele ser lo primero que cae cuando el tiempo aprieta. No porque nadie lo valore, sino porque compite con requisitos que no se pueden negociar. Cada vez que la plataforma absorbe una parte tediosa de la implementación, lo que cambia no es solo el código: cambia la probabilidad de que la decisión de diseño sobreviva hasta producción. Ese es el efecto real que le veo a este tipo de incorporaciones, y es la razón por la que me parece que un diseñador debería seguirlas de cerca aunque no vaya a escribir la regla.',
+      'Dicho eso, conviene no confundir facilidad con permiso. Que ahora sea barato escalonar la entrada de veinte elementos no significa que haya que hacerlo. Una cascada larga retrasa el momento en que la persona puede leer y actuar, y en una lista de operaciones bancarias esa demora es un costo directo, no un adorno. La regla que aplico es la de siempre: la animación tiene que ayudar a entender un cambio de estado o una relación entre elementos. Si solo está decorando la espera, sobra. Y sigue siendo obligatorio respetar la preferencia de movimiento reducido de quien navega, algo que ninguna función nueva resuelve por nosotros.',
+      'El mismo boletín reúne otras piezas que vale la pena mirar. Chris Coyier mostró cómo consultar si un elemento quedó fijo mediante las consultas de contenedor por estado de desplazamiento, aunque ni Safari ni Firefox lo soportan todavía. Adam Argyle repasó los usos de la palabra clave infinity dentro de calc(), con un detalle simpático sobre cómo se relaciona con las esquinas cuadradas. Y Lea Verou dejó abierta una discusión que me parece de fondo: si la carga diferida de imágenes no debería ser el comportamiento por defecto, con la posibilidad de sobreescribirlo cuando corresponde. Es la misma pregunta que aparece en todo sistema de diseño maduro, sobre qué debería costar trabajo y qué debería venir dado.',
+      'El CSS lleva un par de años ganando capacidades que antes exigían un script. Consultas de contenedor, anidación, capas en cascada, y ahora la posibilidad de que un elemento sepa dónde está parado entre sus hermanos. Visto de a una, cada incorporación parece menor. Vistas juntas, van corriendo la frontera de lo que se puede especificar de forma declarativa, y con eso achican la distancia entre lo que se diseña y lo que efectivamente llega al usuario. Para quien trabaja en los dos lados de esa frontera, es de las mejores noticias que puede dar la plataforma.',
+    ],
+    image: '/blog/css-sibling-index-animaciones-escalonadas.png',
+    imageAlt:
+      'Tarjeta del artículo: El CSS ya sabe contar, con seis barras de altura decreciente que representan una animación en cascada',
+    sourceUrl: 'https://css-tricks.com/whats-important-16/',
+    sourceLabel: 'CSS-Tricks — Daniel Schwarz',
+  },
+  {
     id: 'super-app-ia-arquitectura-de-informacion',
     title: 'Una sola app para todo: la IA reabre el problema de la arquitectura de información',
     date: '2026-07-30',
