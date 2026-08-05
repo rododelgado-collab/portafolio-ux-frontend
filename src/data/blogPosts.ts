@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-codigo-como-propuesta-ia',
+    title:
+      'Código como propuesta: cómo Figma usó IA para borrar la frontera entre diseño y desarrollo',
+    date: '2026-08-05',
+    dateLabel: '5 de agosto, 2026',
+    tags: ['IA', 'UX', 'Front-End'],
+    excerpt:
+      'El 3 de agosto, el propio equipo de Figma contó cómo construyó su función de carpetas anidadas sin documentos de requisitos: con pull requests como propuesta y agentes de IA sosteniendo la conversación en Slack. El resultado no fue solo velocidad, fue una forma distinta de repartir el trabajo.',
+    content: [
+      'Hay una pregunta que todo equipo de producto termina haciéndose tarde o temprano: ¿para qué debatir una especificación durante semanas si se puede construir en una tarde y ver si funciona? El 3 de agosto, el equipo de Figma publicó en su propio blog el relato de cómo respondieron esa pregunta al construir carpetas anidadas, una función que exigió repensar desde cero el modelo de contenido y permisos de la plataforma.',
+      'La decisión de fondo, contada por el ingeniero Ethan Adams, fue reemplazar el documento de requisitos por código funcionando. En vez de discutir especificaciones en hilos de Slack, el equipo "lideró con el código como propuesta": armaban un pull request, lo subían a staging y dejaban que el resto del equipo lo probara directamente. La frase que resume la filosofía es contundente: una demo funcionando en el código real vale más que un PRD, siempre.',
+      'Ese cambio de método trajo consigo otro más incómodo: la disolución de los límites entre roles. Cai Charniga, diseñadora de producto en el proyecto, empezó a subir código propio y dio la bienvenida a que los ingenieros tomaran decisiones de diseño cuando hacía falta. En sus palabras, el equipo se convirtió en "alumnos y profesores por turnos", y compartir partes del oficio que antes se guardaban celosamente fue lo que construyó la confianza que el trabajo necesitaba. Mientras tanto, la product manager Sachi Shah dejó la ejecución del día a día para enfocarse en algo que ninguna IA reemplaza: hablar directamente con comunidades de usuarios alrededor del mundo y traer de vuelta cómo la función se comportaba en organizaciones reales.',
+      'La IA aparece en el relato no como protagonista, sino como el engranaje que sostuvo ese ritmo. Adams describe haber usado "agentes como Cursor, muchas veces directamente en Slack, para mantener a todos al tanto". El artículo también menciona un ecosistema más amplio (Figma Make, el servidor MCP de Figma, agent skills, prototipado sobre el propio código) que aceleró el paso de una idea a algo tangible. Ninguna de esas herramientas tomó las decisiones de diseño o de producto; lo que hicieron fue bajar el costo de probar una idea lo suficiente como para que dejara de tener sentido debatirla en abstracto.',
+      'Vengo de proyectos donde el handoff era, literalmente, un traspaso: una entrega de diseño en Figma, una reunión de alineación, y después semanas de ida y vuelta hasta que la implementación se pareciera a la maqueta original. Ese modelo no es un error de nadie, es lo que resulta razonable cuando construir un prototipo funcional es caro. Lo que describe el equipo de Figma es qué pasa cuando ese costo baja de verdad: la conversación deja de vivir en el documento y empieza a vivir en el código que ya corre.',
+      'Conviene no leer esto como una promesa de que los roles desaparecen. Blurring roles, como lo llama Charniga, no significa que cualquiera reemplace a cualquiera; significa que la frontera se vuelve permeable cuando hay confianza y cuando las herramientas dejan de imponer que solo una disciplina pueda tocar cierta capa del trabajo. Eso exige una base que ninguna IA construye por sí sola: un equipo dispuesto a exponer su trabajo a medio hacer y a aceptar que alguien de otra disciplina lo cuestione o lo complete.',
+      'Lo que me deja este caso es una versión concreta de algo que vengo pensando hace tiempo bajo el lema Design & Logic Synergy: la sinergia entre diseño y desarrollo no se decreta en un manual de procesos, se construye reduciendo la distancia entre proponer una idea y verla funcionando. Cuando esa distancia se acorta lo suficiente, como le pasó a este equipo, el documento de requisitos deja de ser el lugar donde se decide el producto. El código, probado por todos, pasa a serlo.',
+    ],
+    image: '/blog/figma-codigo-como-propuesta-ia.png',
+    imageAlt:
+      'Tarjeta del artículo: Código como propuesta, con la etiqueta IA + Diseño y Desarrollo sobre fondo azul y violeta',
+    sourceUrl:
+      'https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/',
+    sourceLabel: 'Figma Blog — Ethan Adams, Cai Charniga, Sachi Shah',
+  },
+  {
     id: 'css-sibling-index-animaciones-escalonadas',
     title: 'El CSS ya sabe contar: sibling-index() y el fin de los retardos a mano',
     date: '2026-07-31',
