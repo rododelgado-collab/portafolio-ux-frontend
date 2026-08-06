@@ -2,6 +2,32 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'ley-ia-europea-aviso-es-diseno',
+    title: 'El aviso de IA ahora lo escribe la ley, pero lo diseñas tú',
+    date: '2026-08-06',
+    dateLabel: '6 de agosto, 2026',
+    tags: ['IA', 'UX', 'Accesibilidad'],
+    excerpt:
+      'El 2 de agosto entraron en vigor las obligaciones de transparencia del artículo 50 de la Ley de IA europea. Debajo del lenguaje legal hay algo que reconocerá cualquiera que diseñe interfaces: una especificación sobre cómo, cuándo y con qué claridad debe aparecer un aviso en pantalla.',
+    content: [
+      'Hay una parte de la Ley de IA europea que no habla de modelos, ni de riesgos sistémicos, ni de auditorías técnicas. Habla de lo que ve una persona cuando abre un producto. El 2 de agosto de 2026 entraron en vigor las obligaciones de transparencia del artículo 50, y con ellas llegó algo poco habitual: un texto legal que, sin usar la palabra diseño, describe un requerimiento de interfaz.',
+      'El artículo establece cuatro obligaciones. Los proveedores deben asegurar que los sistemas de IA pensados para interactuar directamente con personas estén "diseñados y desarrollados" de forma que esas personas sepan que están interactuando con una IA, salvo que resulte evidente para alguien razonablemente informado y atento. Deben marcar en formato legible por máquina el contenido sintético que generan. Quienes despliegan sistemas de reconocimiento de emociones o categorización biométrica tienen que informar a las personas expuestas. Y quienes publican deepfakes, o texto generado por IA destinado a informar al público sobre asuntos de interés general, deben declarar que ese contenido fue generado o manipulado artificialmente.',
+      'Pero la parte que me parece más relevante para quienes diseñamos productos es el párrafo 5, el que define el cómo. La información debe entregarse a las personas "de manera clara y distinguible, a más tardar en el momento de la primera interacción o exposición", y debe ajustarse a "los requisitos de accesibilidad aplicables". Son dos líneas que, leídas con ojos de diseñador, funcionan como criterios de aceptación.',
+      '"Clara y distinguible" descarta el texto gris de diez píxeles al pie de la pantalla, ese que técnicamente está pero que nadie lee. "A más tardar en la primera interacción" descarta enterrarlo en los términos y condiciones o mostrarlo recién cuando la conversación ya avanzó. Y la referencia a los requisitos de accesibilidad tiene una consecuencia concreta que se pierde fácil: el aviso no basta con que se vea bien en la maqueta, tiene que ser perceptible para alguien que navega con lector de pantalla o que no distingue el contraste que elegimos. Un aviso que solo existe como decoración visual no cumple.',
+      'Hay además una exención que es, en el fondo, una pregunta de diseño disfrazada de cláusula legal: no hace falta avisar cuando la interacción con la IA es "evidente" para una persona razonablemente bien informada, observadora y prudente. Quién decide qué resulta evidente, en qué contexto y para qué usuario, no es una discusión que pueda resolver únicamente el área legal. Es exactamente el tipo de juicio que se toma mirando a usuarios reales usando el producto, no leyendo el reglamento.',
+      'Vengo de trabajar en aplicaciones de banca y fintech, y ahí el cumplimiento normativo siempre terminó definiendo pantallas. Esa experiencia me dejó una lección incómoda y bastante consistente: cuando un aviso se diseña para cumplir y no para que se entienda, la gente aprende a ignorarlo. El caso más conocido lo tenemos a la vista todos los días. Las bandas de cookies nacieron de una intención legítima, la de que cada persona decidiera sobre sus datos, y terminaron convertidas en un obstáculo que se despacha con un clic reflejo. La norma se cumple; el objetivo, no.',
+      'Sería una pena repetir ese patrón justamente con el aviso que le dice a alguien si está hablando con una persona o con una máquina. Ahí la información importa de verdad: cambia cuánto confías en la respuesta, qué datos entregas, cuándo pides hablar con un humano. Si ese aviso se convierte en otro elemento que el ojo aprende a saltar, habremos cumplido la ley y perdido lo que la ley buscaba proteger.',
+      'Conviene ser preciso sobre el alcance: estas obligaciones rigen para sistemas puestos en el mercado europeo, no son ley en Chile. Pero cualquier equipo cuyo producto llegue a usuarios en Europa queda alcanzado, y más allá de eso, el texto instala un estándar de referencia que probablemente inspire regulaciones en otras partes. Existe además una ventana de gracia acotada para las obligaciones de marcado en sistemas que ya estaban en el mercado antes del 2 de agosto, que deben cumplir a más tardar el 2 de diciembre de 2026, y el contenido generado antes de esa primera fecha no requiere etiquetado retroactivo.',
+      'Mi conclusión es que este artículo convierte en obligatorio algo que la buena práctica ya recomendaba: decirle a la persona con qué está tratando, a tiempo y de forma que pueda percibirlo. La diferencia es que ahora hay una fecha y una multa detrás. Lo que no cambia es dónde se juega el resultado. La ley puede exigir que el aviso exista, sea claro y llegue temprano; que además se entienda sigue siendo trabajo de diseño, y ese trabajo no lo hace ningún reglamento por nosotros.',
+    ],
+    image: '/blog/ley-ia-europea-aviso-es-diseno.png',
+    imageAlt:
+      'Tarjeta del artículo: El aviso de IA ahora lo escribe la ley, lo diseñas tú, con una cita del artículo 50.5 de la Ley de IA europea',
+    sourceUrl:
+      'https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act',
+    sourceLabel: 'Comisión Europea — Preguntas frecuentes sobre el artículo 50',
+  },
+  {
     id: 'figma-codigo-como-propuesta-ia',
     title:
       'Código como propuesta: cómo Figma usó IA para borrar la frontera entre diseño y desarrollo',
