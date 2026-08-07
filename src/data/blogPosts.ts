@@ -2,6 +2,29 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'nextjs-16-3-velocidad-percibida',
+    title: 'Next.js 16.3: la velocidad percibida deja de ser trabajo manual',
+    date: '2026-08-07',
+    dateLabel: '7 de agosto, 2026',
+    tags: ['Front-end', 'Next.js', 'Performance'],
+    excerpt:
+      'El 3 de agosto, Next.js lanzó su actualización más grande desde noviembre: Instant Navigations promete que una app renderizada en servidor se sienta tan rápida como una SPA. Detrás del número de la demo hay un cambio real en quién resuelve la percepción de velocidad: el framework o el equipo de diseño.',
+    content: [
+      'Hay una pregunta que cualquiera que haya diseñado un estado de carga se ha hecho alguna vez: ¿por qué la sensación de velocidad tiene que resolverse a mano, ruta por ruta, cada vez que se construye una aplicación nueva? El 3 de agosto de 2026, el equipo de Next.js respondió con la actualización más grande del framework desde la versión 16.0, lanzada en noviembre del año pasado.',
+      'La pieza central de Next.js 16.3 se llama Instant Navigations, un conjunto de funciones opcionales que busca traer la capacidad de respuesta de las aplicaciones de una sola página a un framework que renderiza en servidor, sin perder los beneficios de ese modelo. La pieza técnica que lo sostiene es Partial Prefetching: Next.js puede extraer una carcasa reutilizable de cualquier ruta y cargarla en el cliente antes de que la persona haga clic, en vez de forzar a elegir entre un loading genérico por ruta o una precarga completa y costosa de toda la página. Junto a eso llega Instant Insights, una herramienta nueva dentro de las devtools que detecta automáticamente qué navegaciones no están siendo instantáneas y sugiere cómo corregirlas.',
+      'El resto de la actualización es, en la práctica, una lista larga de motivos para actualizar sin cambiar una línea de código de producto. El servidor de desarrollo usa hasta 90% menos memoria gracias al nuevo sistema de expulsión de caché de Turbopack: en las pruebas del propio equipo, el panel de vercel.com pasó de 21.5 GB a 2 GB. Los builds repetidos pueden ser hasta 5.5 veces más rápidos al leer artefactos sin cambios desde caché en disco. Y al reemplazar los web streams por streams nativos de Node.js en el renderizado del App Router, la aplicación soporta hasta un 22% más de solicitudes bajo carga, sin tocar el código de la aplicación.',
+      'Lo que más me llama la atención de este lanzamiento no es el número de la demo, es el desplazamiento de responsabilidad que implica. Cuando trabajaba prototipando pantallas de banca, la sensación de velocidad se resolvía puliendo cada esqueleto y cada transición a mano: cuánto dura el shimmer, en qué momento aparece el spinner, qué se muestra mientras el dato real todavía no llega. Era trabajo de diseño, y también de desarrollo, coordinado pantalla por pantalla porque no había otra forma de asegurar que una navegación se sintiera fluida en vez de bloqueada.',
+      'Next.js 16.3 no elimina ese trabajo, pero le cambia el punto de partida. Si el framework puede extraer automáticamente una carcasa razonable de cualquier ruta y avisar cuando una navegación no cumple el estándar de instantaneidad, el diseño deja de tener que inventar ese comportamiento desde cero y pasa a decidir sobre un piso que ya existe: qué se muestra en esa carcasa, cuánto detalle vale la pena adelantar, cuándo conviene mostrar contenido parcial y cuándo es mejor esperar. Es una diferencia parecida a la que trajo sibling-index() en CSS para las animaciones escalonadas: la plataforma absorbe la parte mecánica, y lo que queda para diseño es la decisión de criterio, no la implementación repetitiva.',
+      'Conviene no perder de vista que estas funciones son opcionales por ahora, activadas detrás de dos flags de configuración, aunque el propio equipo de Next.js adelantó que se convertirán en el comportamiento por defecto en una futura versión mayor del framework. Esa es, en el fondo, la apuesta de fondo del anuncio: que la percepción de velocidad no debería depender de que cada equipo la resuelva por su cuenta, sino de que la plataforma la garantice como punto de partida.',
+      'Para quien trabaja en el cruce entre diseño y desarrollo, este tipo de lanzamientos importa más de lo que su changelog técnico sugiere. Cada vez que un framework decide encargarse de una parte del trabajo que antes recaía en la coordinación manual entre diseño y front-end, la pregunta que queda abierta es qué hacemos con el tiempo que eso libera. Mi apuesta es que no sobra: se destina a decidir mejor los casos donde el criterio humano sigue siendo insustituible, como qué información mostrar primero o cuánta incertidumbre es aceptable mientras el dato real todavía viaja desde el servidor.',
+    ],
+    image: '/blog/nextjs-16-3-velocidad-percibida.png',
+    imageAlt:
+      'Tarjeta del artículo: La velocidad percibida deja de ser trabajo manual, con métricas de Next.js 16.3 sobre fondo azul y violeta',
+    sourceUrl: 'https://nextjs.org/blog/next-16-3',
+    sourceLabel: 'Next.js Blog — Equipo de Next.js y Turbopack',
+  },
+  {
     id: 'ley-ia-europea-aviso-es-diseno',
     title: 'El aviso de IA ahora lo escribe la ley, pero lo diseñas tú',
     date: '2026-08-06',
