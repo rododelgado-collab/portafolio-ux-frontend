@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://portafolio-ux-frontend.vercel.app/blog/dogfooding-no-reemplaza-user-research</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog/nextjs-16-3-velocidad-percibida</loc>
@@ -54,6 +58,6 @@
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/privacidad</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-10</lastmod>
   </url>
 </urlset>

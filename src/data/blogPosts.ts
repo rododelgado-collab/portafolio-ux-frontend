@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'dogfooding-no-reemplaza-user-research',
+    title: 'Tu equipo sabe demasiado: por qué el dogfooding no reemplaza al research',
+    date: '2026-08-10',
+    dateLabel: '10 de agosto, 2026',
+    tags: ['UX', 'Research', 'Usabilidad'],
+    excerpt:
+      'Nielsen Norman Group publicó el 7 de agosto un artículo que separa tres prácticas que suelen confundirse: dogfooding, QA e investigación de usuarios. La diferencia no es de forma, es de quién puede realmente decirte si tu producto funciona.',
+    content: [
+      'Hay una frase que cualquiera que haya trabajado en producto ha escuchado alguna vez, casi siempre como argumento para saltarse un research: "lo probamos nosotros y funciona perfecto". Suena razonable. El equipo usó el flujo, no encontró errores, todo parece listo para salir. El problema es que esa frase mezcla tres prácticas que responden preguntas distintas, y confundirlas sale caro.',
+      'El 7 de agosto, Nielsen Norman Group publicó un artículo de Therese Fessenden que traza esa línea con precisión. Dogfooding es usar el propio producto puertas adentro, algo que remonta a un correo interno de Microsoft de 1988 titulado "Eating our own Dogfood". QA testing es un proceso estructurado donde profesionales recorren cada camino posible buscando errores y puntos de falla. Investigación de usuarios es observar a personas representativas, ajenas al equipo, intentando cumplir un objetivo real con el producto. Las tres generan información útil. Ninguna reemplaza a las otras dos.',
+      'El argumento central del artículo es lo que la autora llama la maldición del conocimiento. Un empleado que prueba su propio producto no puede simular honestamente no saber cómo funciona. Conoce la jerga interna, sabe dónde vive cada configuración, entiende el modelo de datos detrás de cada pantalla y, casi sin darse cuenta, tolera asperezas que un usuario nuevo jamás toleraría. No es un problema de esfuerzo ni de buena voluntad: es que la familiaridad misma distorsiona el juicio.',
+      'El ejemplo que usa el artículo para ilustrar el límite del dogfooding es el video que grabó el CEO de McDonald\'s mordiendo, con gesto dudoso, la nueva Big Arch. La audiencia lo notó de inmediato: no se sentía genuino. Ese tipo de gesto interno, aunque bien intencionado, no sustituye la reacción de alguien que prueba el producto por primera vez sin ningún incentivo de por medio.',
+      'A mí esto me hizo bastante sentido desde mi paso por banca y fintech. En la app de Tarjeta Líder, el equipo podía navegar el flujo de pago con los ojos cerrados: sabíamos exactamente dónde estaba cada paso, qué campo iba primero, qué mensaje de error correspondía a cada caso. Esa fluidez interna no garantizaba nada sobre la experiencia real. Fue el research con usuarios que no conocían atajos ni terminología interna el que reveló las fricciones que después se tradujeron en mejoras de CRO. El equipo interno nunca las habría detectado solo, porque ya sabía demasiado como para notarlas.',
+      'Eso no vuelve inútil al dogfooding, y el artículo tampoco lo plantea así. Usar el propio producto sigue siendo una forma barata y rápida de atrapar errores obvios, flujos rotos y comportamientos inesperados antes de que lleguen a producción. El problema aparece cuando una organización lo trata como sustituto de la investigación de usuarios en lugar de como un complemento previo a ella. La pregunta que responde el dogfooding es si algo funciona o se rompe. La que responde el research es si alguien que no conoce el sistema puede lograr su objetivo con él. Son preguntas distintas y ninguna cantidad de dogfooding contesta la segunda.',
+      'Lo que me parece más útil de este marco es que da un vocabulario simple para una conversación que en muchos equipos se resuelve mal, casi siempre por default y no por decisión consciente. Cuando alguien dice "ya lo probamos", vale la pena preguntar quién lo probó y con cuánto conocimiento previo. Si la respuesta es el propio equipo, lo que hay es una señal de que el producto no se rompe evidentemente, no una señal de que funciona para quien lo va a usar de verdad.',
+      'Ninguna de las tres prácticas es prescindible, pero solo una de ellas puede decirte si el producto tiene sentido para alguien que no lo construyó. Esa es la que más fácil se recorta cuando el tiempo aprieta, y la que más cara sale de recortar cuando el producto ya está en manos de usuarios reales.',
+    ],
+    image: '/blog/dogfooding-no-reemplaza-user-research.png',
+    imageAlt:
+      'Tarjeta del artículo: Tu equipo sabe demasiado, sobre dogfooding, QA e investigación de usuarios, con la fuente NN/g',
+    sourceUrl: 'https://www.nngroup.com/articles/dogfooding/',
+    sourceLabel: 'Nielsen Norman Group — Therese Fessenden',
+  },
+  {
     id: 'nextjs-16-3-velocidad-percibida',
     title: 'Next.js 16.3: la velocidad percibida deja de ser trabajo manual',
     date: '2026-08-07',
