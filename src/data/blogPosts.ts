@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'copilot-feedback-visual-en-el-navegador',
+    title: 'El comentario de diseño ya no vive en Figma: vive en el navegador',
+    date: '2026-08-12',
+    dateLabel: '12 de agosto, 2026',
+    tags: ['IA', 'UX', 'Handoff'],
+    excerpt:
+      'GitHub Copilot sumó feedback a nivel de elemento en su navegador integrado de VS Code: seleccionas algo en la página renderizada, comentas y el agente lo implementa. Repaso qué cambia para el handoff entre diseño y desarrollo.',
+    content: [
+      'El 7 de agosto, GitHub publicó en su changelog oficial las novedades semanales de Copilot, y una de ellas apunta directo a un problema que cualquiera que haya hecho handoff de diseño a desarrollo conoce bien. La actualización de VS Code 1.132 incorpora feedback a nivel de elemento en el navegador integrado: se puede seleccionar uno o varios elementos de una página web ya renderizada, agregar un comentario a cada uno, y enviar ese feedback visual preciso directo al agente para que lo implemente.',
+      'Hasta ahora, el feedback sobre una interfaz solía tomar una de dos formas. O era un comentario en Figma sobre un diseño estático que todavía no reflejaba cómo se veía en producción, o era una captura de pantalla con una flecha y un texto pegado en un ticket, esperando que quien lo leyera interpretara correctamente qué elemento y qué problema se estaban señalando. En ambos casos hay una traducción de por medio, y toda traducción pierde información.',
+      'Lo que cambia con esta función es que el punto de referencia deja de ser una representación del producto y pasa a ser el producto mismo, ya renderizado, con el DOM real detrás. El agente no tiene que adivinar a qué corresponde "el botón de arriba a la derecha": tiene la referencia exacta del elemento que la persona seleccionó, con su comentario asociado, y puede modificarlo con ese contexto completo.',
+      'Llevo años trabajando en el cruce entre diseño y desarrollo, primero en Sermaluc con la app de Banco Estado, después en ManpowerGroup con la app Tarjeta Líder, siempre con handoff de Figma hacia Angular o React de por medio. La fricción más constante en ese proceso nunca fue la falta de voluntad de nadie: era la ambigüedad del lenguaje. Un comentario como "el padding se ve raro aquí" depende por completo de que la otra persona entienda bien qué es "aquí" y qué es "raro". Cuando el "aquí" es un elemento seleccionable en el navegador real, esa ambigüedad de origen desaparece.',
+      'Pero esta capacidad también traslada una responsabilidad, no la elimina. Si un agente puede actuar directo sobre lo que ve en pantalla, el criterio de qué es correcto tiene que estar codificado en algún lugar que el agente pueda consultar: un design system con tokens definidos, componentes documentados, reglas de espaciado explícitas. Sin eso, cada corrección puntual queda aislada. El agente puede arreglar el elemento señalado, pero no tiene forma de saber que esa misma corrección debería aplicarse a los quince componentes similares que existen en el resto del producto. Ahí sigue siendo necesario el trabajo de sistema, no solo el de parche.',
+      'La función convive con otras piezas de la misma actualización, como los side chats con el comando /btw para hacer preguntas sin interrumpir al agente, o el modo worktree para abrir una conversación separada en un espacio de trabajo aislado. El paquete completo apunta en una dirección clara: reducir la distancia entre observar un problema de interfaz y resolverlo, sin que el camino intermedio dependa de que alguien describa bien lo que está viendo.',
+      'Para quienes trabajamos en la frontera entre diseño y código, esto no reemplaza la conversación de diseño ni las decisiones de producto que hay detrás de cada pantalla. Pero sí cambia dónde conviene dejar el feedback de implementación: cada vez menos en un documento aparte, y cada vez más directo sobre lo que ya existe.',
+    ],
+    image: '/blog/copilot-feedback-visual-en-el-navegador.png',
+    imageAlt:
+      'Tarjeta del artículo: El comentario de diseño ya vive en el navegador, sobre feedback visual con IA en GitHub Copilot',
+    sourceUrl:
+      'https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3/',
+    sourceLabel: 'GitHub Changelog — Copilot weekly releases, August 3',
+  },
+  {
     id: 'dogfooding-no-reemplaza-user-research',
     title: 'Tu equipo sabe demasiado: por qué el dogfooding no reemplaza al research',
     date: '2026-08-10',
