@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-weave-agentes-mcp',
+    title: 'Figma deja que tu agente de IA ejecute sus herramientas de diseño sin abrir el lienzo',
+    date: '2026-08-13',
+    dateLabel: '13 de agosto, 2026',
+    tags: ['IA', 'Figma', 'Diseño'],
+    excerpt:
+      'El 11 de agosto Figma anunció que las herramientas de Weave, sus flujos de IA para generar imágenes, video y audio, ya se pueden invocar directo desde ChatGPT, Claude o Cursor a través del servidor MCP. Repaso qué significa que una herramienta de diseño deje de vivir en el lienzo.',
+    content: [
+      'El 11 de agosto de 2026, Figma publicó en sus notas de lanzamiento una función con un nombre técnico y una implicación bastante menos técnica: "Figma MCP: Run Weave tools, right from your favorite agent". Weave es la línea de Figma dedicada a flujos de IA para generar y manipular imágenes, video, audio y otros formatos dentro del producto. Hasta ahora, para usar una de esas herramientas había que abrir Figma. Desde esta actualización, se pueden ejecutar directo desde un cliente externo como ChatGPT, Claude o Cursor, usando el servidor MCP de Figma como puente.',
+      'El flujo que describe el propio anuncio es simple de imaginar. Si un equipo construyó una herramienta de Weave para convertir fotos de producto en mockups de marca, basta con pedirle al agente "corre mi herramienta de mockup de marca con estas imágenes". El agente encuentra la herramienta, la ejecuta, sigue su progreso y devuelve el resultado directo en la conversación, sin que la persona tenga que cambiar de aplicación. Figma es explícito en un punto: el contexto se mantiene durante todo el proceso, incluyendo los prompts, las imágenes de referencia y las guías de marca cargadas previamente.',
+      'El servidor MCP de Figma no es nuevo: ya conectaba a Figma Design, Figma Make y FigJam con agentes como Claude Code, Cursor, VS Code o GitHub Copilot CLI, permitiendo leer contexto de diseño, gestionar tokens o automatizar partes del flujo de colaboración. Lo que agrega esta actualización es que Weave se suma a esa lista de superficies accesibles por agente, y que el sentido del flujo se invierte parcialmente: en vez de que el agente consulte información de un archivo de Figma, ahora puede disparar una acción generativa dentro de Figma sin que la persona abra el archivo en ningún momento.',
+      'Vengo de años de handoff entre Figma y código, primero con Angular en la app de Banco Estado, después con integraciones de pasarela de pago en la app Tarjeta Líder. En ese trabajo, el lienzo de Figma siempre fue el lugar de referencia: ahí vivía el archivo fuente, ahí se resolvían las dudas de espaciado, ahí se validaba que un componente respetara el sistema. Distintas herramientas entraban y salían de ese flujo, pero el archivo seguía siendo el punto de verdad al que todos volvían para confirmar algo.',
+      'Lo que cambia con esta función es sutil pero real: por primera vez, una herramienta de diseño generativo dentro de Figma se vuelve completamente operable sin que nadie mire el lienzo. La tarea se resuelve en el chat del agente, con el resultado entregado ahí mismo. Eso es cómodo, y probablemente ahorra tiempo real en tareas repetitivas como generar variantes de un mockup. Pero también desplaza el archivo de Figma de "lugar donde ocurre el trabajo" a "lugar donde eventualmente aterriza un resultado que se generó en otra parte".',
+      'La pregunta que me queda abierta es de gobernanza, no de capacidad técnica. Cuando una herramienta de marca se invoca desde una conversación de texto, sin el canvas completo alrededor mostrando el resto del sistema, ¿quién verifica que el resultado generado sea coherente con el resto de los assets, no solo con lo que el prompt alcanzó a describir? Figma afirma que el contexto de guías de marca se mantiene en la ejecución, lo cual ayuda, pero mantener un dato de contexto no es lo mismo que tener a alguien mirando el archivo completo antes de aprobar un resultado.',
+      'El propio anuncio de Figma cierra con una frase que vale la pena registrar: construir nuevos flujos de Weave sin salir del agente es lo que viene después. Es decir, esta actualización es un paso intermedio, no el punto final. La dirección parece clara: cada vez más superficies de diseño se vuelven invocables desde donde sea que viva la conversación con el agente, y cada vez menos tareas requieren que alguien abra explícitamente el archivo de diseño para completarlas.',
+      'Para quienes trabajamos en el cruce entre diseño y desarrollo, esto no es motivo de alarma, pero sí de atención. La conveniencia de resolver una tarea sin cambiar de aplicación es real. Lo que hay que vigilar es que esa conveniencia no termine erosionando el hábito de revisar el archivo completo antes de dar por bueno un resultado generado en otro lugar. El sistema de diseño sigue siendo la referencia; la pregunta es si seguirá siendo el lugar donde de verdad se mira antes de aprobar.',
+    ],
+    image: '/blog/figma-weave-agentes-mcp.png',
+    imageAlt:
+      'Tarjeta del artículo: Figma deja que tu agente de IA ejecute sus herramientas de diseño, sobre Weave y el servidor MCP',
+    sourceUrl: 'https://www.figma.com/release-notes/',
+    sourceLabel: 'Figma — Notas de lanzamiento, 11 de agosto de 2026',
+  },
+  {
     id: 'copilot-feedback-visual-en-el-navegador',
     title: 'El comentario de diseño ya no vive en Figma: vive en el navegador',
     date: '2026-08-12',
