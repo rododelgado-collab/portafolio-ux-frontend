@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'vercel-agentes-ia-mantienen-codigo-abierto',
+    title:
+      'Agentes de IA ya mantienen el código abierto de Vercel: el humano solo aprueba el merge',
+    date: '2026-08-14',
+    dateLabel: '14 de agosto, 2026',
+    tags: ['IA', 'Front-End', 'Open Source'],
+    excerpt:
+      'El 12 de agosto, Vercel contó cómo construyó una "fábrica de software" para AI SDK: agentes de IA que ya redactan entre el 25% y el 35% de los pull requests fusionados cada semana. Nada se fusiona sin que una persona apruebe. Repaso qué significa que el trabajo humano se mueva de escribir código a auditar evidencia.',
+    content: [
+      'El 12 de agosto de 2026, Lars Grammel y Eric Dodds publicaron en el blog de ingeniería de Vercel el relato de un experimento que llevan cuatro semanas corriendo en producción: una "fábrica de software" para AI SDK, el paquete de la compañía con más de 20 millones de descargas semanales y más de 26.000 estrellas en GitHub. La fábrica es un sistema de agentes de IA especializados que procesan issues y pull requests del repositorio, encargándose de clasificar reportes, reproducir bugs, implementar arreglos, revisarlos entre sí y hasta gestionar el backport de correcciones a versiones anteriores.',
+      'Las cifras que comparte el artículo no son marginales. Entre el 25% y el 35% de los pull requests que se fusionan cada semana en AI SDK ya los redactó un agente de la fábrica, no una persona. Durante julio, entre el 70% y el 80% de los issues cerrados pasaron por ese mismo sistema. El backlog de issues abiertos bajó de 1.022 a fines de junio a 844 a inicios de agosto, con los bugs abiertos reduciéndose en aproximadamente un 25%. Más de la mitad de los merges de backport a la versión 6 del paquete provienen también de la fábrica. Todo esto corre sobre infraestructura de la propia Vercel: Functions para la API y los webhooks, Queues para la ejecución de tareas, Sandbox para aislar a cada agente, Postgres de Neon para los datos y Blob para los logs.',
+      'Lo que el artículo deja más claro, y es el punto que me parece central, es dónde exactamente se mantiene el control humano. Los autores lo dicen sin rodeos: nada se fusiona sin que una persona del equipo de AI SDK apruebe el cambio, revisando la cadena completa de evidencia que el agente generó para sustentarlo. No es una aprobación de trámite sobre un resumen; es una revisión de la evidencia real detrás de cada fix, incluyendo cómo se reprodujo el bug y por qué se eligió esa solución.',
+      'Esto es distinto de lo que muchas veces se imagina cuando se habla de "agentes escribiendo código": no es que la IA reemplace al desarrollador en la tarea de programar y listo. Es un rediseño más fino del flujo de trabajo, donde la generación se delega casi por completo, pero el punto de aprobación final queda deliberadamente humano y en un solo lugar: el merge. Todo lo que ocurre antes (triage, reproducción, implementación, revisión entre agentes) es responsabilidad de la fábrica. Todo lo que decide si eso entra al código que usan 20 millones de instalaciones semanales sigue siendo decisión de una persona.',
+      'Vengo de proyectos en banca y fintech donde la trazabilidad de una decisión importaba tanto como la decisión misma. En la app de Tarjeta Líder, cualquier cambio que tocara el flujo de pago pasaba por un proceso donde no bastaba con que algo funcionara: había que poder mostrar por qué se sabía que funcionaba, con qué evidencia, bajo qué casos probados. Leyendo el artículo de Vercel, la parte de "revisar la cadena de evidencia" me resultó muy reconocible. Es el mismo principio aplicado a un volumen de cambios que ninguna persona podría generar sola a esa velocidad.',
+      'Ahí también veo el punto de tensión que el artículo no resuelve del todo. Revisar evidencia en vez de generar el resultado es un tipo de trabajo distinto, y no necesariamente uno que escale mejor. Cuando el volumen de pull requests aprobables sube, la pregunta no es solo si el agente hizo bien su trabajo, es si la persona que aprueba tiene tiempo real de revisar cada cadena de evidencia con el mismo cuidado, o si en algún punto la aprobación empieza a convertirse en una formalidad que confía en el patrón general más que en el caso específico que tiene enfrente.',
+      'Con un paquete de este tamaño, ese matiz no es menor. Un bug introducido por un agente y aprobado sin suficiente escrutinio no se queda en un repositorio aislado: se propaga a cada proyecto que instala la próxima versión. El modelo que describe Vercel es defendible en el papel, con el humano como último filtro. Su solidez real depende de que ese filtro siga siendo una revisión genuina y no una firma automática a medida que el volumen de trabajo de la fábrica sigue creciendo.',
+      'Lo que me deja este caso es una hipótesis sobre hacia dónde va el mantenimiento de proyectos de código abierto de alto tráfico: no hacia agentes sin supervisión, sino hacia este patrón de embudo, donde la generación se abre de par en par y la aprobación se concentra en un punto único y auditable. El problema de diseño interesante ya no es si un agente puede escribir el fix, evidentemente puede. Es cómo se diseña esa cadena de evidencia para que la aprobación humana siga significando algo cuando el volumen que pasa por ella se multiplica.',
+    ],
+    image: '/blog/vercel-agentes-ia-mantienen-codigo-abierto.png',
+    imageAlt:
+      'Tarjeta del artículo: Agentes de IA ya mantienen el código abierto de Vercel, con las estadísticas de PRs fusionados por agentes en AI SDK',
+    sourceUrl: 'https://vercel.com/blog/building-a-software-factory-for-ai-sdk',
+    sourceLabel: 'Vercel Blog — Lars Grammel y Eric Dodds',
+  },
+  {
     id: 'figma-weave-agentes-mcp',
     title: 'Figma deja que tu agente de IA ejecute sus herramientas de diseño sin abrir el lienzo',
     date: '2026-08-13',
