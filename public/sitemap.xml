@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://portafolio-ux-frontend.vercel.app/blog/figma-balance-pretty-text-wrap-css</loc>
+    <lastmod>2026-08-18</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog/ia-una-respuesta-no-es-evaluacion</loc>
@@ -74,6 +78,6 @@
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/privacidad</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-18</lastmod>
   </url>
 </urlset>

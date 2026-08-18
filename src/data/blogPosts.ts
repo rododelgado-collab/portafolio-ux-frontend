@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-balance-pretty-text-wrap-css',
+    title: 'El texto de Figma ya no imita el CSS: ahora lo escribe literal en Dev Mode',
+    date: '2026-08-18',
+    dateLabel: '18 de agosto, 2026',
+    tags: ['Front-end', 'CSS', 'Figma'],
+    excerpt:
+      'El 14 de agosto Figma sumó dos opciones de ajuste de texto, Balance y Pretty, que en Dev Mode se traducen literalmente en las propiedades CSS text-wrap: balance y text-wrap: pretty. Repaso qué cambia cuando el archivo de diseño deja de aproximar el CSS y empieza a declararlo.',
+    content: [
+      'El 14 de agosto de 2026, Figma actualizó su artículo de ayuda "Explore text properties" para documentar dos opciones nuevas de ajuste de texto: Balance y Pretty. Según describe el propio artículo, Balance distribuye el contenido de la forma más pareja posible entre líneas, de modo que cada línea quede cerca del mismo largo, pensada para bloques cortos donde la forma del texto importa, como titulares, botones y badges. Pretty, en cambio, mantiene cada línea completa pero ajusta las últimas líneas para evitar una palabra huérfana sola al final, pensada para copy más largo, como cuerpos de texto y descripciones.',
+      'La idea detrás de ambas opciones no es nueva. Cualquiera que haya diseñado un titular sabe lo incómodo que se ve un salto de línea que deja una sola palabra corta colgando, y durante años la única solución fue ajustar el ancho del contenedor a mano hasta que el corte de línea se viera bien, o simplemente vivir con el resultado. Lo que hace distinto este lanzamiento es un detalle técnico que el mismo artículo de ayuda deja explícito: si una capa de texto usa el estilo de ajuste Balance o Pretty, en la sección de Typography del Dev Mode aparece literalmente text-wrap: balance; o text-wrap: pretty;.',
+      'Esas dos líneas no son una convención inventada por Figma. Son propiedades CSS reales, ya soportadas por los navegadores: text-wrap: balance funciona en Chrome desde la versión 114, en Firefox desde la 121 y en Safari desde la 17.5; text-wrap: pretty funciona en Chrome desde la 117 y en Firefox desde la 134, con soporte de Safari recién llegando. Cuando Figma decidió resolver el problema del ajuste de texto, no inventó su propio vocabulario visual y lo dejó para que alguien lo tradujera después. Adoptó el vocabulario que ya existe en la plataforma web y lo usa tal cual, tanto en la interfaz de diseño como en la salida que le entrega a quien programa.',
+      'Vengo de años de handoff entre Figma y código, primero con Angular en la app de Banco Estado, después con integraciones de pasarela de pago en la app de Tarjeta Líder. El ajuste de texto era, en ese proceso, una de esas decisiones visuales que se perdían fácil en la traducción. El diseño se veía bien en el archivo, y quien programaba tenía que interpretar esa intención y reproducirla con la propiedad CSS correcta, cuando existía una, o simplemente dejarla pasar porque no había forma clara de comunicarla. No era un problema de mala comunicación entre personas. Era que el archivo de diseño y el código hablaban dos idiomas distintos, y alguien tenía que hacer de traductor cada vez.',
+      'Lo que cambia con esta actualización es que ese trabajo de traducción deja de ser necesario para este caso puntual. El archivo ya no describe una intención visual que hay que interpretar: declara la propiedad exacta que hay que escribir. Es una diferencia de fondo, no de forma. Una cosa es que el diseño se vea prolijo y alguien tenga que averiguar cómo se logra ese resultado en código. Otra distinta es que el propio archivo diga, sin ambigüedad, qué línea de CSS reproduce esa decisión.',
+      'Esto conecta con un patrón más amplio que vengo notando en las herramientas de diseño de los últimos meses: cada vez hay menos espacio entre lo que se decide en el lienzo y lo que termina existiendo en el código. No es la primera vez que Figma cierra una de estas brechas, y probablemente no será la última. Pero este caso en particular tiene un valor adicional, porque no requiere que nadie del equipo de desarrollo cambie su forma de trabajar ni aprenda una convención nueva. La propiedad que aparece en Dev Mode es la misma que ya se usaría escribiendo CSS desde cero, sin la intermediación de Figma.',
+      'Vale la pena una precaución: por ahora estas opciones funcionan dentro de Figma Design y aplican específicamente al corte de texto en múltiples líneas, no a cualquier decisión tipográfica. No resuelven, por ejemplo, la brecha de traducción que sigue existiendo en decisiones más complejas de layout o de interacción, donde el archivo de diseño todavía describe una intención que el código tiene que interpretar. Pero como caso puntual, muestra con bastante claridad hacia dónde parece ir la relación entre diseño y desarrollo: no hacia herramientas que se parecen al código, sino hacia herramientas que literalmente lo producen.',
+      'Para quienes trabajamos en el cruce entre diseño y front-end, este tipo de detalles importa más de lo que aparenta. Cada fricción de handoff que desaparece sin necesitar un comentario, una reunión o un documento de especificación es tiempo que se recupera para decisiones que sí requieren criterio humano. La pregunta que me queda dando vueltas es cuántas otras decisiones que hoy se explican con palabras en un archivo de Figma deberían, en cambio, ser una propiedad que el archivo ya declara.',
+    ],
+    image: '/blog/figma-balance-pretty-text-wrap-css.png',
+    imageAlt:
+      'Tarjeta del artículo: Figma ya escribe CSS real en Dev Mode, con las propiedades text-wrap balance y text-wrap pretty',
+    sourceUrl: 'https://help.figma.com/hc/en-us/articles/360039956634-Explore-text-properties',
+    sourceLabel: 'Figma Help Center — Explore text properties',
+  },
+  {
     id: 'ia-una-respuesta-no-es-evaluacion',
     title: 'Una respuesta de la IA no es una evaluación, es apenas un ejemplo',
     date: '2026-08-17',
