@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'cursor-origin-hosting-de-codigo-con-agentes',
+    title: 'Cursor ya no solo escribe código: ahora también lo aloja',
+    date: '2026-08-19',
+    dateLabel: '19 de agosto, 2026',
+    tags: ['IA', 'Front-end', 'DevTools'],
+    excerpt:
+      'El 17 de agosto Cursor anunció Origin, su propia plataforma de hosting de código, integrada al mismo editor donde ya se conversa con el agente de IA. El lanzamiento coincidió con una caída global de GitHub. Repaso qué cambia cuando el repositorio, la conversación con el agente y el pull request comparten el mismo espacio.',
+    content: [
+      'El 17 de agosto de 2026, Cursor anunció en su changelog oficial el lanzamiento de Origin, una plataforma de hosting de código integrada directamente al editor. Según describe la propia entrada del changelog, Origin ofrece repositorios, gestión de pull requests y navegación de código, con la particularidad de que todo vive en el mismo lugar donde ya se trabaja con el agente de IA. La frase que usa Cursor para resumirlo es directa: "tu código, tus pull requests y tus agentes ahora están en el mismo lugar".',
+      'Origin no reemplaza a GitHub, lo complementa. Un repositorio sincronizado desde GitHub se actualiza en tiempo casi real, y cualquier push sigue llegando a GitHub, que continúa siendo la fuente de verdad. Los comentarios de revisión de código viajan en ambos sentidos entre las dos plataformas en cuestión de segundos. Lo que cambia no es dónde vive el código de forma permanente, sino dónde ocurre el trabajo día a día: el agente puede leer el repositorio, responder preguntas sobre el código, hacer cambios, actualizar un pull request existente o subir una rama nueva, todo sin que la persona tenga que salir del editor para revisar algo en el navegador.',
+      'La coincidencia de tiempos le dio al lanzamiento una atención que probablemente no habría tenido en otro momento. Ese mismo 18 de agosto, TechCrunch reportó que GitHub sufrió una caída global de más de seis horas, con tasas de error cercanas al 20% en todo el mundo. Cursor no vinculó el lanzamiento de Origin a ese incidente, según la misma cobertura, pero la casualidad alimentó la conversación en redes sobre si un editor con IA integrada podía convertirse también en una alternativa viable de hosting.',
+      'Más allá de la coincidencia puntual, lo que me interesa de este lanzamiento es un patrón que vengo notando en varias herramientas distintas durante estas últimas semanas: cada vez hay menos distancia entre el lugar donde se conversa sobre un cambio y el lugar donde ese cambio efectivamente vive. Ya lo vimos con Figma habilitando que sus herramientas de Weave se ejecuten desde un agente externo sin abrir el archivo, y con GitHub Copilot permitiendo seleccionar un elemento en el navegador y mandar ese feedback directo a la implementación. Origin aplica la misma lógica al código fuente: en vez de que la conversación con el agente viva en un lugar y el repositorio en otro, ambos comparten el mismo espacio.',
+      'Vengo de años de handoff entre diseño y desarrollo, primero con Angular en la app de Banco Estado, después con integraciones de pasarela de pago en la app de Tarjeta Líder. La fricción más constante en ese tipo de colaboración nunca fue la falta de buena voluntad de nadie, era la distancia entre dónde se discutía un cambio y dónde ese cambio efectivamente se implementaba: un comentario en un canal de Slack, una captura de pantalla con una flecha, una pregunta que esperaba respuesta en una pestaña distinta a la que se estaba trabajando. Cada uno de esos saltos era una oportunidad para que algo se perdiera en el camino.',
+      'Lo que propone Origin, igual que los otros casos que he ido cubriendo esta semana, es que esa fricción deje de depender de la disciplina del equipo para coordinarse bien y pase a depender del diseño del producto. Si el agente puede leer el código, conversar sobre él y modificarlo en el mismo lugar donde vive el repositorio, la pregunta de "¿dónde reviso esto?" deja de tener una respuesta ambigua.',
+      'Vale la pena una nota de cautela: Origin está en beta temprana, disponible solo para planes pagos, y según la propia cobertura de prensa todavía no se han revelado del todo las funciones "nativas para agentes" que Cursor promete a futuro. GitHub, con cerca de 180 millones de usuarios y casi dos décadas de historia, no va a dejar de ser el centro de gravedad del código abierto de la noche a la mañana. Pero como caso de producto, Origin es un ejemplo bastante nítido de hacia dónde parecen estar convergiendo las herramientas de desarrollo asistido por IA: no hacia más pestañas abiertas, sino hacia menos.',
+      'La pregunta que me queda dando vueltas, la misma que me hago con cada una de estas herramientas que van cerrando distancias, es cuánta de la fricción que damos por normal en nuestros flujos de trabajo actuales viene simplemente de tener que cambiar de pestaña para preguntar algo sobre el mismo trabajo que ya tenemos al frente.',
+    ],
+    image: '/blog/cursor-origin-hosting-de-codigo-con-agentes.png',
+    imageAlt:
+      'Tarjeta del artículo: Cursor ya no solo escribe código, ahora también lo aloja, con el flujo agente, repo y pull request',
+    sourceUrl: 'https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/',
+    sourceLabel: 'TechCrunch — Lucas Ropek, y changelog oficial de Cursor',
+  },
+  {
     id: 'figma-balance-pretty-text-wrap-css',
     title: 'El texto de Figma ya no imita el CSS: ahora lo escribe literal en Dev Mode',
     date: '2026-08-18',
