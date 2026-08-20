@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'vercel-agente-ia-slack-tarjeta-de-plan',
+    title: 'El agente de IA de Vercel se muda a Slack, pero solo actúa con tu aprobación',
+    date: '2026-08-20',
+    dateLabel: '20 de agosto, 2026',
+    tags: ['IA', 'UX', 'Agentes'],
+    excerpt:
+      'El 19 de agosto Vercel integró su agente de IA directo en Slack: se le puede mencionar en un canal o hilo para diagnosticar incidentes, revisar pull requests u operar despliegues. Opera de solo lectura por defecto y cualquier cambio real pasa antes por una tarjeta de plan que alguien tiene que aprobar. Repaso qué implica que esa tarjeta se convierta en la interfaz completa del producto.',
+    content: [
+      'El 19 de agosto de 2026, Vercel publicó en su blog de ingeniería el lanzamiento de Vercel for Slack, una integración que lleva su producto Vercel Agent directo al chat de equipo. Según describe el propio anuncio, ahora se puede mencionar a @Vercel en un canal, un hilo o un mensaje directo para pedirle que investigue un incidente, rastree un error hasta el despliegue que lo causó, explique un pico de costos o responda preguntas sobre el código en producción.',
+      'La lista de tareas que resuelve el agente, tal como la describe Vercel, se organiza en tres frentes. Diagnosticar: investigar incidentes, rastrear errores hasta el deploy que los originó y explicar picos de costo. Programar junto al equipo: arreglar builds y CI que fallan, revisar pull requests con conocimiento de cómo corre ese código en producción, y convertir la decisión tomada en un hilo en un pull request ya probado. Operar proyectos: revertir despliegues, actualizar configuración, gestionar feature flags y resolver un uso inusual antes de que se convierta en una factura inesperada.',
+      'El detalle que más me interesa de todo el anuncio no es esa lista de capacidades, es la decisión de diseño que las envuelve. El agente opera de solo lectura por defecto: accede a datos de despliegue, estados de build, logs, métricas, revisiones de código y pull requests sin necesidad de autorización adicional. Pero en el momento en que la tarea deja de ser consultar información y pasa a modificar algo real, como revertir un despliegue o tocar una variable de configuración, el agente no actúa de inmediato. Presenta una tarjeta con el plan completo de lo que va a hacer, y espera que una persona la apruebe antes de ejecutar cualquier cambio.',
+      'Esta semana he venido cubriendo un patrón consistente: herramientas de IA que se mudan de su aplicación de origen al lugar exacto donde ya ocurre el trabajo, ya sea el editor de código, el archivo de diseño o, en este caso, el chat de equipo. Lo distinto de este anuncio es que no se limita a mover la conversación de sitio. También traslada, de forma explícita, el mecanismo de control: la aprobación deja de ser un paso implícito que ocurre en la cabeza de quien revisa un pull request, y se convierte en un componente visual concreto que hay que diseñar con la misma seriedad que cualquier otra pantalla del producto.',
+      'Vengo de proyectos en banca y fintech donde ese tipo de mecanismo nunca fue un trámite decorativo. En la integración de la pasarela de pago MatchPay para la app de Tarjeta Líder, cada paso que modificaba un estado real, no una simulación, pasaba por una instancia de confirmación explícita, con la información suficiente para que la persona supiera exactamente qué estaba autorizando antes de autorizarlo. La confianza en todo el sistema dependía menos de que la automatización funcionara bien la mayoría de las veces, y más de que el punto de aprobación fuera claro, legible y difícil de confundir con un trámite más.',
+      'Ahí es donde veo la tensión que este diseño todavía tiene que resolver en la práctica. Una tarjeta de aprobación que vive dentro de un hilo de Slack compite por atención con todo lo demás que pasa en ese mismo hilo: mensajes de compañeros, notificaciones, emojis de reacción. El mismo entorno que hace conveniente pedirle algo al agente sin cambiar de aplicación es el entorno menos diseñado para que una decisión de alto impacto reciba la atención que merece. Que el botón diga "aprobar" no garantiza que la persona haya leído el plan completo antes de tocarlo, sobre todo si ya se acostumbró a aprobar variantes similares sin incidentes previos.',
+      'Vale la pena una nota de cautela: Vercel for Slack está en beta pública, disponible para equipos en planes Pro y Enterprise, y es razonable esperar que el diseño de esa tarjeta de plan siga iterando a medida que Vercel observe cómo se usa en la práctica. No tengo forma de saber, con la información pública disponible, qué tan seguido las personas leen el plan completo antes de aprobar ni qué pasa cuando se aprueba algo por error. Pero el principio de diseño detrás, solo lectura por defecto y aprobación explícita para cualquier cambio real, me parece el punto de partida correcto para cualquier agente que opere en un entorno de producción compartido.',
+      'Lo que me deja este caso es una pregunta que se puede aplicar a cualquier producto que integre un agente de IA en un canal de comunicación existente: cuando la interfaz de aprobación tiene que competir por atención con el resto de la conversación humana que ocurre alrededor, ¿el diseño de esa tarjeta hace lo suficiente para que aprobar se sienta como una decisión, y no como responder un mensaje más?',
+    ],
+    image: '/blog/vercel-agente-ia-slack-tarjeta-de-plan.png',
+    imageAlt:
+      'Tarjeta del artículo: El agente de IA de Vercel se muda a Slack, con la tarjeta de plan que pide aprobación antes de actuar',
+    sourceUrl: 'https://vercel.com/blog/introducing-vercel-for-slack',
+    sourceLabel: 'Vercel Blog — Bryan Hunter, Vishal Yathish y Kevin Corbett',
+  },
+  {
     id: 'cursor-origin-hosting-de-codigo-con-agentes',
     title: 'Cursor ya no solo escribe código: ahora también lo aloja',
     date: '2026-08-19',
