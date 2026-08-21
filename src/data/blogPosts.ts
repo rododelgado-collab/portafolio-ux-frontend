@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'sveltekit-3-remote-functions-next-js',
+    title: 'SvelteKit 3 le complica la vida a Next.js con sus remote functions',
+    date: '2026-08-21',
+    dateLabel: '21 de agosto, 2026',
+    tags: ['Front-end', 'SvelteKit', 'Next.js'],
+    excerpt:
+      'El 13 de agosto el equipo de Svelte publicó el release candidate de SvelteKit 3, con las remote functions como su pieza central: llamar datos del servidor como si fueran una función más del componente, sin loaders ni actions de por medio. La cobertura de The Register lo lee como presión directa sobre Next.js. Repaso qué cambia en la forma de pedir datos y por qué me interesa como front-end.',
+    content: [
+      'El 13 de agosto de 2026, el equipo de Svelte publicó en su blog oficial el release candidate de SvelteKit 3, con la promesa de que la versión estable llegará pronto "sin más cambios que rompan compatibilidad". La pieza central del anuncio son las remote functions, una función experimental disponible desde SvelteKit 2.27 que en esta versión candidata pasa a convivir como alternativa de primer nivel junto a las load functions y las actions de siempre.',
+      'La idea, tal como la describe el propio equipo, es simple de enunciar: desde un componente de Svelte se puede importar directamente una función de consulta o de mutación y llamarla en el código, como si fuera cualquier otra función de JavaScript. Por debajo, SvelteKit la compila en un cliente RPC liviano que ejecuta la llamada fetch correspondiente contra el servidor. No hay que declarar una página entera como dinámica ni escribir un loader que baje datos de arriba hacia abajo para que un componente puntual pueda actualizarse. El propio equipo de Svelte lo resume con una frase directa: dicen estar "unreasonably excited" con las remote functions, al punto de que hacen que el resto del framework, incluidas sus propias load functions y actions, "se vea un poco tosco" en comparación.',
+      'La cobertura de The Register, firmada por Joab Jackson y publicada el 19 de agosto, enmarca este cambio como presión competitiva directa sobre Next.js. El argumento es que Next.js resolvió un problema parecido con sus Server Functions, antes llamadas Server Actions, pero esa pieza está pensada principalmente para escribir datos, no para consultarlos con la misma naturalidad. Las remote functions de SvelteKit, en cambio, tratan lectura y escritura como el mismo mecanismo: query, form, command y prerender conviven bajo una misma lógica de invocación directa desde el componente.',
+      'El anuncio también deja estable una segunda pieza que pasa más desapercibida pero que cualquiera que haya sufrido variables de entorno mal tipadas va a apreciar: ahora se pueden declarar en un archivo src/env.ts, especificando si son públicas o privadas y si deben resolverse en tiempo de compilación o al arrancar la aplicación, con validación mediante Standard Schema. El objetivo declarado es que sean, en palabras del equipo, "type-safe, seguras y validadas sin esfuerzo".',
+      'Vengo de trabajar el handoff entre diseño y desarrollo con Angular, primero en la app de Banco Estado, y con React en proyectos más recientes. Una de las fricciones que más se repite en ese cruce no es visual, es de datos: qué componente necesita qué información, en qué momento, y quién es responsable de traerla. Los patrones de loaders centralizados resuelven bien el caso de una página completa, pero cuando el componente que necesita datos frescos es pequeño y específico, como un contador, un estado de aprobación o un widget que se actualiza solo, terminar escribiendo un endpoint aparte y cableándolo a mano es trabajo que se siente desproporcionado al tamaño del problema.',
+      'Lo que me parece valioso de este enfoque, más allá de si termina ganándole terreno a Next.js o no, es que trata la granularidad como un problema de diseño de API, no como un detalle de implementación que cada equipo resuelve a su manera. Si un componente puede pedir exactamente los datos que necesita, con el mismo mecanismo tanto para leer como para escribir, hay menos superficie donde la arquitectura de datos y la arquitectura visual del componente terminan desalineadas.',
+      'Vale la pena una nota de cautela, doble en este caso. SvelteKit 3 sigue en fase de release candidate, sin fecha confirmada para la versión estable, y las remote functions todavía viven detrás de un flag experimental mientras el equipo termina de pulir detalles. La cobertura periodística también cita un benchmark externo sobre el tamaño del HTML que devuelve el SSR de SvelteKit frente a Next.js, pero no logré verificar la metodología completa de esa comparación, así que prefiero no repetir la cifra como un hecho establecido. Lo que sí está confirmado, con fuente en el propio blog de Svelte, es el cambio de diseño: tratar la obtención de datos como una llamada de función más, no como un paso aparte del ciclo de vida de la página.',
+      'La pregunta que me deja este caso, pensando en cómo se construyen productos con equipos de diseño y desarrollo trabajando codo a codo, es si la granularidad con la que un framework deja pedir datos debería ser una decisión tan central como la que hoy le damos a la librería de componentes o al sistema de diseño.',
+    ],
+    image: '/blog/sveltekit-3-remote-functions-next-js.png',
+    imageAlt:
+      'Tarjeta del artículo: SvelteKit 3 y sus remote functions frente a Next.js, arquitectura de datos en el front-end',
+    sourceUrl: 'https://www.theregister.com/devops/2026/08/19/sveltekit-3-puts-heat-on-nextjs-with-radical-approach-to-rpcs/5289925',
+    sourceLabel: 'The Register — Joab Jackson, y blog oficial de Svelte',
+  },
+  {
     id: 'vercel-agente-ia-slack-tarjeta-de-plan',
     title: 'El agente de IA de Vercel se muda a Slack, pero solo actúa con tu aprobación',
     date: '2026-08-20',
