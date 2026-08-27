@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://portafolio-ux-frontend.vercel.app/blog/desarrolladores-construyen-software-que-antes-compraban</loc>
+    <lastmod>2026-08-27</lastmod>
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/blog/anthropic-autorizacion-empresarial-mcp-figma</loc>
@@ -98,6 +102,6 @@
   </url>
   <url>
     <loc>https://portafolio-ux-frontend.vercel.app/privacidad</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
   </url>
 </urlset>
