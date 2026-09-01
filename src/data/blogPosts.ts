@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'producir-con-ia-cuesta-menos-que-evaluar-si-sirve',
+    title: 'Producir una pantalla con IA ya cuesta menos que evaluar si sirve',
+    date: '2026-08-31',
+    dateLabel: '31 de agosto, 2026',
+    tags: ['UX', 'IA', 'Research'],
+    excerpt:
+      'El 28 de agosto Nielsen Norman Group publicó "The Custodial Era of UX", un artículo de Anna Kaley y Raluca Budiu con una idea central: producir una experiencia con IA ya toma menos tiempo que evaluar si es útil, usable y coherente. Eso genera deuda de UX y equipos que limpian después. Repaso sus tres propuestas y por qué el desbalance me parece real.',
+    content: [
+      'El 28 de agosto de 2026, Nielsen Norman Group publicó un artículo firmado por Anna Kaley y Raluca Budiu con un título que resume bien el momento: "The Custodial Era of UX: Cleaning Up After AI", algo así como la era de la custodia del UX, la de limpiar lo que deja la IA. La tesis central es una frase corta: el problema es que producir se volvió más barato que evaluar en UX. Hoy puede tomar menos tiempo generar una experiencia que decidir si esa experiencia es útil, usable, confiable y coherente.',
+      'Las autoras describen un patrón que se repite en cinco pasos: aparece una idea nueva, se produce rápido con ayuda de IA, la evaluación de UX queda rezagada, los problemas de experiencia empiezan a aflorecer y, al final, alguien tiene que dedicar tiempo a limpiar y reparar. A esa acumulación de problemas de usabilidad que se cuelan cuando la velocidad de producción supera al rigor de la evaluación la llaman deuda de UX. Su manera de decirlo: enviar algo rápido no es lo mismo que crear algo útil.',
+      'El artículo enumera los tipos de problema que genera esa prisa: interfaces que funcionan técnicamente pero confunden, contenido que se nota generado por IA y termina siendo una distracción incómoda, mensajes que oscurecen la propuesta de valor en vez de aclararla, funciones recargadas que suman complejidad sin resolver nada real, y productos afinados para una demo más que para el uso cotidiano.',
+      'Frente a eso, proponen tres frentes de trabajo. El primero es construir criterio compartido sobre qué se construye: revisar y filtrar lo que la IA genera antes de pulirlo, hacer un análisis de costo-beneficio con una pregunta simple, ¿esto mejora la experiencia de la persona que lo va a usar?, y educar al equipo para distinguir que algo se pueda construir de que valga la pena construirlo. A veces la respuesta correcta es frenar una función que nadie pidió.',
+      'El segundo frente es acelerar la evaluación misma. Ajustar el rigor al nivel de riesgo de cada cambio, montar infraestructura de research que permita reclutar y probar rápido, con paneles de usuarios ya disponibles, usar la IA para agilizar la mecánica de la investigación sin reemplazar a quien la interpreta, y apoyarse en plantillas de evaluación y listas heurísticas para no partir de cero cada vez.',
+      'El tercero es meter guía de UX dentro de las propias herramientas de IA. Capturar en archivos de contexto el conocimiento de UX de la organización, mantener un sistema de diseño con patrones de interacción aprobados, documentar los estándares de contenido y de accesibilidad, dejar por escrito qué patrones engañosos no se deben usar, y conectar todo eso a las herramientas que generan, para que los problemas previsibles se eviten en el origen y no se descubran después.',
+      'Vengo del cruce entre diseño y desarrollo front-end, y de años de investigación aplicada a banca y fintech, primero en Sermaluc con la app de Banco Estado y después en ManpowerGroup con la app de Tarjeta Líder, donde parte de mi trabajo era comprobar si un cambio movía la aguja en conversión. En ese mundo la parte lenta nunca fue dibujar la pantalla, era validar que servía: entender el problema, probar con usuarios reales, medir. Que la generación de la interfaz sea ahora casi instantánea no acorta esa otra parte. Lo que cambia es la proporción entre las dos, y con ella la tentación de dar por terminado algo solo porque ya está construido y se ve bien en una demo.',
+      'Vale la pena leer el artículo con algo de contexto. Nielsen Norman Group es una consultora que vende justamente formación y servicios de evaluación de UX, así que tiene un incentivo natural para enmarcar la evaluación como la pieza indispensable del proceso. No es un estudio con datos ni una encuesta, es un ensayo que generaliza a partir de patrones que las autoras dicen observar en su trabajo, y se apoya en ideas que la misma firma viene desarrollando desde su informe "State of UX 2026". Con esas salvedades, la asimetría de fondo que plantean, que hoy cuesta más decidir si algo sirve que fabricarlo, me parece difícil de rebatir para cualquiera que haya trabajado cerca de un flujo de diseño asistido por IA.',
+      'La pregunta que me deja, pensando en los equipos donde he trabajado, es si la evaluación de UX está corriendo al mismo ritmo que la producción con IA, o si ya estamos dejando trabajo de limpieza acumulado para un "después" que nadie tiene agendado.',
+    ],
+    image: '/blog/producir-con-ia-cuesta-menos-que-evaluar-si-sirve.png',
+    imageAlt:
+      'Tarjeta del artículo: producir con IA ya cuesta menos que evaluar si sirve, la era de la custodia del UX según Nielsen Norman Group',
+    sourceUrl: 'https://www.nngroup.com/articles/ai-ux-debt/',
+    sourceLabel: 'Nielsen Norman Group — Anna Kaley y Raluca Budiu',
+  },
+  {
     id: 'desarrolladores-construyen-software-que-antes-compraban',
     title: 'El 92% de los desarrolladores ya intentó construir el software que antes compraba',
     date: '2026-08-27',
