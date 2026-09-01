@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'chrome-css-pseudoelementos-programables',
+    title: 'Chrome empieza a dejar que el código toque los pseudo-elementos que antes solo estilizaba el CSS',
+    date: '2026-09-01',
+    dateLabel: '1 de septiembre, 2026',
+    tags: ['Frontend', 'CSS', 'Performance'],
+    excerpt:
+      'El 25 de agosto Chrome 152 llegó a estable con una expansión de la interfaz CSSPseudoElement, que hasta ahora solo funcionaba con ::before, ::after y ::marker, a ::backdrop, ::scroll-marker y ::view-transition. La misma versión suma la CPU Performance API para consultar el rendimiento del dispositivo. Repaso qué cambia en la práctica y por qué me parece una señal de fondo, no solo una nota de versión.',
+    content: [
+      'El 25 de agosto de 2026, Chrome 152 llegó al canal estable para Windows, Mac y Linux con dos novedades que, leídas juntas, dicen algo sobre hacia dónde va la relación entre CSS y JavaScript en el navegador. La primera es una expansión de la interfaz CSSPseudoElement. La segunda es la CPU Performance API.',
+      'Hasta Chrome 151, la interfaz CSSPseudoElement, que permite manipular pseudo-elementos desde JavaScript, solo funcionaba con tres de ellos: ::before, ::after y ::marker. El resto de los pseudo-elementos existía únicamente como un lugar donde aplicar estilos con CSS, sin que el código pudiera escuchar eventos ni reaccionar a ellos directamente. Chrome 152 extiende esa interfaz a tres pseudo-elementos más: ::backdrop, ::scroll-marker y ::view-transition.',
+      'En la práctica, esto resuelve problemas concretos con los que cualquier persona que haya construido un diálogo modal se ha topado. Cerrar un dialog al hacer clic en el fondo, pero no cuando el clic ocurre dentro del contenido, solía requerir calcular a mano si las coordenadas del clic caían dentro o fuera del área del contenido, una lógica de intersección que se repetía proyecto tras proyecto. Con ::backdrop accesible como CSSPseudoElement, ese caso se resuelve escuchando el evento directamente sobre el fondo, sin la lógica intermedia.',
+      'Algo similar ocurre con ::scroll-marker, el pseudo-elemento pensado para los indicadores de posición en un contenedor con scroll, como los puntos de un carrusel. Poder capturar interacciones sobre esos marcadores desde JavaScript facilita registrar en qué punto del carrusel interactúa la persona usuaria, algo que antes exigía reconstruir esa lógica con elementos adicionales fuera del pseudo-elemento nativo. Y con ::view-transition, que forma parte de la View Transitions API, se puede interceptar una transición de vista mientras ocurre y disparar una nueva, algo que antes quedaba fuera del alcance del código una vez que la transición ya estaba en marcha.',
+      'La segunda novedad de esta versión es la CPU Performance API, que permite a una aplicación web consultar el nivel de rendimiento del CPU del dispositivo donde se ejecuta. La idea es que una aplicación pueda adaptar su experiencia, por ejemplo simplificando animaciones o reduciendo la carga de cómputo, según la capacidad real del hardware, en vez de asumir un único nivel de rendimiento para todas las personas usuarias. El propio Chrome documenta que tanto la persona usuaria como quien administra el navegador en un entorno corporativo pueden anular el nivel reportado, así que no es un dato absoluto ni imposible de manipular, pero sí una señal que antes no existía de forma estandarizada.',
+      'Vengo del cruce entre diseño y desarrollo front-end, y lo que más me llama la atención de esta versión no es una función aislada, sino el patrón que dibuja junto con otras novedades de CSS de los últimos años: el navegador va cerrando, pseudo-elemento por pseudo-elemento, la brecha entre lo que el CSS puede estilizar visualmente y lo que el JavaScript puede escuchar y manipular. Cada vez que eso ocurre, desaparece un parche que existía solo para reconstruir con código algo que el diseño ya había definido en la hoja de estilos.',
+      'La CPU Performance API me interesa por un motivo distinto, más cercano a mi paso por banca y fintech en Sermaluc y ManpowerGroup: ahí trabajé con bases de personas usuarias que accedían desde dispositivos muy dispares, desde equipos de gama alta hasta teléfonos con años de uso y presupuestos ajustados. En ese contexto, diseñar animaciones, transiciones y densidad de información pensando en un dispositivo promedio siempre fue una simplificación cómoda pero imprecisa. Tener una señal estándar del navegador sobre la capacidad real del hardware abre la puerta a decisiones de diseño explícitamente diferenciadas por nivel de rendimiento, en vez de una única experiencia que en la práctica solo se comporta bien en la mitad superior de los dispositivos.',
+      'Vale la pena una salvedad: estas dos funciones llegan primero a Chrome, no a todos los navegadores a la vez, así que por ahora conviene tratarlas como progressive enhancement y no como una base sobre la que construir sin comprobación de soporte. Aun así, la dirección del cambio me parece clara y, a diferencia de muchas notas de versión, con implicancias que van más allá de un detalle técnico menor.',
+      'La pregunta que me deja es si, cuando estas señales de rendimiento estén disponibles de forma más estable entre navegadores, empezaremos a diseñar explícitamente por nivel de rendimiento del dispositivo, o si seguiremos diseñando para ese dispositivo promedio que en la práctica no representa a nadie.',
+    ],
+    image: '/blog/chrome-css-pseudoelementos-programables.png',
+    imageAlt:
+      'Tarjeta del artículo: Chrome 152 deja programar los pseudo-elementos ::backdrop, ::scroll-marker y ::view-transition, y suma la CPU Performance API',
+    sourceUrl: 'https://developer.chrome.com/blog/new-in-chrome-152',
+    sourceLabel: 'Chrome for Developers — New in Chrome 152',
+  },
+  {
     id: 'producir-con-ia-cuesta-menos-que-evaluar-si-sirve',
     title: 'Producir una pantalla con IA ya cuesta menos que evaluar si sirve',
     date: '2026-08-31',
