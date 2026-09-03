@@ -2,6 +2,32 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-plugins-shaders-generativos-agente-react',
+    title: 'Figma deja crear plugins y shaders con una instrucción, y que un agente externo los pase a React',
+    date: '2026-09-03',
+    dateLabel: '3 de septiembre, 2026',
+    tags: ['IA', 'Figma', 'Front-end'],
+    excerpt:
+      'El 1 de septiembre Figma detalló en su blog una actualización de sus plugins y shaders generativos: herramientas que el diseñador no instala, sino que describe en una frase para que el agente las construya sobre el lienzo. Ahora se puede ver y descargar el código que generan, publicarlas para el equipo y conectar un agente externo por MCP que las modifique o pase un shader a React. Repaso qué mueve esto en la costura entre diseño y desarrollo, y qué sigue necesitando revisión a mano.',
+    content: [
+      'El 1 de septiembre de 2026, Figma publicó en su blog un artículo firmado por Rogie King, diseñador de producto de la empresa, que detalla una actualización de dos funciones relativamente nuevas: los plugins y los shaders generativos. La idea de fondo es que el diseñador ya no elige una herramienta de una lista, sino que la describe con una instrucción y el agente de Figma la construye ahí mismo, sobre el lienzo.',
+      'Conviene separar los dos conceptos. Un plugin generativo es una herramienta a medida creada por prompt: una forma de generar layouts, aplicar una distorsión de lente, ordenar capas con un criterio propio. Un shader generativo es un programa que corre en la GPU y manipula visualmente las capas de Figma Design, ya sea como relleno o como efecto. Ninguno de los dos exige escribir código a mano para existir.',
+      'La actualización trae cuatro cambios. El primero: los shaders ahora pueden tener movimiento e interacción, por ejemplo reaccionar a la posición del mouse, descritos también en lenguaje natural. El segundo: tanto los plugins como los shaders se pueden publicar, a la comunidad de Figma o de forma privada dentro de una organización, esto último solo en los planes Organization y Enterprise.',
+      'El tercero es el que más me interesa: se puede ver y descargar el código que hay detrás de esos plugins y shaders generados, para editarlo por fuera. El cuarto va en la misma dirección: el servidor MCP de Figma permite que un agente externo, no el de Figma, vea y modifique esos plugins y shaders, y que un shader se exporte a ese agente para que lo implemente en código React o HTML. Figma indica que, al copiar un frame con un shader aplicado hacia un agente externo, el efecto ahora se traduce correctamente en el React que ese agente genera.',
+      'En cuanto a disponibilidad, el agente de diseño está en beta abierta para los usuarios con asiento Full en todos los planes, y accesible en borradores para los asientos Collab, Dev y View. Durante la beta es gratis; después consumirá créditos de IA.',
+      'Vengo de años de handoff entre diseño y desarrollo, primero con Angular en la app de Banco Estado en Sermaluc, después con React en proyectos más recientes. El traspaso entre una pantalla en Figma y su versión en el front siempre tuvo la misma forma: acá está el diseño, ahora reconstrúyelo en código, y en el medio se perdían matices, se recalculaban espaciados y se discutían detalles que en el archivo parecían obvios. Que la herramienta de diseño empiece a entregar el código de un efecto, y que un agente lo convierta en un componente, mueve esa costura de lugar. No la elimina, pero cambia dónde está.',
+      'Hay una parte de este cambio que me parece más sutil que el ahorro de tiempo. Cuando la herramienta que necesito para una tarea la puedo pedir en una frase y descartar después, deja de tener tanto sentido la idea de dominar un set fijo de plugins. La habilidad se corre hacia saber describir bien lo que quiero y, sobre todo, hacia poder leer el código que eso genera para decidir si sirve.',
+      'Y ahí está la condición que el prompt no automatiza. Una herramienta improvisada en una frase igual produce código, y ese código, si va a tocar un proyecto real, necesita que alguien lo entienda antes de integrarlo: qué hace, qué rendimiento tiene, si va a romper algo en producción. En mi paso por banca y fintech esa revisión nunca fue opcional. La velocidad para generar la herramienta no acorta el tiempo de confiar en ella.',
+      'Vale leer el anuncio con el contexto de siempre. Es Figma comunicando una función propia, en beta, con un modelo de créditos que se activa más adelante, así que hay un incentivo natural para presentarlo como un salto y no como un experimento. Los shaders, además, son una necesidad puntual en muchos flujos de trabajo, no algo que se use todos los días. Con esas salvedades, la dirección general, que el diseño y su implementación en código se acercan hasta casi tocarse dentro de la misma herramienta, es difícil de ignorar.',
+      'La pregunta que me deja, pensando en cómo trabajo con Figma a diario, es si vamos hacia diseñadores que arman y desarman herramientas propias para cada tarea, o si seguiremos prefiriendo un conjunto estable y conocido, aunque eso signifique adaptarnos a lo que la herramienta ya trae.',
+    ],
+    image: '/blog/figma-plugins-shaders-generativos-agente-react.png',
+    imageAlt:
+      'Tarjeta del artículo: Figma deja crear plugins y shaders generativos con una instrucción y que un agente externo los lleve a código React',
+    sourceUrl: 'https://www.figma.com/blog/how-we-built-generative-plugins-and-shaders/',
+    sourceLabel: 'Figma — Blog',
+  },
+  {
     id: 'vercel-agentes-ia-disenar-con-marca-archivo-texto',
     title: 'Vercel enseña a sus agentes de IA a diseñar con su marca desde un archivo de texto público',
     date: '2026-09-02',
