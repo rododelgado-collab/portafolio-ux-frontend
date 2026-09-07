@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-opacidad-variable-color-sin-romper-vinculo',
+    title: 'Figma deja aplicar opacidad a una variable de color sin romper el vínculo con la librería',
+    date: '2026-09-07',
+    dateLabel: '7 de septiembre, 2026',
+    tags: ['UX', 'Figma', 'Design Systems'],
+    excerpt:
+      'El 3 de septiembre Figma agregó, sin demasiado ruido, una función que la comunidad llevaba años pidiendo en su foro: poder aplicar opacidad a una variable de color sin desvincularla de la librería. Repaso qué cambia técnicamente, por qué era un problema real para quien mantiene un design system, y por qué a veces la mejora más útil no es la más vistosa.',
+    content: [
+      'El 3 de septiembre de 2026, Figma sumó a sus release notes una función bajo el título "Control opacity at scale". Hasta ahora, cuando un color estaba enlazado a una variable de la librería y alguien necesitaba una versión más transparente de ese mismo color, para un estado deshabilitado, un overlay o un scrim, la única forma de lograrlo era desvincular el color de la variable y ajustar la opacidad a mano. Eso rompía la referencia: si el color base cambiaba después en la librería, esa versión transparente quedaba desactualizada y nadie se enteraba hasta que alguien lo notaba en producción.',
+      'El cambio permite dos cosas. La primera es aliasear la opacidad de una variable de color mientras el color sigue enlazado a la librería, sin necesidad de desvincular nada. La segunda es controlar esa opacidad con una variable numérica: si el número es negativo, la opacidad queda en 0%; si supera 100, queda en 100%; en cualquier otro caso, el valor numérico define directamente el porcentaje. La función está disponible en cualquier plan de Figma, sin restricción por tipo de cuenta, y el caso de uso que la propia documentación destaca es justamente actualizar opacidad de forma consistente en estados deshabilitados, overlays y scrims.',
+      'Vale la pena entender por qué esto no era un capricho de nicho. En el foro de comunidad de Figma existen varios hilos, algunos con años de antigüedad, pidiendo exactamente esta función: la posibilidad de mantener un color como fuente única de verdad y crear variantes con opacidad que se actualicen solas cuando ese color base cambia. Mientras tanto, la comunidad resolvía el problema con plugins de terceros, capas de modificación de opacidad no destructivas, o simplemente aceptando la duplicación de variables como costo de mantener el sistema ordenado.',
+      'Trabajando con design systems en banca y fintech, primero en Sermaluc para la app de Banco Estado y después en ManpowerGroup para la app Tarjeta Líder, este problema apareció una y otra vez. Un color de marca terminaba necesitando una variante al 40% para un estado deshabilitado, otra al 12% para un scrim detrás de un modal, y cada una recibía su propio nombre de variable porque no había forma de derivarla del color base sin perder el vínculo. El resultado era un archivo de variables cada vez más largo, con nombres que había que recordar o buscar, y el riesgo constante de que alguien tomara la variante equivocada para un componente nuevo.',
+      'Ese riesgo no es solo estético. Cuando una variante de opacidad queda desvinculada del color base y alguien actualiza la paleta de marca meses después, nada avisa que esa variante quedó atrás. En un sistema de diseño bancario, donde el mismo color de error o de advertencia se repite en decenas de pantallas con distintos niveles de énfasis, esa clase de desincronización silenciosa es exactamente el tipo de deuda que después cuesta una auditoría completa de consistencia visual para detectar.',
+      'Conviene mirar este anuncio con la escala que le corresponde. No es un rediseño de producto ni una función con demo vistosa en una keynote: es una entrada más, entre varias, en una página de release notes. Figma no publicó cifras de cuánta gente pedía esto, ni un caso de estudio sobre cuánto tiempo ahorra. La evidencia de que resolvía un problema real está, más bien, en la cantidad de hilos de foro y de plugins de comunidad que existían únicamente para compensar esta carencia, un tipo de evidencia indirecta pero bastante convincente cuando se repite durante años.',
+      'Lo que más me interesa de este tipo de mejoras es que compiten mal por atención frente a los anuncios de agentes de IA o canvases generativos, pero terminan afectando el trabajo diario de quien mantiene un sistema de diseño mucho más que muchas de esas funciones más vistosas. Nadie hace una demo de un archivo de variables con veinte entradas menos, pero esa reducción es la que de verdad baja el costo de mantener el sistema y el margen de error de quien lo usa todos los días.',
+      'La pregunta que me deja, pensando en los sistemas de diseño donde he trabajado, es cuántas variables duplicadas siguen viviendo hoy en esas librerías solo porque, hasta hace unos días, no había otra forma de resolverlo.',
+    ],
+    image: '/blog/figma-opacidad-variable-color-sin-romper-vinculo.png',
+    imageAlt:
+      'Tarjeta del artículo: Figma deja aplicar opacidad a un color de variable enlazado sin romper el token, con cuatro muestras de un mismo color en distintas opacidades',
+    sourceUrl: 'https://www.figma.com/release-notes/',
+    sourceLabel: 'Figma — Release notes',
+  },
+  {
     id: 'ia-no-reemplaza-investigacion-real-mapas-empatia',
     title: 'La IA imita el mapa de empatía, pero no reemplaza la investigación real',
     date: '2026-09-04',
