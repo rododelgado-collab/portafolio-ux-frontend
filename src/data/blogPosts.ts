@@ -2,6 +2,33 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'codigo-agentico-satura-integracion-continua-anthropic',
+    title: 'El código que escribe la IA satura la integración continua, según Anthropic',
+    date: '2026-09-16',
+    dateLabel: '16 de septiembre, 2026',
+    tags: ['IA', 'Desarrollo', 'CI/CD'],
+    excerpt:
+      'El 14 de septiembre Anthropic contó en su propio blog de ingeniería cómo la programación agéntica saturó su integración continua: los trabajos de CI crecieron 25 veces en seis meses y sus ingenieros envían 8 veces más código por trimestre, con Claude escribiendo el 80% de ese código. Repaso el caso, el servicio de selección de tests que tuvieron que rediseñar dos veces, y por qué ese mismo desbalance entre producir y evaluar me resulta familiar desde el diseño.',
+    content: [
+      'El 14 de septiembre de 2026, Anthropic publicó en su blog de ingeniería un artículo firmado por Sachin Malhotra que documenta un problema con el que probablemente se tope cualquier equipo que adopte programación agéntica a fondo: la infraestructura de integración continua, pensada para el ritmo al que un equipo humano escribe código, empieza a quebrarse cuando ese ritmo deja de ser humano.',
+      'Las cifras que da el artículo sitúan el problema en escala. En seis meses, el volumen de trabajos de integración continua en Anthropic creció 25 veces. Sus ingenieros pasaron a enviar, en promedio, 8 veces más código por trimestre que el promedio registrado entre 2021 y 2025, y Claude escribe el 80% de ese código. El volumen de tests del repositorio, como consecuencia directa, creció 10 veces en el mismo período.',
+      'Ejecutar el conjunto completo de tests en cada cambio dejó de ser viable con ese volumen, así que el equipo construyó un servicio de selección de tests: un sistema determinista que decide qué tests correr en cada pull request según el historial de resultados y la relevancia de cada paquete afectado. El servicio tiene dos partes, un listener que registra los resultados de cada ejecución de CI, y un selector que usa esos datos para decidir qué correr en cada cambio nuevo.',
+      'El problema apareció en el listener. Bastaban 20 minutos de atraso en el registro de resultados para que decenas de miles de actualizaciones de tests quedaran sin aplicar, lo que dejaba al selector tomando decisiones con información desactualizada. La causa técnica era una arquitectura de proceso único que no podía escalar en horizontal, agravada por restricciones de memoria que forzaban reinicios diarios a media tarde en días de semana, justo cuando el volumen de trabajo era mayor.',
+      'Lo que más me interesa de este artículo es cómo describe el intento de resolverlo con parches sucesivos, porque documenta con honestidad los rendimientos decrecientes de esa estrategia. El primer parche aguantó 70 días antes de volver a fallar. El segundo, 29 días. El tercero, menos de uno. Cada parche compraba menos tiempo que el anterior, una señal bastante clara de que el problema no estaba en el ajuste fino sino en el diseño de base del servicio.',
+      'La solución final fue un rediseño de fondo: reemplazar el proceso único con estado en memoria por un diseño sin estado, apoyado en un almacén de datos en memoria compartido, de modo que cualquier worker del listener pudiera procesar resultados sin necesitar cargar el estado completo, lo que sí permite escalar en horizontal agregando más workers cuando el volumen crece.',
+      'Vengo del handoff de diseño hacia desarrollo en Angular, en Sermaluc, para la app de Banco Estado, y de procesos de research y CRO en banca y fintech donde la velocidad de producción siempre chocó con la capacidad de verificar a fondo lo que se producía. Ver ese mismo desbalance, producir más rápido de lo que se puede evaluar, aparecer ahora en la infraestructura de testing y no solo en el diseño de interfaces, me parece revelador. Es el mismo problema de fondo que ya había leído esta semana en un artículo de Nielsen Norman Group sobre la deuda de UX que deja la IA: la producción se volvió más barata que la evaluación, y eso vale tanto para una pantalla como para un pipeline de CI.',
+      'Conviene leer el artículo con el contexto que le corresponde. Es Anthropic describiendo un problema de su propia infraestructura, resuelto con sus propias herramientas, en un relato que también sirve para mostrar cuánto código puede llegar a escribir Claude dentro de la propia empresa que lo fabrica. La cifra del 80% del código escrito por Claude, en particular, conviene tomarla como una medición interna de una organización con motivos claros para destacarla, no como un estándar de la industria.',
+      'La lección que el artículo rescata, planificar siempre asumiendo un crecimiento exponencial en vez de lineal, porque el volumen puede multiplicarse por 25 en un par de trimestres, me parece aplicable más allá del CI. Un design system pensado para que un equipo pequeño lo mantenga a mano puede enfrentar la misma clase de quiebre si de pronto los componentes que hay que auditar se multiplican al ritmo al que la IA ahora los genera.',
+      'La pregunta que me deja, pensando en los equipos de diseño y desarrollo donde he trabajado, es si nuestra capacidad de evaluar, revisar y verificar ya quedó atrás de la capacidad de producir con IA, y si nos daríamos cuenta a tiempo o solo cuando el sistema empiece a fallar como el listener de Anthropic.',
+    ],
+    image: '/blog/codigo-agentico-satura-integracion-continua-anthropic.png',
+    imageAlt:
+      'Tarjeta del artículo: el código que escribe la IA satura la integración continua, sobre el caso de Anthropic y su servicio de selección de tests',
+    sourceUrl:
+      'https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic',
+    sourceLabel: 'Anthropic — Sachin Malhotra',
+  },
+  {
     id: 'prototipos-ia-probar-interacciones-complejas-antes',
     title: 'Prototipos con IA para probar interacciones complejas mucho antes',
     date: '2026-09-14',
