@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-auto-layout-vertical-wrap-flexbox',
+    title: 'El auto layout vertical de Figma ahora se comporta como CSS flexbox',
+    date: '2026-09-28',
+    dateLabel: '28 de septiembre, 2026',
+    tags: ['UX/UI', 'Figma', 'Front-end'],
+    excerpt:
+      'El 25 de septiembre Figma agregó vertical wrap a su auto layout: cuando el flujo es vertical, el contenido que desborda ya no se extiende fuera del marco, sino que continúa en una nueva columna, replicando el comportamiento de flexbox en CSS. Repaso qué cambia exactamente, qué aclara Figma sobre sus límites, y por qué esa clase de ajuste me interesa tanto como diseñador que hizo handoff hacia desarrollo.',
+    content: [
+      'El 25 de septiembre de 2026, Figma publicó en sus release notes una función llamada vertical wrap para auto layout. Hasta ahora, wrap solo existía para el flujo horizontal: los objetos se distribuían de izquierda a derecha y, al llegar al ancho del marco, continuaban en una nueva fila. Con esta actualización, ese mismo comportamiento queda disponible también para el flujo vertical, y con una particularidad: en vez de generar filas nuevas, genera columnas nuevas.',
+      'La mecánica es la siguiente. Cuando un marco tiene auto layout configurado en flujo vertical y se activa wrap, los objetos siguen llenando el marco de arriba hacia abajo, como siempre. La diferencia aparece cuando el contenido alcanza la altura del marco: en vez de desbordarse fuera de los límites visibles, como ocurría antes, continúa en una columna nueva a la derecha. Es el mismo principio que ya existía para wrap horizontal, aplicado en el otro eje.',
+      'Figma es explícito sobre por qué esto importa: el comportamiento nuevo iguala al de flexbox en CSS, el modelo de layout que la mayoría de los equipos de desarrollo ya usa para maquetar interfaces web. Antes, un diseñador que quisiera representar en Figma una lista que se reparte en columnas de alto fijo, algo bastante común en flexbox con flex-wrap, tenía que simularlo a mano, agrupando manualmente los elementos en columnas separadas y recalculando esa agrupación cada vez que el contenido cambiaba.',
+      'La documentación de ayuda de Figma detalla cómo se activa: se selecciona un marco con auto layout, se elige flujo vertical y se activa la opción wrap. La recomendación es usar una altura de marco fija, porque es esa altura la que determina en qué punto cada columna se da por completa y el contenido salta a la siguiente. Con wrap activo, además, se pueden definir tanto el espaciado horizontal entre columnas como el espaciado vertical entre elementos dentro de cada columna, de forma independiente.',
+      'Hay una aclaración que Figma hace explícita y que conviene tomar en serio: vertical wrap no es un layout de mampostería, es decir, no es lo que en la jerga del diseño web se conoce como masonry. La documentación lo dice sin rodeos: los objetos se mantienen en el orden del auto layout y solo pasan a la siguiente columna cuando la columna actual llega a la altura disponible del marco. No hay una redistribución inteligente que busque parejar visualmente el alto de las columnas, como sí ocurre en un layout de mampostería real. Quien busque ese efecto específico va a seguir necesitando otra solución.',
+      'Vengo de hacer el handoff de diseño hacia desarrollo en Angular, en Sermaluc, para la app de Banco Estado, y esta clase de desajuste entre el archivo de diseño y el código que lo termina implementando es un problema que conozco de memoria. Cuando el comportamiento de wrap en Figma no coincidía con el de flexbox en CSS, la conversación con desarrollo terminaba, casi siempre, en una de dos rutas: o el desarrollador ajustaba el CSS a mano para que se pareciera al mockup estático, perdiendo la responsividad real que el propio flexbox ofrece de forma nativa, o el diseño se ajustaba después de ver cómo se comportaba el código, perdiendo la función del archivo de diseño como referencia confiable del resultado final.',
+      'Ese tipo de fricción rara vez aparece en una demo o en un titular, pero es el tipo de fricción que consume horas reales en cualquier equipo que reparte el trabajo entre quien diseña y quien construye. Cuantas más reglas de comportamiento comparten el archivo de diseño y el código, menos margen queda para esa clase de negociación silenciosa donde nadie está seguro de si el desajuste es un error de implementación o una limitación original de la herramienta de diseño.',
+      'Conviene mirar el anuncio con la escala que le corresponde. Es una entrada más entre varias en una página de release notes, sin cifras de adopción ni casos de estudio que lo acompañen, y Figma no explica con ejemplos concretos para qué tipo de contenido está pensada la función más allá de la analogía directa con flexbox. La aclaración sobre que no es masonry, eso sí, es una señal de que el propio equipo anticipó que la gente iba a pedir ese comportamiento y prefirió dejar el límite por escrito antes que dejarlo para que cada quien lo descubriera por error.',
+      'La pregunta que me deja, pensando en los equipos de diseño y desarrollo donde he trabajado, es cuánto tiempo seguimos gastando hoy en traducir a mano diferencias de comportamiento entre el archivo de diseño y el CSS que lo implementa, y cuántas de esas diferencias en realidad ya no deberían existir si las herramientas de diseño terminan de alinearse con los modelos de layout que el desarrollo usa todos los días.',
+    ],
+    image: '/blog/figma-auto-layout-vertical-wrap-flexbox.png',
+    imageAlt:
+      'Tarjeta del artículo: el auto layout vertical de Figma ahora se comporta como CSS flexbox, sobre la función vertical wrap lanzada el 25 de septiembre de 2026',
+    sourceUrl: 'https://www.figma.com/release-notes/',
+    sourceLabel: 'Figma — Release Notes',
+  },
+  {
     id: 'codigo-agentico-satura-integracion-continua-anthropic',
     title: 'El código que escribe la IA satura la integración continua, según Anthropic',
     date: '2026-09-16',
