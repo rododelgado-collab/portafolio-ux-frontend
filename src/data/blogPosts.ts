@@ -2,6 +2,29 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-agente-iconos-vectoriales-trazos-editables',
+    title: 'El agente de Figma ahora dibuja íconos con trazos editables, no con rellenos',
+    date: '2026-11-09',
+    dateLabel: '9 de noviembre, 2026',
+    tags: ['UX/UI', 'Figma', 'Design systems'],
+    excerpt:
+      'El 5 de noviembre Figma mejoró la forma en que su agente genera ilustraciones e íconos vectoriales: capas agrupadas de forma funcional, referencias de estilo propias y, sobre todo, strokes en vez de fills para el trazado de líneas. Repaso qué cambia y por qué ese detalle técnico es el que decide si un ícono generado por IA sirve o no dentro de un design system.',
+    content: [
+      'El 5 de noviembre de 2026, Figma publicó en sus release notes una actualización sobre cómo su agente genera ilustraciones e íconos vectoriales. La promesa, en palabras de la propia nota, es que esos vectores sean fáciles de editar, de ajustar a tu estilo y de animar. No es una función nueva en sí misma, sino una mejora en la calidad de lo que el agente ya producía.',
+      'La nota detalla cuatro cambios. El primero es la agrupación funcional de capas: los vectores generados se construyen con capas independientes, agrupadas de manera intuitiva, para poder iterar sobre ellos. El segundo es la posibilidad de adjuntar referencias: se le pueden entregar al agente ilustraciones propias como referencia de estilo para generar componentes adicionales o íconos acordes a la marca a escala. El tercero es el uso de strokes en lugar de fills para el trazado de líneas, lo que permite cambiar el grosor del trazo y sus remates sin redibujar. El cuarto es que esa estructura limpia de capas deja los vectores listos para animarse con Figma Motion, ya sea a mano o con el mismo agente.',
+      'De los cuatro, el que me parece más importante es el tercero, aunque sea el menos vistoso. Un ícono de línea puede construirse de dos maneras: como un trazo con grosor definido, o como una forma rellena que imita ese trazo. A simple vista son idénticos. La diferencia aparece cuando hay que modificarlo: si es un trazo, cambiar el grosor es ajustar un valor; si es un relleno, hay que redibujar el contorno completo.',
+      'En los design systems con los que he trabajado, un set de íconos vale por su consistencia. Mismo grosor de trazo, mismos remates, misma retícula. Esa regla es la que hace que una interfaz se sienta coherente aunque los íconos los hayan hecho personas distintas en momentos distintos. Un ícono convertido a relleno puede verse perfecto en el mockup, pero rompe la regla apenas alguien necesita adaptarlo a otro tamaño o a un peso visual distinto, y suele llegar al handoff como un SVG que nadie en desarrollo quiere tocar.',
+      'Por eso me interesa que la mejora apunte a la estructura y no solo al resultado visual. Un vector generado por IA que se ve bien pero está mal construido no ahorra trabajo: lo traslada a quien tenga que mantenerlo después. Que el agente respete convenciones como trazos editables y capas agrupadas con lógica es lo que lo acerca a producir material que puede entrar a una librería compartida sin una limpieza previa.',
+      'Conviene leer el anuncio con la escala que tiene. Es una entrada de release notes, sin ejemplos comparativos ni cifras, y no especifica en qué planes está disponible ni si hay limitaciones de uso. Tampoco dice nada sobre cómo se comporta la referencia de estilo cuando la librería de origen tiene sus propias inconsistencias, que es justamente el caso más común en equipos reales. Habrá que probarlo antes de asumir que reemplaza el criterio de quien cuida el sistema de íconos.',
+      'La pregunta que me deja es práctica: si un equipo empieza a generar íconos con IA, ¿quién revisa que estén bien construidos antes de sumarlos a la librería? La herramienta mejora, pero la responsabilidad de la consistencia sigue siendo humana, y vale la pena definir ese paso de revisión antes de que la librería se llene de íconos que solo se ven bien.',
+    ],
+    image: '/blog/figma-agente-iconos-vectoriales-trazos-editables.png',
+    imageAlt:
+      'Tarjeta del artículo: el agente de Figma ahora dibuja íconos con trazos editables, no rellenos, con un mismo ícono de tarjeta mostrado en tres grosores de trazo',
+    sourceUrl: 'https://www.figma.com/release-notes/',
+    sourceLabel: 'Figma — Release Notes',
+  },
+  {
     id: 'figma-auto-layout-vertical-wrap-flexbox',
     title: 'El auto layout vertical de Figma ahora se comporta como CSS flexbox',
     date: '2026-09-28',
