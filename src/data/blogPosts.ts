@@ -2,6 +2,29 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'investigacion-ux-ciclo-desarrollo-con-ia',
+    title: 'La investigación UX entra al ciclo del desarrollo con IA',
+    date: '2026-11-14',
+    dateLabel: '14 de noviembre, 2026',
+    tags: ['UX Research', 'IA', 'Producto'],
+    excerpt:
+      'Nielsen Norman Group propone "research-in-the-loop": aprovechar que los agentes de código construyen funciones rápido para que también construyan la forma de evaluarlas, con una sección de investigación dentro del spec. Repaso la propuesta y por qué definir qué medir antes de lanzar es tan valioso como lo que se mide.',
+    content: [
+      'El 13 de noviembre de 2026, Nielsen Norman Group publicó un artículo de Tony Alicea titulado "Research-In-The-Loop: How UXR Adapts to Development at AI Speed". El punto de partida es conocido para cualquiera que trabaje con agentes de código: construir y corregir software se volvió barato, así que muchos equipos lanzan primero y preguntan después. El problema, según el artículo, es que un lanzamiento dice qué pasó, pero rara vez por qué.',
+      'La propuesta es integrar la investigación UX al desarrollo asistido por IA y adaptarla a ciclos más cortos. La pieza clave es la instrumentación: encuestas de intercepción, registro de eventos, botones de feedback o dashboards que antes dependían de que ingeniería tuviera tiempo, y que ahora un agente puede construir junto con la función a partir de unos pocos requisitos. El ciclo que describe es especificar, construir e instrumentar, lanzar, y evaluar y aprender.',
+      'Para que eso ocurra, el artículo sugiere agregar una sección de investigación a los requisitos, en un archivo markdown junto al resto del spec que puedan leer personas y agentes. Esa sección define qué se espera que pase, qué señales indicarían éxito y cuáles indicarían daño, qué se debe rastrear y cuándo hay que hablar con personas. El ejemplo es un help-desk que pasa tickets directo entre departamentos: menos tiempo hasta la resolución sería señal de éxito, más tickets reabiertos sería señal de problema.',
+      'Lo que más valoro es que el artículo no vende la instrumentación como reemplazo de nada. Distingue tres tipos de actividad: evaluar si se cumplió lo previsto, investigar por qué la gente se comportó de cierta forma, y descubrir necesidades que nadie anticipó. La instrumentación ayuda con la primera y señala dónde mirar en la segunda, pero el texto es explícito en que no sustituye el descubrimiento independiente. También advierte que su propio ejemplo no es un diseño de evaluación completo: una baja en los tiempos de resolución podría explicarse por estacionalidad o por cambios de dotación.',
+      'Trabajando en optimización de conversión en fintech aprendí que una métrica que sube te dice qué pasó, pero rara vez por qué. El porqué aparece cuando hablas con usuarios, y es lo que permite decidir si un resultado se puede repetir o fue circunstancial. Por eso me parece sano que la propuesta mantenga sesiones cualitativas con cadencia propia, no atadas a cada lanzamiento, y que reserve evidencia más sólida para decisiones difíciles de revertir.',
+      'Hay un beneficio que el artículo no pone en primer plano y que, para mí, es de los más importantes: escribir la hipótesis antes de construir obliga a diseño y desarrollo a ponerse de acuerdo en qué significa que algo funcionó. En muchos handoffs esa conversación nunca ocurre, y cada lado evalúa el resultado con criterios distintos. Una sección de investigación en el spec convierte ese acuerdo en algo explícito y versionado.',
+      'El propio autor presenta el enfoque como una propuesta, con preguntas abiertas: quién es dueño de los requisitos de investigación, qué cuenta como evidencia válida o cuántas encuestas es demasiado para las mismas personas. Su recomendación para empezar es acotada: probarlo en un solo lanzamiento, de punta a punta. Me parece el tamaño correcto para un experimento, y una buena forma de descubrir si el equipo realmente sabe qué quiere medir antes de lanzar.',
+    ],
+    image: '/blog/investigacion-ux-ciclo-desarrollo-con-ia.png',
+    imageAlt:
+      'Tarjeta del artículo: la investigación UX entra al ciclo del desarrollo con IA, con cuatro pasos encadenados: especificar qué medir, construir e instrumentar, lanzar, y evaluar y aprender',
+    sourceUrl: 'https://www.nngroup.com/articles/research-in-the-loop/',
+    sourceLabel: 'Nielsen Norman Group',
+  },
+  {
     id: 'figma-agente-iconos-vectoriales-trazos-editables',
     title: 'El agente de Figma ahora dibuja íconos con trazos editables, no con rellenos',
     date: '2026-11-09',
