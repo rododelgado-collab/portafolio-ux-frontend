@@ -2,6 +2,29 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'copilot-agente-prueba-app-en-navegador',
+    title: 'El agente de Copilot ahora abre el navegador para probar la app que estás construyendo',
+    date: '2026-11-18',
+    dateLabel: '18 de noviembre, 2026',
+    tags: ['IA', 'Front-end', 'QA'],
+    excerpt:
+      'GitHub anunció browser use en public preview para la app de Copilot: el agente puede llenar formularios, leer páginas y probar la web app en construcción, en el navegador donde ya iniciaste sesión. Repaso qué trae y por qué, viniendo de la banca, lo primero que revisaría son los permisos.',
+    content: [
+      'El 17 de noviembre de 2026, GitHub publicó en su changelog las novedades de la app de Copilot presentadas en Microsoft Ignite. Son tres: soporte para repositorios de Azure DevOps en public preview, soporte para GitHub Enterprise Server que pasa a disponibilidad general, y la que más me interesa para el trabajo de interfaz: browser use, también en public preview.',
+      'Según el anuncio, browser use permite pedirle a Copilot que llene formularios, extraiga información de páginas web o pruebe y depure la web app que estás construyendo, directamente en el navegador donde ya iniciaste sesión. Funciona en navegadores basados en Chromium, como Google Chrome y Microsoft Edge, mediante la extensión de GitHub Copilot para Chrome, y corre en un grupo de pestañas aislado.',
+      'Viene desactivado por defecto. Para usarlo hay que instalar la extensión y luego, en la configuración de la app, activar tanto Computer Use como Browser Use. Los niveles de permiso se administran desde la configuración de la propia extensión. GitHub indica además que browser use también está disponible en Copilot CLI, VS Code y los IDE de JetBrains.',
+      'Para quienes trabajamos entre diseño y desarrollo, el valor está en cerrar un ciclo que hasta ahora quedaba abierto. Un agente que genera un componente o un flujo suele terminar diciendo que la tarea está lista, pero lista según el código, no según lo que ve una persona en pantalla. Que el mismo agente pueda abrir la app, recorrer un formulario y depurar lo que encuentra acerca la revisión de la interfaz al momento en que se escribe el código, en vez de dejarla para el final del sprint.',
+      'Dicho eso, la frase que más me llamó la atención del anuncio es "el navegador donde ya iniciaste sesión". En proyectos de banca y fintech aprendí que la sesión abierta es justamente el activo más delicado: ahí están los accesos a herramientas internas, a ambientes productivos y a datos de clientes. Que la función venga apagada y corra en pestañas aisladas son buenas señales, pero la responsabilidad de configurarla bien sigue siendo del equipo.',
+      'Si lo probara mañana, empezaría por revisar los niveles de permiso de la extensión antes de activar nada, usaría un perfil de navegador separado y lo limitaría a ambientes locales o de prueba con cuentas ficticias. También le pediría al agente que describa lo que verificó, para que su revisión complemente, y no reemplace, las pruebas de usabilidad con personas reales.',
+      'La dirección me parece correcta: un agente que comprueba su propio trabajo en la interfaz es más útil que uno que solo lo declara terminado. Como toda función en public preview, vale la pena explorarla con calma y con límites claros desde el primer día.',
+    ],
+    image: '/blog/copilot-agente-prueba-app-en-navegador.png',
+    imageAlt:
+      'Tarjeta del artículo: el agente de Copilot ahora abre el navegador para probar tu app, con una ventana de navegador que lista llenar formularios y leer páginas, probar y depurar la web app en construcción, y desactivado por defecto en public preview',
+    sourceUrl: 'https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/',
+    sourceLabel: 'GitHub Changelog',
+  },
+  {
     id: 'investigacion-ux-ciclo-desarrollo-con-ia',
     title: 'La investigación UX entra al ciclo del desarrollo con IA',
     date: '2026-11-14',
