@@ -2,6 +2,29 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'figma-agente-dev-mode-responde-a-quien-programa',
+    title: 'El agente de Figma entra a Dev Mode para responderle a quien programa',
+    date: '2026-11-21',
+    dateLabel: '21 de noviembre, 2026',
+    tags: ['UX/UI', 'Figma', 'Handoff'],
+    excerpt:
+      'Figma anunció que su agente ahora trabaja dentro de Dev Mode: explica diseños, compara versiones, entrega fragmentos de código y genera links para descargar assets en lote. Repaso qué trae y por qué, sin un archivo bien documentado, sus respuestas valen poco.',
+    content: [
+      'El 19 de noviembre de 2026, Figma publicó en sus release notes una novedad para quienes implementan diseños: el agente de Figma ahora se puede usar dentro de Dev Mode. Según el anuncio, se le puede pedir que inspeccione y ayude a entender un diseño, que compare versiones, que entregue fragmentos de código y que genere links para descargar assets en lote.',
+      'El centro de ayuda de Figma detalla un poco más. En Dev Mode, el agente puede responder preguntas sobre las interacciones de un componente o encontrar capas que podrían usar variables existentes; puede orientar la implementación, por ejemplo con CSS grid, flexbox o un snippet de React; y puede mostrar una comparación visual entre versiones o una lista de cambios en el chat. La exportación directa no está soportada: el agente genera links para que cada persona descargue los assets por su cuenta.',
+      'Un detalle importante está en los permisos. Las personas con asiento Dev pueden conversar con el agente sin modificar el diseño; quienes tienen asiento Full pueden además pedirle ediciones. Figma también aclara que Dev Mode no está disponible en el plan Starter ni con asientos View o Collab, y que el consumo de créditos de IA varía según la complejidad de la tarea.',
+      'Para quienes trabajamos entre diseño y desarrollo, la novedad apunta a un punto conocido del handoff. En los equipos con los que he implementado en Angular, las preguntas que más se repiten suelen ser las mismas: qué cambió desde la última versión, qué variable corresponde a este valor, cómo se comporta este componente al interactuar. Que esas respuestas estén disponibles donde ya se inspecciona el diseño puede ahorrar varias conversaciones cortas y dejar las reuniones para las decisiones que de verdad las necesitan.',
+      'Dicho eso, el agente responde a partir de lo que hay en el archivo. Si el diseño no documenta estados de carga, errores o casos borde, el agente no tiene de dónde sacar una respuesta confiable sobre ellos. En productos de banca y fintech, justamente esos casos son los que más pesan: un mensaje de error poco claro en un flujo de pago afecta la confianza de inmediato. Un design system ordenado, con variables bien nombradas y componentes con sus estados completos, sigue siendo la base para que estas respuestas sirvan.',
+      'También veo un cambio en el rol de quien diseña. Si parte de las preguntas del handoff las va a responder un agente, la documentación del archivo deja de ser un extra y pasa a ser la fuente de las respuestas que recibe el equipo de desarrollo. Diseñar pensando en que alguien, persona o agente, va a leer el archivo para implementarlo es una buena práctica que ahora gana todavía más peso.',
+      'La dirección me parece útil: menos fricción en el día a día del handoff y más tiempo para conversar sobre lo que importa. Como con cualquier herramienta de IA, vale la pena contrastar sus respuestas con el diseño y con quien lo hizo, sobre todo en los flujos críticos.',
+    ],
+    image: '/blog/figma-agente-dev-mode-responde-a-quien-programa.png',
+    imageAlt:
+      'Tarjeta del artículo: el agente de Figma entra a Dev Mode para responderle a quien programa, con un panel que lista entender el diseño, comparar versiones, pedir snippets de código y descargar assets en lote',
+    sourceUrl: 'https://www.figma.com/release-notes/',
+    sourceLabel: 'Figma Release Notes',
+  },
+  {
     id: 'copilot-agente-prueba-app-en-navegador',
     title: 'El agente de Copilot ahora abre el navegador para probar la app que estás construyendo',
     date: '2026-11-18',
