@@ -2,6 +2,31 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'sitios-municipales-barreras-criticas-accesibilidad',
+    title: '4 de cada 10 sitios municipales de EE.UU. tienen barreras críticas de accesibilidad',
+    date: '2026-11-23',
+    dateLabel: '23 de noviembre, 2026',
+    tags: ['UX/UI', 'Accesibilidad', 'WCAG'],
+    excerpt:
+      'Un escaneo de 158 sitios web de gobiernos municipales de Estados Unidos encontró que el 42% tiene al menos una barrera crítica de accesibilidad, a meses de que rija la exigencia de WCAG 2.1 AA. Repaso los hallazgos y por qué casi todos se resuelven en el diseño, no al final.',
+    content: [
+      'El 21 de noviembre de 2026 se difundió, a través de Stacker, un análisis producido por Clym sobre la accesibilidad de los sitios web de gobiernos municipales de Estados Unidos. Los datos vienen de un escaneo hecho en julio de 2026 por AccessLumens, una empresa que vende pruebas de accesibilidad, sobre 158 sitios, en su mayoría de ciudades con 100.000 habitantes o más. Se revisó la página de inicio de cada ciudad y, cuando fue posible, una página que la gente usa para pagar una cuenta, pedir un permiso o contactar al municipio.',
+      'El resultado principal: el 42% de los sitios tenía al menos una barrera crítica. El 45% tenía botones, links o campos de formulario sin una etiqueta que un lector de pantalla pueda anunciar, un problema que, según AccessLumens, es el más citado en demandas por accesibilidad. Entre los problemas más frecuentes aparecen también el contraste de color insuficiente (28% de las ciudades), las imágenes sin texto alternativo (22%), los links que no dicen a dónde llevan (13%) y los controles que no se pueden alcanzar con teclado (11%).',
+      'Hay un dato que me parece revelador: el 44% de las ciudades de entre 100.000 y 250.000 habitantes tenía una barrera crítica, frente al 13% de las ocho ciudades de más de un millón. El propio análisis aclara sus límites: se usaron herramientas automatizadas y pruebas de teclado con scripts, que detectan muchos problemas comunes pero no todos, no se observó a usuarios reales y los resultados son una fotografía diagnóstica, no una determinación legal de conformidad.',
+      'El contexto es normativo. Una regla del Departamento de Justicia bajo el Título II de la ADA exige que los sitios web y apps móviles de gobiernos cumplan WCAG 2.1 nivel AA. Para los gobiernos que atienden a 50.000 personas o más, el plazo es el 26 de abril de 2027; para los más pequeños y los distritos especiales, el 26 de abril de 2028.',
+      'Lo que más me llama la atención es lo básico de la lista. Ninguno de estos problemas exige tecnología compleja: una etiqueta asociada a un campo, un ratio de contraste que cumpla 4,5:1 en texto normal, un texto alternativo con sentido, un link que diga a dónde lleva. Son decisiones que se toman, o se omiten, en el diseño y en el handoff.',
+      'En los flujos de pago que he diseñado en fintech, el formulario es el corazón del producto. Un campo sin etiqueta no es un detalle estético: es una persona que no puede terminar lo que vino a hacer. Y no es casual que, según el análisis, las páginas de inicio tuvieran más barreras críticas que las de pagos, permisos o contacto; a veces la página más visible es la que más cambia y la que menos se revisa.',
+      'Si tuviera que priorizar, empezaría por lo que un design system puede resolver de una vez: componentes de formulario que no se puedan usar sin etiqueta, tokens de color con contraste validado, un estado de foco visible por defecto y una guía de texto alternativo en la documentación. Después, sumaría pruebas automatizadas en el pipeline y, sobre todo, pruebas con personas que usan lectores de pantalla, que es lo que ningún escaneo reemplaza.',
+      'La accesibilidad que llega como auditoría al final del proyecto siempre sale cara. La que vive en los componentes y en las especificaciones del handoff se paga una sola vez y protege cada pantalla que viene después.',
+    ],
+    image: '/blog/sitios-municipales-barreras-criticas-accesibilidad.png',
+    imageAlt:
+      'Tarjeta del artículo: 4 de cada 10 sitios municipales de EE.UU. tienen barreras críticas de accesibilidad, con un panel de cifras: 42% con al menos una barrera crítica, 45% con controles sin etiqueta para lector de pantalla, 28% con contraste insuficiente y 22% con imágenes sin texto alternativo',
+    sourceUrl:
+      'https://kesq.com/stacker-technology/2026/11/21/many-big-city-websites-still-have-accessibility-barriers-as-2027-deadline-nears',
+    sourceLabel: 'KESQ / Stacker',
+  },
+  {
     id: 'figma-agente-dev-mode-responde-a-quien-programa',
     title: 'El agente de Figma entra a Dev Mode para responderle a quien programa',
     date: '2026-11-21',
