@@ -2,6 +2,30 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'claude-ship-agentes-revisan-corrigen-aprueban-pull-requests',
+    title: 'Anthropic suma agentes que revisan, corrigen y aprueban pull requests según la política del equipo',
+    date: '2026-11-25',
+    dateLabel: '25 de noviembre, 2026',
+    tags: ['IA', 'Desarrollo', 'Code Review'],
+    excerpt:
+      'Anthropic presentó Claude Ship, un conjunto de agentes para lo que pasa después de escribir el código: revisar pull requests, mantenerlos en verde y aprobar los cambios que la política del equipo permita. Repaso qué hace cada pieza y por qué lo más interesante es cómo se diseña la confianza.',
+    content: [
+      'El 23 de noviembre de 2026, Anthropic presentó Claude Ship, un conjunto de agentes enfocado en el trabajo que viene después de escribir código: revisar pull requests, corregirlos y decidir cuáles están listos para fusionarse según reglas que define cada equipo. Está formado por tres piezas. Code Review, que ya está en disponibilidad general, y dos agentes nuevos en beta: PR Steward y Claude Approvals.',
+      'Code Review revisa cada pull request contra la base de código desde varias perspectivas, verifica sus propios hallazgos antes de publicarlos, los categoriza y los deja como comentarios en el PR. Se puede configurar con niveles Quick, Standard o Deep por repositorio. PR Steward intenta mantener el PR en verde: actúa ante checks de CI fallidos, conflictos de merge y comentarios de revisión, y después de cada push comenta qué cambió y cómo deshacerlo. Claude Approvals aplica una política de aprobación que el equipo escribe como archivo dentro del repositorio y puede aprobar cambios rutinarios por sí mismo o exigir que una persona apruebe en ciertos casos.',
+      'Hay un punto de entrada para quien programa: en Claude Code, el comando /ship sube el cambio, abre el PR, lo revisa y trabaja sobre los comentarios y los checks que fallen. Lo que finalmente se puede fusionar depende de los permisos de cada desarrollador y de las reglas de protección de la rama, que siguen funcionando como antes.',
+      'Las condiciones importan. Según el anuncio, Claude Ship está disponible en los planes Team y Enterprise, solo para repositorios en GitHub, y se factura por uso de tokens, con límites de gasto configurables. No está disponible para organizaciones con Zero Data Retention, con la configuración HIPAA ni con claves de cifrado gestionadas por el cliente.',
+      'Lo que más me interesa no es la automatización en sí, sino cómo está diseñada la confianza. PR Steward está pensado explícitamente para no aprobar ni fusionar, y cada cambio que hace viene acompañado de una explicación y de la forma de revertirlo. Para Claude Approvals, la recomendación es empezar en modo solo observación antes de exigir su aprobación en la protección de ramas. Es decir: primero ver cómo decide, después darle autoridad.',
+      'En los proyectos de banca y fintech en los que he trabajado, la automatización nunca entra de golpe. Se gana su lugar de a poco, con reglas explícitas, trazabilidad y alguien que pueda responder por cada decisión. Que la política de aprobación sea un archivo versionado en el repositorio, que cualquiera del equipo puede leer, discutir y cambiar con un pull request, me parece la decisión correcta: convierte un criterio que suele vivir en la cabeza de dos o tres personas en algo visible.',
+      'Desde el lado del front-end, me surge una pregunta práctica: qué cuenta como cambio rutinario. Un ajuste de texto o de espaciado puede parecer menor y, aun así, romper el contraste, el foco visible o un flujo de pago en una pantalla que nadie revisó. Si un equipo decide delegar aprobaciones, vale la pena que la política considere también la accesibilidad y la experiencia, no solo que los tests pasen.',
+      'El cuello de botella del desarrollo se está moviendo de escribir código a revisarlo y decidir qué entra a producción. Herramientas como esta empujan en esa dirección, y lo que hará la diferencia es la calidad de las reglas que cada equipo escriba para ellas.',
+    ],
+    image: '/blog/claude-ship-agentes-revisan-corrigen-aprueban-pull-requests.png',
+    imageAlt:
+      'Tarjeta del artículo: agentes que revisan, corrigen y aprueban pull requests, con tres pasos: Code Review, disponible, revisa y verifica sus hallazgos; PR Steward, beta, atiende CI, conflictos y comentarios; Claude Approvals, beta, aprueba según la política del equipo',
+    sourceUrl: 'https://claude.com/resources/articles/introducing-claude-ship',
+    sourceLabel: 'Anthropic',
+  },
+  {
     id: 'sitios-municipales-barreras-criticas-accesibilidad',
     title: '4 de cada 10 sitios municipales de EE.UU. tienen barreras críticas de accesibilidad',
     date: '2026-11-23',
