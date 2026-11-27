@@ -2,6 +2,28 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'canva-abre-diseno-a-agentes-ia-mcp-api-cli',
+    title: 'Canva abre sus herramientas de diseño a agentes de IA y desarrolladores',
+    date: '2026-11-27',
+    dateLabel: '27 de noviembre, 2026',
+    tags: ['IA', 'Diseño', 'Design Systems'],
+    excerpt:
+      'Canva abrió su servidor MCP a cualquier agente o desarrollador y sumó APIs REST, una CLI ampliada y cuentas de servicio. Repaso qué cambia y por qué la decisión más interesante es cuánto control se le entrega al agente.',
+    content: [
+      'Esta semana, Canva anunció que su servidor MCP queda abierto a cualquier agente de IA o desarrollador. Junto con eso sumó nuevas APIs REST, amplió su herramienta de línea de comandos para trabajos masivos y agregó cuentas de servicio con facturación por API, para que los flujos automatizados puedan correr sin que una persona tenga que estar conectada. También abrió Craft, su modelo de generación de imágenes, a través de la API.',
+      'La compañía compartió algunas cifras de adopción. Según Canva, casi 500.000 personas se registraron a través de MCP desde octubre, y en ese mismo mes la mayoría de los comandos de su CLI los ejecutaron agentes y no personas. Son datos de la propia empresa, pero muestran hacia dónde se está moviendo el uso.',
+      'Lo que más me llama la atención es cómo están organizados los caminos de acceso. MCP está pensado para el trabajo guiado por agentes, donde el agente decide los pasos. Las APIs REST son para quien quiere controlar cada llamada desde su propio producto. Y la CLI apunta a agentes de código y tareas por lote. No es solo una lista de integraciones: es una forma de decidir cuánto control se le entrega a la máquina en cada caso, y esa es una decisión de diseño.',
+      'Hay matices que vale la pena tener presentes. Según la cobertura del anuncio, cada persona que usa el MCP sigue iniciando sesión con su propia cuenta de Canva, las cuentas de servicio aplican a la API REST y no se publicaron precios para la facturación por API. Antes de integrarlo en un producto, conviene revisar esas condiciones con calma.',
+      'Desde mi experiencia en proyectos de banca, buena parte del trabajo de diseño estaba en el handoff: dejar claras las reglas para que el equipo de desarrollo pudiera aplicarlas sin adivinar. Cuando quien consume esas reglas pasa a ser un agente, la exigencia sube. Un brand kit incompleto o un design system con excepciones no documentadas no se va a “interpretar con criterio”: se va a aplicar tal cual, a escala.',
+      'Por eso creo que el efecto más profundo de esta tendencia no está en la herramienta, sino en la calidad de lo que le entregamos. Tokens bien nombrados, componentes con reglas explícitas y guías de marca escritas para ser leídas por personas y por máquinas pasan a ser infraestructura. La pregunta para los equipos de diseño ya no es solo si su sistema se entiende, sino si un agente puede usarlo sin romperlo.',
+    ],
+    image: '/blog/canva-abre-diseno-a-agentes-ia-mcp-api-cli.png',
+    imageAlt:
+      'Tarjeta con el titular "Canva abre sus herramientas de diseño a agentes de IA y desarrolladores" y tres recuadros: MCP, el agente decide los pasos; REST, quien programa controla cada llamada; CLI, trabajos por lote.',
+    sourceUrl: 'https://dataconomy.com/2026/11/25/canva-opens-design-tools-to-ai-agents-and-developers/',
+    sourceLabel: 'Dataconomy',
+  },
+  {
     id: 'claude-ship-agentes-revisan-corrigen-aprueban-pull-requests',
     title: 'Anthropic suma agentes que revisan, corrigen y aprueban pull requests según la política del equipo',
     date: '2026-11-25',
